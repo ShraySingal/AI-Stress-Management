@@ -1,0 +1,7 @@
+split,model,accuracy,precision,recall,f1,roc_auc,tp,fp,tn,fn
+Stratified,Baseline Random Forest,0.8512,0.7658,0.5811,0.6608,0.8981,641,196,3123,462
+Stratified,Improved Balanced RF,0.8275,0.6232,0.7797,0.6927,0.9009,860,520,2799,243
+Stratified,Tuned XGBoost,0.827,0.6211,0.786,0.6939,0.9011,867,529,2790,236
+Unseen Users,Baseline Random Forest,0.8418,0.7208,0.57,0.6366,0.8867,586,227,2974,442
+Unseen Users,Improved Balanced RF,0.8134,0.589,0.7695,0.6672,0.8874,791,552,2649,237
+Unseen Users,Tuned XGBoost,0.8186,0.5973,0.7792,0.6762,0.8877,801,540,2661,227

@@ -6,13 +6,27 @@ __pycache__/
 *.egg-info/
 *.dist-info/
 
-# Data files (keep sample data only, not the full synthetic set)
+# Virtual environment
+.venv/
+venv/
+env/
+
+# Data files (keep metadata, evaluation reports tracked)
 dataset/*.csv
-dataset/*.json
 dataset/*.joblib
 
-# Large binary – ignored (or use LFS if desired)
+# Large binary - ignored (105MB exceeds GitHub limit)
 capstone.db
+
+# Compressed archives
+files.zip
+*.zip
+
+# Screen recordings / media
+*.mp4
+*.avi
+*.mkv
+*.mov
 
 # IDE / editor artefacts
 .vscode/
@@ -28,3 +42,10 @@ build/
 *.log
 *.tmp
 *.bak
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# pytest cache
+.pytest_cache/
