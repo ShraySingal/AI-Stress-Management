@@ -1,0 +1,46 @@
+{
+  "synthetic": true,
+  "seed": 42,
+  "users": 300,
+  "days": 180,
+  "end_date": "2026-09-30",
+  "risk_thresholds": {
+    "low": [
+      0,
+      30
+    ],
+    "moderate": [
+      31,
+      60
+    ],
+    "elevated": [
+      61,
+      80
+    ],
+    "high": [
+      81,
+      100
+    ]
+  },
+  "ml_target": "next_day_stress_score >= 61",
+  "rows": {
+    "users": 300,
+    "user_preferences": 300,
+    "privacy_settings": 300,
+    "emergency_contacts": 456,
+    "mood_entries": 36095,
+    "stress_assessments": 32735,
+    "sleep_records": 45053,
+    "activity_records": 46202,
+    "habit_definitions": 1803,
+    "habit_logs": 207372,
+    "wearable_devices": 160,
+    "wearable_data": 22845,
+    "chat_sessions": 542,
+    "chat_messages": 2178,
+    "notifications": 14954,
+    "audit_logs": 6000,
+    "ml_training_dataset": 22108
+  },
+  "note": "All values are simulated. Not clinically validated. Not for medical use."
+}

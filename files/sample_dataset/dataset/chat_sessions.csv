@@ -1,0 +1,543 @@
+id,user_id,title,started_at,message_count,escalated_to_support
+d94c1c2f-4492-48e2-90d7-a35ffda4a05b,0221503d-ef6f-4b3f-8a81-ee618bdb024f,Why did my stress increase?,2026-04-22 18:00:00,6,False
+2563beec-c041-46e1-aaa7-70e70d543613,0221503d-ef6f-4b3f-8a81-ee618bdb024f,What is affecting my stress?,2026-08-25 20:00:00,4,False
+86814f88-ff54-4732-9b18-3879a6258235,0f9ed1c4-7d4d-4f17-9a78-7e2e4e470d7d,What is affecting my stress?,2026-05-09 20:00:00,6,False
+983a7180-9f29-4acd-b955-4994ae9c90c7,0f9ed1c4-7d4d-4f17-9a78-7e2e4e470d7d,What is affecting my stress?,2026-09-20 09:00:00,2,False
+6e39ec95-e722-4db7-93a4-9cb7deabf754,0f9ed1c4-7d4d-4f17-9a78-7e2e4e470d7d,How can I relax?,2026-06-13 20:00:00,4,False
+83d113d1-ecfb-4048-9214-e15c467c8748,0f9ed1c4-7d4d-4f17-9a78-7e2e4e470d7d,What is affecting my stress?,2026-06-06 21:00:00,4,False
+7b4c2402-bde0-4276-9668-49162be59037,0f9ed1c4-7d4d-4f17-9a78-7e2e4e470d7d,What can I do before sleeping?,2026-08-17 17:00:00,6,True
+e21ba9d5-0bfe-4ac7-9298-7eed9f2b307c,a88766ad-9e06-4e1a-851b-ef516ce083ce,How was my week?,2026-05-18 22:00:00,4,False
+c8844a89-88ac-4b35-aa06-c0ae334d04ec,a88766ad-9e06-4e1a-851b-ef516ce083ce,What is affecting my stress?,2026-04-18 16:00:00,6,False
+ae08e989-0a83-437a-b6b9-ce15d4dc92a2,a88766ad-9e06-4e1a-851b-ef516ce083ce,What is affecting my stress?,2026-04-16 16:00:00,4,False
+7b2d4f73-d181-46c7-9d82-61c54a34d31c,ef9fc309-1c9f-41e7-945e-087143e3bfc9,What can I do before sleeping?,2026-08-11 21:00:00,2,False
+2a734a7a-e140-45b5-bb7c-7f555bc34f98,ef9fc309-1c9f-41e7-945e-087143e3bfc9,What is affecting my stress?,2026-06-05 21:00:00,6,False
+dde12ca3-7828-4a82-b52b-f664adbe86a6,ef9fc309-1c9f-41e7-945e-087143e3bfc9,How was my week?,2026-07-31 15:00:00,6,False
+2b292643-3e50-4a53-8ed9-2e696313a094,318f58a1-2df5-48f2-a1ae-d40bbfd3df1f,How can I relax?,2026-07-11 14:00:00,4,False
+731c1c50-4e36-447e-98df-07603a9fab99,318f58a1-2df5-48f2-a1ae-d40bbfd3df1f,What is affecting my stress?,2026-05-30 10:00:00,2,False
+cf3f9b32-c5d4-43cd-8610-7842e2dd867f,318f58a1-2df5-48f2-a1ae-d40bbfd3df1f,How was my week?,2026-09-30 08:00:00,4,False
+1f5bce4d-59fd-432c-b31d-f2ee31c9bf1d,3d5df3ed-e675-40ea-b648-1888480c5700,What can I do before sleeping?,2026-05-23 17:00:00,4,False
+c7a02bdc-971b-47fa-ba0a-6ceff8c3d22a,3d5df3ed-e675-40ea-b648-1888480c5700,How can I relax?,2026-07-29 18:00:00,2,False
+eae7a786-cbff-47dd-bf21-f4088af99aa3,3d5df3ed-e675-40ea-b648-1888480c5700,What is affecting my stress?,2026-04-22 19:00:00,6,False
+6225566f-0770-4522-9d53-157c78eebc02,3d5df3ed-e675-40ea-b648-1888480c5700,What is affecting my stress?,2026-04-28 13:00:00,6,False
+da887997-2eb8-47a5-8ba6-f4f9ca51072c,3d5df3ed-e675-40ea-b648-1888480c5700,Why did my stress increase?,2026-06-29 17:00:00,2,False
+7513494f-d437-4a77-8604-d72f875bcb0c,3d5df3ed-e675-40ea-b648-1888480c5700,How was my week?,2026-07-05 12:00:00,2,False
+da12e3f4-74c4-4b8f-ac23-c82d60ffeb7b,6f86789d-e34b-4606-85b0-ca8e4da04415,What is affecting my stress?,2026-09-13 16:00:00,4,False
+1c27e031-0977-4851-9b6d-fa5e2d4420dc,6f86789d-e34b-4606-85b0-ca8e4da04415,How can I relax?,2026-06-12 08:00:00,2,False
+c1d1b57b-d9ce-49ee-83ac-f37233a36860,9cc6a5be-595d-4755-a3c7-29ad8fc02e20,What can I do before sleeping?,2026-04-13 20:00:00,6,False
+c32be0b3-b2e6-4341-b6ed-c673bc197e84,9cc6a5be-595d-4755-a3c7-29ad8fc02e20,How was my week?,2026-09-22 19:00:00,2,False
+45afbf1e-d9e5-4063-8b1c-5f5abfac5c8d,9cc6a5be-595d-4755-a3c7-29ad8fc02e20,Why did my stress increase?,2026-08-19 16:00:00,4,False
+f337a4a0-791d-4aa0-a547-5d9812333d13,9cc6a5be-595d-4755-a3c7-29ad8fc02e20,How can I relax?,2026-08-18 08:00:00,4,False
+0e080743-818a-4b6d-8123-a2fae010b61e,45cb6ee9-d2fa-4028-bfa3-d3f7c965b0d2,How was my week?,2026-08-08 13:00:00,2,False
+33bb7a70-c5b2-4654-968d-7a333861922a,45cb6ee9-d2fa-4028-bfa3-d3f7c965b0d2,Why did my stress increase?,2026-05-07 19:00:00,2,False
+c917e211-3e94-43ad-8a97-d5665f50c94c,45cb6ee9-d2fa-4028-bfa3-d3f7c965b0d2,What can I do before sleeping?,2026-07-27 09:00:00,4,False
+94beceaf-1697-46d2-935c-dd978995a8df,45cb6ee9-d2fa-4028-bfa3-d3f7c965b0d2,What can I do before sleeping?,2026-08-20 11:00:00,6,False
+94d4b94d-7703-4693-8d16-a4f23eda93d9,864c40ce-0975-41a2-903c-4efc074923cc,Why did my stress increase?,2026-07-23 08:00:00,4,False
+503ebb9b-cca8-43a2-8c97-a1a561f895d9,864c40ce-0975-41a2-903c-4efc074923cc,How can I relax?,2026-05-25 22:00:00,6,False
+cc876d0b-3747-466d-aba7-1bf526df0804,864c40ce-0975-41a2-903c-4efc074923cc,How can I relax?,2026-05-07 22:00:00,6,False
+d662eba4-7587-4f08-b741-94b451957e2e,864c40ce-0975-41a2-903c-4efc074923cc,What is affecting my stress?,2026-07-11 08:00:00,2,False
+3f1b1d8d-bdde-4f1c-9846-d0aa31e66ee5,dcf9b024-ba87-4df2-8fa8-3b457f2e8442,Why did my stress increase?,2026-06-01 16:00:00,2,False
+e295a6f1-1ce2-4dbb-b276-0e4357e71fda,dcf9b024-ba87-4df2-8fa8-3b457f2e8442,How was my week?,2026-06-06 19:00:00,6,False
+6034e1b0-b487-4c8d-b8e5-fca599cd2f86,dcf9b024-ba87-4df2-8fa8-3b457f2e8442,How was my week?,2026-04-28 21:00:00,2,False
+71f22e11-226b-4b51-827e-ce951c53f351,dcf9b024-ba87-4df2-8fa8-3b457f2e8442,What is affecting my stress?,2026-08-03 08:00:00,4,True
+bb9da1c3-8f1c-4772-82ab-df6413895aa8,808886cf-78d5-4d08-b8c7-9ef855b1ef8e,Why did my stress increase?,2026-06-06 11:00:00,2,False
+92505de0-53f7-48af-825c-3dcc505cddd2,808886cf-78d5-4d08-b8c7-9ef855b1ef8e,How was my week?,2026-06-04 20:00:00,4,False
+dfbf4805-3615-472d-96da-a98d55a5fc86,808886cf-78d5-4d08-b8c7-9ef855b1ef8e,How was my week?,2026-04-22 22:00:00,4,False
+6e38c650-db11-4f92-8dee-f63ac9ffe729,808886cf-78d5-4d08-b8c7-9ef855b1ef8e,What is affecting my stress?,2026-09-22 12:00:00,4,False
+5cd55112-6d16-4fea-8c99-61d8e57bfa9a,54fb56a0-c95d-4842-8651-c3d5c39df333,What is affecting my stress?,2026-06-01 14:00:00,2,False
+fb566c1e-733a-4259-ae70-4b73d5e7b5f2,54fb56a0-c95d-4842-8651-c3d5c39df333,Why did my stress increase?,2026-06-08 14:00:00,6,False
+ad021e82-9240-458f-8da4-96a5b5520dd1,54fb56a0-c95d-4842-8651-c3d5c39df333,Why did my stress increase?,2026-04-17 17:00:00,4,False
+a4091644-5890-45dd-bb0d-24818f1361f0,54fb56a0-c95d-4842-8651-c3d5c39df333,How can I relax?,2026-04-29 20:00:00,6,False
+ae3aae8a-0cca-4216-b99c-f840bcf5477f,fee8a804-b188-4fb6-b5dc-7aa16693b3aa,Why did my stress increase?,2026-05-29 08:00:00,4,False
+f195833c-43be-4a58-8b11-22c195315091,fee8a804-b188-4fb6-b5dc-7aa16693b3aa,How was my week?,2026-06-02 14:00:00,2,False
+6d12c227-a78e-4322-aee2-d78fc282475b,fee8a804-b188-4fb6-b5dc-7aa16693b3aa,What can I do before sleeping?,2026-05-02 12:00:00,2,False
+9ce78e7d-4a03-4ca3-bc92-f104876a5383,3098f236-3822-42d6-8e1d-7c3ede2edd59,What is affecting my stress?,2026-06-01 16:00:00,6,False
+ab5f31c4-cb39-4252-b59b-090d9cf66922,3098f236-3822-42d6-8e1d-7c3ede2edd59,What is affecting my stress?,2026-05-20 20:00:00,4,False
+9f449122-010d-4782-b138-e7a725132114,3098f236-3822-42d6-8e1d-7c3ede2edd59,How can I relax?,2026-08-10 14:00:00,2,False
+3655ae2f-420e-4b20-bf62-6f033ee7ee06,3098f236-3822-42d6-8e1d-7c3ede2edd59,Why did my stress increase?,2026-06-26 22:00:00,4,False
+b19e8a83-f35a-4d2b-982d-6bfae500d3bd,3098f236-3822-42d6-8e1d-7c3ede2edd59,How can I relax?,2026-04-07 13:00:00,2,False
+4a2253d4-63f5-457e-97ed-a9bd0c941e2e,afc70c78-86c9-46d3-b156-2254171e43f8,What is affecting my stress?,2026-04-30 15:00:00,4,False
+f239d379-0b65-4b08-a31a-b893891de51a,afc70c78-86c9-46d3-b156-2254171e43f8,Why did my stress increase?,2026-08-22 08:00:00,2,False
+45ff1981-7d70-4358-bd4a-59fa0d4ce3c5,afc70c78-86c9-46d3-b156-2254171e43f8,Why did my stress increase?,2026-05-24 12:00:00,6,False
+f0b9a289-e0bc-43bf-bd81-e231331de870,afc70c78-86c9-46d3-b156-2254171e43f8,What is affecting my stress?,2026-05-20 14:00:00,6,False
+11de5fdb-8749-4d4d-a3a3-0b35a6d02004,afc70c78-86c9-46d3-b156-2254171e43f8,How can I relax?,2026-04-14 15:00:00,4,False
+ab8e1dd0-2d8f-4456-a8f0-55c08f6a582a,afc70c78-86c9-46d3-b156-2254171e43f8,What can I do before sleeping?,2026-08-09 17:00:00,6,True
+81e89a49-89b2-4cc3-a70e-8ef4ed35905f,ce6a4a42-8643-47fc-8e33-15e8cf408041,What can I do before sleeping?,2026-05-03 22:00:00,2,False
+d0350adc-0151-4000-98f8-e159e5a54f78,ce6a4a42-8643-47fc-8e33-15e8cf408041,How can I relax?,2026-04-30 18:00:00,6,False
+b4997c16-75cc-45e5-8352-338decd6dce1,ce6a4a42-8643-47fc-8e33-15e8cf408041,How can I relax?,2026-05-29 16:00:00,2,False
+f7e1ae78-7380-4421-b4b6-19182efe9f13,644c1cd2-8936-497c-a969-a9e928c95511,What can I do before sleeping?,2026-08-25 14:00:00,2,False
+ed26aee5-bed4-4554-8c6c-f0eb2a3e6566,644c1cd2-8936-497c-a969-a9e928c95511,Why did my stress increase?,2026-07-26 10:00:00,6,False
+5949409c-b421-4a64-8339-2678ff914e33,644c1cd2-8936-497c-a969-a9e928c95511,What can I do before sleeping?,2026-07-18 15:00:00,4,False
+49390852-dd2e-4d72-a660-028837eef0e6,c2c9dbba-4308-426a-a0af-90267c3226ce,What is affecting my stress?,2026-08-28 20:00:00,6,False
+47f88487-a3f7-44f2-886c-37cb992b9742,c2c9dbba-4308-426a-a0af-90267c3226ce,How can I relax?,2026-05-11 17:00:00,6,False
+133dda97-e03d-4bf1-aa73-6b27001e99ea,c2c9dbba-4308-426a-a0af-90267c3226ce,What can I do before sleeping?,2026-06-01 17:00:00,6,False
+b4d88897-7872-4e85-8267-de514ecf1bbe,c2c9dbba-4308-426a-a0af-90267c3226ce,What can I do before sleeping?,2026-04-26 14:00:00,2,False
+ae0a3fb6-bfb2-431e-bd16-22e8837c31c8,c2c9dbba-4308-426a-a0af-90267c3226ce,How can I relax?,2026-05-19 20:00:00,2,False
+e5297445-210b-4b74-ba74-eaefd5776518,c2c9dbba-4308-426a-a0af-90267c3226ce,How can I relax?,2026-06-23 09:00:00,2,False
+d79a2d32-045b-462f-b142-0543979c6a27,8eef8c4a-bd74-42d7-93c7-6a647ef829d9,How can I relax?,2026-09-06 16:00:00,4,False
+cded40d2-4c83-4712-a3d7-8b1918c55deb,8eef8c4a-bd74-42d7-93c7-6a647ef829d9,How was my week?,2026-06-13 10:00:00,2,False
+e99ef882-1a40-4b29-ab41-58a76f2d14c9,8eef8c4a-bd74-42d7-93c7-6a647ef829d9,What can I do before sleeping?,2026-06-17 15:00:00,4,False
+79c0e454-cab3-4594-8404-0ea9d027d57d,8eef8c4a-bd74-42d7-93c7-6a647ef829d9,How can I relax?,2026-06-04 08:00:00,6,False
+dfca300f-d501-41ed-bda5-45bb86027197,8eef8c4a-bd74-42d7-93c7-6a647ef829d9,How can I relax?,2026-09-15 13:00:00,2,False
+7b67c926-bdc1-4a02-b81a-59b41a60246a,8eef8c4a-bd74-42d7-93c7-6a647ef829d9,Why did my stress increase?,2026-06-29 18:00:00,2,False
+6e5c60ec-34e4-4359-80bd-bc13463f134f,8eef8c4a-bd74-42d7-93c7-6a647ef829d9,Why did my stress increase?,2026-08-13 19:00:00,6,False
+ff8f744f-151a-41ef-9fc2-bfa4d036e35b,af3d387c-0509-4967-9772-1564e90d6a06,Why did my stress increase?,2026-06-10 13:00:00,6,False
+cbc5ffc3-835a-42a4-95c5-652afc550a90,af3d387c-0509-4967-9772-1564e90d6a06,How can I relax?,2026-08-20 17:00:00,4,False
+d7093f0d-4a39-46ed-9a58-428c21509bcb,af3d387c-0509-4967-9772-1564e90d6a06,What is affecting my stress?,2026-04-22 11:00:00,2,False
+ff5a76c4-611e-4083-95eb-0dace46dea75,af3d387c-0509-4967-9772-1564e90d6a06,What is affecting my stress?,2026-09-12 13:00:00,8,True
+ac0828ff-ad0d-4d1d-8a45-1e994a655fc0,af3d387c-0509-4967-9772-1564e90d6a06,Why did my stress increase?,2026-06-05 10:00:00,4,False
+343f8491-6828-459c-bac1-0e3bddf15541,6cfeca3a-66a5-4a7d-89f7-87bc8e63e29d,What is affecting my stress?,2026-08-09 15:00:00,6,False
+d2b269a3-d33c-4898-8e2a-d8f8502a19a4,6cfeca3a-66a5-4a7d-89f7-87bc8e63e29d,How can I relax?,2026-08-25 18:00:00,6,False
+5b57f7f1-8007-4959-b541-d4c0d114b236,6cfeca3a-66a5-4a7d-89f7-87bc8e63e29d,How can I relax?,2026-06-06 09:00:00,6,False
+6bfd06bd-e05c-4f82-ba38-9199670b70d5,6cfeca3a-66a5-4a7d-89f7-87bc8e63e29d,How was my week?,2026-08-06 08:00:00,2,False
+a903e0a8-a5b9-4e38-8c53-acaa1c4a1380,6cfeca3a-66a5-4a7d-89f7-87bc8e63e29d,What can I do before sleeping?,2026-05-07 14:00:00,6,False
+f5825bd8-c818-4741-94b6-ca1d660b11a8,6cfeca3a-66a5-4a7d-89f7-87bc8e63e29d,What can I do before sleeping?,2026-07-11 09:00:00,2,False
+325332ff-cf46-4ae7-aef0-79465fad8936,6cfeca3a-66a5-4a7d-89f7-87bc8e63e29d,What can I do before sleeping?,2026-07-29 11:00:00,6,False
+e0f889de-a558-4ac0-aec0-978f42d46c37,c198493e-a725-4825-b39d-76610c554aee,How can I relax?,2026-05-26 18:00:00,2,False
+1689b561-4d81-40e9-a7b3-e7079dd9647a,c198493e-a725-4825-b39d-76610c554aee,How can I relax?,2026-05-08 16:00:00,6,False
+df75da32-b239-45c8-846b-60ef3571f196,04526fdf-7cac-4cac-85f9-999a9a8ccbb3,How was my week?,2026-05-28 14:00:00,6,False
+066cc966-f7b6-4047-ab11-f36da60ba4fa,04526fdf-7cac-4cac-85f9-999a9a8ccbb3,Why did my stress increase?,2026-06-18 15:00:00,4,True
+8c346505-d7b7-455c-ab4d-636bb64a038b,04526fdf-7cac-4cac-85f9-999a9a8ccbb3,How was my week?,2026-04-24 16:00:00,6,False
+62455313-0c1a-40cd-babb-50e9862c8e79,04526fdf-7cac-4cac-85f9-999a9a8ccbb3,What is affecting my stress?,2026-04-09 18:00:00,2,False
+21657a37-a544-4d17-83a8-dbbce1b83cd6,78dea9cf-86c1-47c5-879a-383162ababdb,Why did my stress increase?,2026-08-21 18:00:00,2,False
+9d0ce1a0-7748-48de-89ac-d3c8038890b7,78dea9cf-86c1-47c5-879a-383162ababdb,What can I do before sleeping?,2026-09-20 15:00:00,4,False
+26691594-d847-43c4-b5e1-7acbc1b409f0,78dea9cf-86c1-47c5-879a-383162ababdb,How was my week?,2026-09-11 18:00:00,6,False
+a00470fa-bf2d-4555-b9ba-ff6359a49efd,9fb54a3e-80f8-4c18-b3c6-72564e4bbc52,How can I relax?,2026-07-19 10:00:00,2,False
+c4d8d767-e918-4b13-9565-4d9ed476b599,08d85116-6e02-470f-93d5-d4d12b7ddf80,How was my week?,2026-09-05 08:00:00,4,False
+b32084d0-a42c-42fb-aa51-6d93aac70cb0,08d85116-6e02-470f-93d5-d4d12b7ddf80,What can I do before sleeping?,2026-07-05 17:00:00,2,False
+a4ad732c-a53d-49f1-8e62-388b301576f0,08d85116-6e02-470f-93d5-d4d12b7ddf80,How can I relax?,2026-06-25 15:00:00,6,False
+d87d972f-9a8a-4c64-90de-05546a105263,08d85116-6e02-470f-93d5-d4d12b7ddf80,Why did my stress increase?,2026-04-18 13:00:00,4,False
+b2d58337-7d54-42bb-9b6e-6746b8e7ab91,08d85116-6e02-470f-93d5-d4d12b7ddf80,What can I do before sleeping?,2026-08-07 08:00:00,2,False
+230a92bf-1f2d-4da0-a4eb-539a12d9e28d,08d85116-6e02-470f-93d5-d4d12b7ddf80,What is affecting my stress?,2026-09-22 19:00:00,2,False
+baeaadb3-8fc1-4169-ba97-3163ada9f82f,b6546a51-9416-4c33-b9a9-4551e32a2f98,How can I relax?,2026-05-24 08:00:00,6,False
+0d76e9e6-7b8a-4d2f-8b19-45d8cb13468c,b6546a51-9416-4c33-b9a9-4551e32a2f98,How was my week?,2026-08-15 18:00:00,4,False
+a84f6769-7335-482c-b3c7-e2460259c8a6,b6546a51-9416-4c33-b9a9-4551e32a2f98,Why did my stress increase?,2026-05-09 22:00:00,2,False
+0f6fadae-e214-43ac-a713-aa0f60c42c68,b6546a51-9416-4c33-b9a9-4551e32a2f98,What is affecting my stress?,2026-09-14 16:00:00,6,False
+051194da-8c38-48c3-8e6c-240756bded93,3731831a-d624-49ec-8de7-3a7ef282933a,How can I relax?,2026-08-07 13:00:00,6,False
+d3077f0a-4f31-4d02-9c1a-c630729fefa0,3731831a-d624-49ec-8de7-3a7ef282933a,How can I relax?,2026-06-18 09:00:00,6,False
+c02bfb3c-deb2-498c-bb85-1a9231f767ee,3731831a-d624-49ec-8de7-3a7ef282933a,How was my week?,2026-06-06 09:00:00,2,False
+d26fb43f-e4c1-4a99-b610-b159662acacf,3731831a-d624-49ec-8de7-3a7ef282933a,Why did my stress increase?,2026-05-12 13:00:00,2,False
+412920b0-1587-473c-887e-96885c514ba8,3731831a-d624-49ec-8de7-3a7ef282933a,Why did my stress increase?,2026-04-22 13:00:00,4,False
+74dea862-4119-4c9e-8255-b0461301637b,3731831a-d624-49ec-8de7-3a7ef282933a,Why did my stress increase?,2026-09-17 11:00:00,4,False
+94497400-3dfa-4554-aa7a-10805eeb5bf3,b9f277ec-fa91-4624-a321-eb349feb4cfa,How was my week?,2026-06-09 10:00:00,6,False
+9a7469b5-3bd7-4e52-9cc7-7daa1e7f8d0d,b9f277ec-fa91-4624-a321-eb349feb4cfa,What is affecting my stress?,2026-04-22 15:00:00,2,False
+dab2dd2e-3d5f-4edb-aa68-fa18d491ef07,b9f277ec-fa91-4624-a321-eb349feb4cfa,What can I do before sleeping?,2026-09-11 20:00:00,4,True
+a7729013-1edb-40ec-8521-a53ea9a2510d,7e4cae50-8f72-46cf-8596-dcdfb3303bf8,What can I do before sleeping?,2026-09-02 13:00:00,4,False
+e380bc4e-6ccf-4952-91c0-4ce43c6e47c6,7e4cae50-8f72-46cf-8596-dcdfb3303bf8,How was my week?,2026-08-08 19:00:00,4,False
+3c9c3159-3eb5-45c7-91e3-0626047b1d51,7e4cae50-8f72-46cf-8596-dcdfb3303bf8,What is affecting my stress?,2026-08-20 08:00:00,4,False
+9d0c18a1-b564-4e66-bb5b-69264e34b3fa,7e4cae50-8f72-46cf-8596-dcdfb3303bf8,Why did my stress increase?,2026-06-18 15:00:00,2,False
+b7154d5a-a6be-4778-9bda-7b5b7ba85f31,7e4cae50-8f72-46cf-8596-dcdfb3303bf8,How was my week?,2026-04-11 22:00:00,4,False
+98aa8e7d-5958-47f2-bc80-336be53b79e5,4770f0fc-c0ee-40f0-8a0d-4bb01d57acb8,What can I do before sleeping?,2026-07-26 13:00:00,6,False
+9c475563-95a0-4b57-ade7-df34a2385915,4770f0fc-c0ee-40f0-8a0d-4bb01d57acb8,What is affecting my stress?,2026-09-29 22:00:00,6,False
+4d4111bf-8ffe-49fb-808a-e0d5275b5754,4770f0fc-c0ee-40f0-8a0d-4bb01d57acb8,How was my week?,2026-07-17 11:00:00,2,False
+95374ed9-8ffc-414c-8ad4-a78ed022d2be,452d86ae-1abf-401f-a9eb-c0db6b6fd82e,How was my week?,2026-06-19 09:00:00,4,False
+70851ab2-08cc-427a-b8d1-c816f7848a90,3bb8441c-29c3-4c06-8971-7f143b3701f3,How was my week?,2026-04-11 16:00:00,4,False
+521a951b-b4be-4b65-8eaf-4396f1659999,3bb8441c-29c3-4c06-8971-7f143b3701f3,What can I do before sleeping?,2026-09-18 12:00:00,4,False
+e8ca53d3-5fbf-49a4-94e7-478e6cecb5b6,3bb8441c-29c3-4c06-8971-7f143b3701f3,Why did my stress increase?,2026-04-09 19:00:00,6,False
+bd80dcdd-ac62-4cfa-b19c-15b0e1bf31b5,3bb8441c-29c3-4c06-8971-7f143b3701f3,Why did my stress increase?,2026-08-10 13:00:00,2,False
+133501f3-3854-4995-8d0c-95d387b9b791,38e9ed14-1102-4298-977e-8acc64f0fb84,How can I relax?,2026-09-20 16:00:00,4,False
+cc29702e-d2e1-47ad-aabe-51441f6f9c5f,38e9ed14-1102-4298-977e-8acc64f0fb84,How can I relax?,2026-07-01 12:00:00,4,False
+e89e0b6c-db79-44fe-94b2-57169a2b5bc2,38e9ed14-1102-4298-977e-8acc64f0fb84,Why did my stress increase?,2026-08-17 16:00:00,2,False
+18d10c1b-aa82-4d31-b83e-915caccc6572,06b48b58-c255-4635-9f4b-bc8d57bc1809,How can I relax?,2026-09-11 12:00:00,2,False
+4d56d622-134a-4baf-aec2-b060f495ec15,06b48b58-c255-4635-9f4b-bc8d57bc1809,How can I relax?,2026-08-06 21:00:00,4,False
+d8b79e50-c087-46fe-ba0b-fc3ac7a9cc1d,06b48b58-c255-4635-9f4b-bc8d57bc1809,What can I do before sleeping?,2026-08-18 22:00:00,4,False
+891abf36-0832-42e7-bd75-9d35b49e5318,06b48b58-c255-4635-9f4b-bc8d57bc1809,What is affecting my stress?,2026-05-07 12:00:00,4,False
+d9b33816-7978-43c1-92e4-a68e3b3bc81a,06b48b58-c255-4635-9f4b-bc8d57bc1809,How was my week?,2026-04-08 20:00:00,6,False
+0644508f-bbd6-4bbd-a57b-bebcfe2d99fd,06b48b58-c255-4635-9f4b-bc8d57bc1809,What is affecting my stress?,2026-05-07 15:00:00,4,False
+a1f8bd28-dbb0-4ecc-bd3f-0d5f574d6911,80f849f7-fa19-480e-9309-fae6565a3d7a,Why did my stress increase?,2026-09-01 19:00:00,6,False
+97b8c540-764b-45e4-a9e9-0d63579adb7c,80f849f7-fa19-480e-9309-fae6565a3d7a,How can I relax?,2026-08-08 19:00:00,4,False
+5197fd2e-89ca-401a-906f-f8ce4b651675,80f849f7-fa19-480e-9309-fae6565a3d7a,What is affecting my stress?,2026-09-05 15:00:00,4,False
+d24ffce7-973c-467f-81d7-f9b487230220,80f849f7-fa19-480e-9309-fae6565a3d7a,What is affecting my stress?,2026-07-27 22:00:00,2,False
+90f5e1a4-6b40-4bd3-8242-ee709a5fc0e1,80f849f7-fa19-480e-9309-fae6565a3d7a,What can I do before sleeping?,2026-06-25 18:00:00,4,False
+5afb51a8-8fce-43cc-ba36-6f558522ee2a,80f849f7-fa19-480e-9309-fae6565a3d7a,What can I do before sleeping?,2026-09-23 13:00:00,6,False
+ac84c085-c2c1-4838-8088-adb628cace95,01c9d60e-25cd-4438-ac76-59e13fe0ae34,How can I relax?,2026-05-24 22:00:00,4,False
+f5c917f4-e464-4479-b574-9fd5ef5329f2,01c9d60e-25cd-4438-ac76-59e13fe0ae34,How can I relax?,2026-08-24 14:00:00,6,False
+cd36b543-ea71-451a-a313-6b64911558f8,01c9d60e-25cd-4438-ac76-59e13fe0ae34,How can I relax?,2026-07-25 16:00:00,6,False
+4b37b47e-ef54-403b-b021-899edd034e7c,01c9d60e-25cd-4438-ac76-59e13fe0ae34,How can I relax?,2026-08-18 09:00:00,4,False
+ec00b3ce-2de7-4879-aa3b-749dd7ff7f9e,01c9d60e-25cd-4438-ac76-59e13fe0ae34,How was my week?,2026-04-20 19:00:00,4,False
+0627e961-f65b-4da4-8314-ad24b9c4e0f4,01c9d60e-25cd-4438-ac76-59e13fe0ae34,What can I do before sleeping?,2026-04-11 12:00:00,2,False
+861b96d8-1df1-4d89-8300-bc7f19ab4acc,f26b5cbc-d561-4265-8e37-a4c50239dd08,What can I do before sleeping?,2026-08-20 08:00:00,2,False
+02a544e8-f758-4f58-a3dc-6c84924e11c6,f26b5cbc-d561-4265-8e37-a4c50239dd08,What is affecting my stress?,2026-06-14 10:00:00,4,False
+db50ff31-e49d-476e-9735-e1694449b327,f26b5cbc-d561-4265-8e37-a4c50239dd08,How was my week?,2026-08-04 15:00:00,4,False
+0f7178d4-64df-4d57-889d-19bcda72a7b3,f26b5cbc-d561-4265-8e37-a4c50239dd08,What can I do before sleeping?,2026-04-08 09:00:00,6,False
+c73f889c-a745-43d7-b17e-49024eb4fb06,f26b5cbc-d561-4265-8e37-a4c50239dd08,What can I do before sleeping?,2026-08-10 09:00:00,6,False
+5ec230ec-ab6c-487f-bfb4-300a7e20aefb,f26b5cbc-d561-4265-8e37-a4c50239dd08,How can I relax?,2026-07-08 14:00:00,4,False
+6d6678c5-e156-4a2b-9b59-0a1dc8b5123a,cd6255d1-064b-4fc7-9217-32d566a20b9c,How was my week?,2026-08-28 17:00:00,2,False
+f1f30ff8-5bc7-40cf-969f-8faf4fe52b87,cd6255d1-064b-4fc7-9217-32d566a20b9c,What is affecting my stress?,2026-07-04 18:00:00,4,False
+4451031a-df27-4d55-8e92-7a6ae06598cb,b6ed20ef-2b12-4d42-8688-3d56978c628e,How can I relax?,2026-09-05 21:00:00,6,False
+eaac9cf2-50e9-450f-b0e7-fa126776f679,520e27db-30eb-4d34-a943-8ba258ae5aa1,What can I do before sleeping?,2026-07-21 22:00:00,6,False
+cffe0828-40f0-462c-8a7d-0b723b1ba176,520e27db-30eb-4d34-a943-8ba258ae5aa1,How can I relax?,2026-09-02 11:00:00,4,False
+660dbfce-341b-4e08-aa42-58a301114a6a,520e27db-30eb-4d34-a943-8ba258ae5aa1,Why did my stress increase?,2026-09-15 11:00:00,2,False
+d68ccf03-cb2d-4992-a6eb-36d6f2d8bb66,520e27db-30eb-4d34-a943-8ba258ae5aa1,What can I do before sleeping?,2026-06-18 08:00:00,6,False
+5eb8d7dd-4af1-4918-8130-d68abab8973c,d3e740b8-94e8-4ff4-b366-8c5cd6169c04,Why did my stress increase?,2026-08-31 15:00:00,4,False
+c16b9597-7860-491c-a0b0-960d4aad118b,d3e740b8-94e8-4ff4-b366-8c5cd6169c04,Why did my stress increase?,2026-07-07 16:00:00,6,False
+cf9156e1-ae6c-404a-896e-fad360c82b0d,d3e740b8-94e8-4ff4-b366-8c5cd6169c04,How was my week?,2026-07-30 18:00:00,6,False
+1318fe18-c697-48b6-9702-ed0f2fa5abae,d3e740b8-94e8-4ff4-b366-8c5cd6169c04,What is affecting my stress?,2026-05-21 15:00:00,4,False
+99af5cac-d222-4579-98db-60dbfdfc57ae,d3e740b8-94e8-4ff4-b366-8c5cd6169c04,How was my week?,2026-09-10 10:00:00,8,True
+be5ef0d8-8985-4f20-acf1-51144e028b53,d3e740b8-94e8-4ff4-b366-8c5cd6169c04,How can I relax?,2026-09-30 18:00:00,2,False
+b0519db5-a9a6-4dc0-8649-f18d74096f24,d3e740b8-94e8-4ff4-b366-8c5cd6169c04,What can I do before sleeping?,2026-04-22 21:00:00,4,False
+f774b550-af46-4bb4-a1c7-c3d5b8ec1d3e,2ab8ad4b-c4de-40b6-9df0-a3b89e3cbfd3,Why did my stress increase?,2026-07-15 18:00:00,2,False
+4f27b73d-2b99-4592-8966-718e2d3d35e7,2ab8ad4b-c4de-40b6-9df0-a3b89e3cbfd3,Why did my stress increase?,2026-08-26 16:00:00,2,False
+9bca16c5-b014-44a5-a328-d0a8f25e6f63,2ab8ad4b-c4de-40b6-9df0-a3b89e3cbfd3,Why did my stress increase?,2026-08-16 22:00:00,2,False
+f2efde4a-b402-4b1c-bd5d-676a51271870,2ab8ad4b-c4de-40b6-9df0-a3b89e3cbfd3,What can I do before sleeping?,2026-05-20 10:00:00,6,False
+b5e1c16e-8c2a-4370-b368-029ae071cf1e,2ab8ad4b-c4de-40b6-9df0-a3b89e3cbfd3,Why did my stress increase?,2026-06-22 21:00:00,4,False
+243f17e0-6543-4cea-8da2-4875723ad53b,2ab8ad4b-c4de-40b6-9df0-a3b89e3cbfd3,Why did my stress increase?,2026-08-08 12:00:00,4,False
+565555b5-c211-429e-9d9b-ac634d5ce58e,2ab8ad4b-c4de-40b6-9df0-a3b89e3cbfd3,Why did my stress increase?,2026-06-16 09:00:00,4,False
+81a336af-51d1-4788-b32a-a43020f6e373,ac68bfd2-8ff3-4446-aacb-e6fd7713d5d9,How can I relax?,2026-07-08 18:00:00,6,False
+ee6d7584-2ce7-4bef-b568-bece4d8136d3,ac68bfd2-8ff3-4446-aacb-e6fd7713d5d9,What is affecting my stress?,2026-05-03 22:00:00,2,False
+cfef35b2-0185-476b-82fc-02cac77a269d,ac68bfd2-8ff3-4446-aacb-e6fd7713d5d9,What can I do before sleeping?,2026-09-05 20:00:00,2,False
+267e4de9-bef8-4423-a970-168d741645be,ac68bfd2-8ff3-4446-aacb-e6fd7713d5d9,What can I do before sleeping?,2026-05-10 20:00:00,6,False
+a6d4613e-30b0-4f0a-852e-1b0beba0466f,ac68bfd2-8ff3-4446-aacb-e6fd7713d5d9,What is affecting my stress?,2026-04-19 18:00:00,4,False
+730a8372-f8e3-49f2-8351-f1a5366ebc9e,ac68bfd2-8ff3-4446-aacb-e6fd7713d5d9,Why did my stress increase?,2026-08-12 10:00:00,6,False
+64886626-fcec-4c3a-b0fe-fe3b151fa5e4,ac68bfd2-8ff3-4446-aacb-e6fd7713d5d9,How can I relax?,2026-06-21 11:00:00,6,False
+1addf711-f405-400b-a578-92e7b0e6f4b9,c05f769a-e77b-4e40-8b2d-77ffbafc7242,What is affecting my stress?,2026-07-06 12:00:00,6,False
+6b484957-223f-462f-a790-96d34a52df7b,c05f769a-e77b-4e40-8b2d-77ffbafc7242,Why did my stress increase?,2026-07-12 18:00:00,4,False
+c45fc1d5-c134-4cfa-b89b-1c76c1c76013,c05f769a-e77b-4e40-8b2d-77ffbafc7242,Why did my stress increase?,2026-05-22 17:00:00,6,False
+7808ae1b-d5f2-4c3c-b989-69c01fa55cda,c05f769a-e77b-4e40-8b2d-77ffbafc7242,What can I do before sleeping?,2026-04-07 19:00:00,6,False
+202449ec-6101-4cc4-b6d7-9051802f540e,8e13ba00-dee3-4fcd-b11b-9bfb53f7276a,What is affecting my stress?,2026-04-28 14:00:00,4,False
+5243a178-ea35-4317-a592-b1933f26ee2a,5631c3a7-263b-40ab-9e2b-0a3dcad36cc4,Why did my stress increase?,2026-06-21 17:00:00,2,False
+1db34bb4-e6ce-404e-bed0-8d941cce3301,b9b3f9dc-0dca-41e8-968f-7239931c562d,What is affecting my stress?,2026-04-15 14:00:00,2,False
+cd46868b-0e58-42a6-8a6e-31e9d66450bb,b9b3f9dc-0dca-41e8-968f-7239931c562d,How was my week?,2026-05-30 16:00:00,6,False
+6af3d88f-3cf5-4a83-a2a2-56e65d4efbf3,b9b3f9dc-0dca-41e8-968f-7239931c562d,What is affecting my stress?,2026-07-15 13:00:00,4,False
+83e009bb-7837-4c5e-ad7a-6bf7c3eedee2,cef006b2-9b43-4fdd-a89b-dbbabde4a8d0,How was my week?,2026-04-29 10:00:00,4,False
+987955cb-0241-4ff7-94c4-95da474aaf1a,cef006b2-9b43-4fdd-a89b-dbbabde4a8d0,What can I do before sleeping?,2026-05-27 11:00:00,4,False
+112ea123-32b1-4d9e-aee0-0c3e05aac43a,a141a976-d8f2-46f9-ba60-18d97ff2434a,Why did my stress increase?,2026-04-21 10:00:00,4,False
+a3f95a6a-99ce-445c-884d-4e39403ce42b,a141a976-d8f2-46f9-ba60-18d97ff2434a,What is affecting my stress?,2026-04-27 22:00:00,2,False
+efdda60f-0573-4629-bb42-336c737904ba,a141a976-d8f2-46f9-ba60-18d97ff2434a,How was my week?,2026-05-24 21:00:00,4,False
+b88466a9-dbe8-41d9-b82a-bfc9fd386c05,a141a976-d8f2-46f9-ba60-18d97ff2434a,What can I do before sleeping?,2026-05-25 14:00:00,2,False
+a1b5e33b-c344-4293-98ae-c7a26b82cd79,a141a976-d8f2-46f9-ba60-18d97ff2434a,How was my week?,2026-04-07 17:00:00,4,False
+93c9d3ff-b753-4422-8ddb-9758415367cd,a141a976-d8f2-46f9-ba60-18d97ff2434a,What is affecting my stress?,2026-05-07 20:00:00,6,False
+33ff536c-4697-4d99-9d9a-4226582128a2,d8deb90c-38e7-4b0a-820b-118aa6e1aba7,What is affecting my stress?,2026-04-18 08:00:00,4,False
+a02aa20e-e1c5-40bd-ada2-88d4e6e42b71,d8deb90c-38e7-4b0a-820b-118aa6e1aba7,Why did my stress increase?,2026-06-29 17:00:00,6,False
+af5cd277-7547-4978-80ac-a3a1631a3558,d8deb90c-38e7-4b0a-820b-118aa6e1aba7,What is affecting my stress?,2026-07-01 16:00:00,2,False
+7d2c396c-2cc5-436c-a283-89231b51f879,d8deb90c-38e7-4b0a-820b-118aa6e1aba7,What is affecting my stress?,2026-08-07 18:00:00,6,False
+0a2d89b9-7409-4768-918c-828a185c8e4d,d8deb90c-38e7-4b0a-820b-118aa6e1aba7,Why did my stress increase?,2026-07-06 21:00:00,4,False
+1fa8ee04-2cae-4803-85c6-cfaa2d6029cb,d8deb90c-38e7-4b0a-820b-118aa6e1aba7,How was my week?,2026-08-24 09:00:00,6,False
+7113d505-ea37-4f6b-b09f-1d8dbef231ca,d8deb90c-38e7-4b0a-820b-118aa6e1aba7,Why did my stress increase?,2026-06-12 22:00:00,6,False
+1006136b-898e-4b8b-9162-169dc9e98e6b,c541d65a-11d0-49c6-8339-9adc77546ddc,What is affecting my stress?,2026-04-29 12:00:00,6,False
+f9d9dbff-6e47-4f49-b6b4-978954fe4250,c541d65a-11d0-49c6-8339-9adc77546ddc,How can I relax?,2026-04-29 11:00:00,2,False
+03f6780d-2252-492d-a440-ad4a006b8797,c541d65a-11d0-49c6-8339-9adc77546ddc,What can I do before sleeping?,2026-04-21 14:00:00,2,False
+269ab81c-3144-4514-ac07-737eab1a730d,c541d65a-11d0-49c6-8339-9adc77546ddc,What can I do before sleeping?,2026-04-08 10:00:00,6,False
+94fc2a60-b1d6-4cbc-8587-c0a4f3979f78,c541d65a-11d0-49c6-8339-9adc77546ddc,What is affecting my stress?,2026-04-14 12:00:00,6,False
+30d199b5-f546-4a89-b016-9a25ba7be7d7,c541d65a-11d0-49c6-8339-9adc77546ddc,What can I do before sleeping?,2026-04-30 09:00:00,6,False
+9733da52-ba45-4449-be62-71cb03ec1c56,fbd3bd7f-59d2-465c-af2c-c36a528c061b,Why did my stress increase?,2026-07-28 16:00:00,4,False
+a9ab58c9-1003-483f-a095-2f0350dd77d7,fbd3bd7f-59d2-465c-af2c-c36a528c061b,Why did my stress increase?,2026-07-01 08:00:00,2,False
+214d59b0-d7e1-4273-850e-b59cbde26e34,fbd3bd7f-59d2-465c-af2c-c36a528c061b,What can I do before sleeping?,2026-05-11 10:00:00,6,False
+ecdd060d-f269-41e2-a7ee-1615d824bf74,fbd3bd7f-59d2-465c-af2c-c36a528c061b,What is affecting my stress?,2026-06-18 20:00:00,6,False
+b13681e6-60e2-40cd-adba-5a727610e8ed,07b73703-5e08-4793-b9b0-e0d0ab4eacaa,How was my week?,2026-09-04 17:00:00,6,True
+fb333ccc-c6bc-4d9c-b8ab-9a6a5abdee93,07b73703-5e08-4793-b9b0-e0d0ab4eacaa,Why did my stress increase?,2026-07-06 08:00:00,2,False
+398befd7-efb3-4002-a7c5-d8a7c97d60fe,07b73703-5e08-4793-b9b0-e0d0ab4eacaa,Why did my stress increase?,2026-05-05 21:00:00,4,True
+b8674fad-9c61-4ac6-ba60-af7123f17756,39fcbb30-a583-4078-a7d8-ee460086e5d3,Why did my stress increase?,2026-07-29 09:00:00,2,False
+3dfb5fa9-9387-4adc-8901-f80abd37be2e,39fcbb30-a583-4078-a7d8-ee460086e5d3,What can I do before sleeping?,2026-04-09 22:00:00,2,False
+6c5b3cbc-d64c-40fd-a03b-a789fc6faf1d,39fcbb30-a583-4078-a7d8-ee460086e5d3,How was my week?,2026-06-21 11:00:00,4,False
+22ceaed3-cf13-4b17-8e93-b975347ec0f4,39fcbb30-a583-4078-a7d8-ee460086e5d3,What can I do before sleeping?,2026-05-12 08:00:00,2,False
+6ef80a51-493f-4d04-8897-e0a01042b5b9,39fcbb30-a583-4078-a7d8-ee460086e5d3,How can I relax?,2026-07-20 19:00:00,4,False
+764b6038-f2f4-4f01-92ee-b45d4eca42c6,39fcbb30-a583-4078-a7d8-ee460086e5d3,How can I relax?,2026-07-29 11:00:00,2,False
+e4ce3254-8b14-4c85-b5f9-59ba1f7a05fc,6486e7ee-250f-44c2-b7ca-7aaab3366d68,Why did my stress increase?,2026-09-12 11:00:00,2,False
+be96885b-1db4-4690-bc45-b9f2dc508e97,6486e7ee-250f-44c2-b7ca-7aaab3366d68,What is affecting my stress?,2026-07-29 12:00:00,4,False
+fa993cce-4876-4e83-89b9-b1b92b9db1f8,6486e7ee-250f-44c2-b7ca-7aaab3366d68,What can I do before sleeping?,2026-09-11 15:00:00,6,False
+60b478e8-c4fb-434b-9829-199fd67b8ad2,6486e7ee-250f-44c2-b7ca-7aaab3366d68,Why did my stress increase?,2026-06-27 19:00:00,2,False
+28ff4f36-c5b0-4677-adf7-0aebde3d7178,6486e7ee-250f-44c2-b7ca-7aaab3366d68,Why did my stress increase?,2026-06-10 15:00:00,2,False
+110adc8e-3a1a-4851-b411-f1b7e529a70e,6486e7ee-250f-44c2-b7ca-7aaab3366d68,How was my week?,2026-04-12 20:00:00,4,False
+b5c20787-5717-4a89-97e8-33d8dfc08477,d6ff8f29-b28a-46bb-8e30-93a7de19b8ba,Why did my stress increase?,2026-05-05 11:00:00,6,True
+6a9ef018-5f86-4e48-8efa-e3cb424cc4ca,d6ff8f29-b28a-46bb-8e30-93a7de19b8ba,What is affecting my stress?,2026-04-14 21:00:00,6,False
+d45ba91a-bcb2-4b8c-8153-ae8a3c3e4ba7,f73c8a10-bd39-486b-8a93-79833edbe16b,What can I do before sleeping?,2026-06-06 09:00:00,6,False
+4ca347b8-a813-44c7-a397-ab67faf451e7,f73c8a10-bd39-486b-8a93-79833edbe16b,How was my week?,2026-08-02 15:00:00,4,False
+cbccc6a1-133f-4fb1-a182-c2e1fb5200cf,f73c8a10-bd39-486b-8a93-79833edbe16b,Why did my stress increase?,2026-09-01 17:00:00,4,False
+c411bd10-24a8-496c-a613-fe7cbf9e892e,f73c8a10-bd39-486b-8a93-79833edbe16b,What is affecting my stress?,2026-06-18 17:00:00,6,False
+8b475588-6c58-4405-a5f4-2758af9d0918,f73c8a10-bd39-486b-8a93-79833edbe16b,What can I do before sleeping?,2026-06-16 11:00:00,2,False
+b453917e-dc05-4a33-8459-28e992453163,f73c8a10-bd39-486b-8a93-79833edbe16b,Why did my stress increase?,2026-06-16 08:00:00,4,False
+51a34caf-0968-43d8-bfd9-8c66dffbb5b8,1a5543cd-dac8-4ec0-be83-765d53bd02f5,What is affecting my stress?,2026-09-21 14:00:00,4,False
+0189cad7-0e4c-4642-9aba-eb5193cd25c4,1a5543cd-dac8-4ec0-be83-765d53bd02f5,What is affecting my stress?,2026-06-07 18:00:00,6,False
+7e28a698-2efa-4294-aa77-5a6ef6c97fdd,1a5543cd-dac8-4ec0-be83-765d53bd02f5,How can I relax?,2026-05-30 10:00:00,6,False
+d16db60a-3f6f-4e4b-8c10-c588786908e1,1a5543cd-dac8-4ec0-be83-765d53bd02f5,What can I do before sleeping?,2026-07-27 18:00:00,6,False
+dcd4b2c1-0dad-4f69-a90c-e34644d61432,3c1165ff-c3e9-4330-a232-4d4918181472,What is affecting my stress?,2026-08-20 08:00:00,4,False
+54fe1da3-fe27-4eca-baf9-6c3b02d5fd20,3c1165ff-c3e9-4330-a232-4d4918181472,What is affecting my stress?,2026-04-20 17:00:00,4,False
+cb9f90ea-8ba6-4fae-9113-507103abb770,3c1165ff-c3e9-4330-a232-4d4918181472,How was my week?,2026-05-24 21:00:00,4,False
+205f70a7-9d1b-4270-98bb-d64159f11711,3c1165ff-c3e9-4330-a232-4d4918181472,What is affecting my stress?,2026-06-19 13:00:00,6,False
+725fbac5-5017-4ed7-bbd9-655a5bbdee9d,3c1165ff-c3e9-4330-a232-4d4918181472,Why did my stress increase?,2026-06-07 14:00:00,2,False
+9110537a-715d-45e6-9223-f92d722dd3f3,c39ae0ea-a22e-458e-9fe9-d565c2aba9ec,What can I do before sleeping?,2026-07-14 20:00:00,6,False
+943546ec-f62b-49d9-98f6-ca0e187645d4,2f6fb122-dfe6-4c58-a92d-57f2803b140e,What is affecting my stress?,2026-06-22 12:00:00,4,True
+b40d5ade-b06a-407d-9f07-0324b2af2c10,2f6fb122-dfe6-4c58-a92d-57f2803b140e,What can I do before sleeping?,2026-04-13 14:00:00,2,False
+73e38d1f-7e62-49ab-851e-e0d9035affe5,2f6fb122-dfe6-4c58-a92d-57f2803b140e,How can I relax?,2026-06-29 11:00:00,2,False
+7a48a087-e4cc-4d7f-b341-5e3e500a6d40,2f6fb122-dfe6-4c58-a92d-57f2803b140e,How can I relax?,2026-06-01 17:00:00,2,False
+ea0a3012-7ce6-4733-bc89-e3dacac295f8,2f6fb122-dfe6-4c58-a92d-57f2803b140e,How was my week?,2026-07-11 17:00:00,2,False
+5be12be1-ac5f-4a70-bca6-caa71c82cad2,2f6fb122-dfe6-4c58-a92d-57f2803b140e,Why did my stress increase?,2026-07-02 10:00:00,4,False
+5f634893-b6a4-4a0b-88c1-721e7b78426a,947ec946-a9c4-4dff-ba0e-bdbfe877462c,What can I do before sleeping?,2026-05-03 19:00:00,2,False
+b1dc7a78-6d76-4ab7-8131-f8979b5a0814,947ec946-a9c4-4dff-ba0e-bdbfe877462c,How can I relax?,2026-09-09 12:00:00,6,False
+cb83128d-c5b3-4d9a-af8f-a6a138818814,6c66dcd1-d67a-4f79-a8ba-97966b688651,How can I relax?,2026-06-16 14:00:00,4,False
+6d367ae6-4b79-43b9-b3ca-03651fba4adc,6c66dcd1-d67a-4f79-a8ba-97966b688651,How was my week?,2026-06-20 17:00:00,2,False
+aea2d8e6-b7ad-4b84-8baf-7a1aee165f14,6c66dcd1-d67a-4f79-a8ba-97966b688651,How was my week?,2026-05-04 09:00:00,2,False
+5fcca816-9dbb-4788-81b5-b65115822e09,6c66dcd1-d67a-4f79-a8ba-97966b688651,How was my week?,2026-09-09 19:00:00,6,False
+1765252e-6bdb-4b1f-a2c5-f5ee5e9b14bb,6c66dcd1-d67a-4f79-a8ba-97966b688651,What is affecting my stress?,2026-09-20 18:00:00,6,False
+4aa4a41d-33e0-4a4a-949a-64e4f2926431,6c66dcd1-d67a-4f79-a8ba-97966b688651,What is affecting my stress?,2026-08-27 15:00:00,6,False
+373e3097-0258-426b-bca7-d6ce6cdd2a6f,6c66dcd1-d67a-4f79-a8ba-97966b688651,How can I relax?,2026-05-26 14:00:00,6,False
+1e1046e6-bab8-4079-bcd3-aa3837bc4dd0,8a1bce5c-953e-4b5d-afa3-a538dcbe8098,Why did my stress increase?,2026-06-08 14:00:00,6,False
+f36417a7-14c9-4b31-8f6e-803c706d4e34,8a1bce5c-953e-4b5d-afa3-a538dcbe8098,Why did my stress increase?,2026-09-08 20:00:00,2,False
+78fdeec4-5764-4f0b-8bdf-211707f1bbd4,8a1bce5c-953e-4b5d-afa3-a538dcbe8098,How was my week?,2026-07-20 19:00:00,4,False
+07cb4785-452c-4615-bda2-1322047bd69f,8a1bce5c-953e-4b5d-afa3-a538dcbe8098,Why did my stress increase?,2026-09-14 19:00:00,6,False
+2dd35d65-38f5-4577-97b6-cd74fb44b892,8a1bce5c-953e-4b5d-afa3-a538dcbe8098,How was my week?,2026-06-13 13:00:00,6,False
+5bc1af23-1d09-4d64-bc43-0ea99270213a,eae8f9e0-608d-4612-bc64-e1fcee44a015,Why did my stress increase?,2026-08-20 16:00:00,4,False
+f309b059-f985-4c72-914e-ac0eb1426558,eae8f9e0-608d-4612-bc64-e1fcee44a015,How can I relax?,2026-08-07 16:00:00,2,False
+bda55ce8-2dfa-4337-b319-6f3716af66ec,eae8f9e0-608d-4612-bc64-e1fcee44a015,Why did my stress increase?,2026-07-30 15:00:00,6,False
+7889c575-9e3a-4370-a9d3-7852770d63e8,eae8f9e0-608d-4612-bc64-e1fcee44a015,What can I do before sleeping?,2026-04-28 14:00:00,4,False
+52d1d3ca-7a7d-4f2f-a9a0-5953bca678c3,eae8f9e0-608d-4612-bc64-e1fcee44a015,How was my week?,2026-04-09 18:00:00,6,False
+b79eed83-7b32-467d-a728-b5478a161b07,86a07392-e339-48d4-81cb-553ce34d3042,What can I do before sleeping?,2026-06-27 17:00:00,4,False
+cac46158-a281-4c7e-87cc-8db6f1fb37f4,86a07392-e339-48d4-81cb-553ce34d3042,What is affecting my stress?,2026-08-31 12:00:00,4,False
+da11f450-9a50-499e-9190-582258592232,86a07392-e339-48d4-81cb-553ce34d3042,How was my week?,2026-08-11 09:00:00,2,False
+887f3bec-7375-4517-8851-668ac46cf946,86a07392-e339-48d4-81cb-553ce34d3042,Why did my stress increase?,2026-09-26 20:00:00,4,False
+e6815b19-6a6c-4074-af3f-30a597fd29fe,86a07392-e339-48d4-81cb-553ce34d3042,What is affecting my stress?,2026-04-15 17:00:00,4,False
+f14ea7f6-e240-4079-ad7a-11475bdc5e4d,86a07392-e339-48d4-81cb-553ce34d3042,How can I relax?,2026-04-14 22:00:00,2,False
+ebc57af6-2159-4c25-b24e-1620122bccc3,86a07392-e339-48d4-81cb-553ce34d3042,What can I do before sleeping?,2026-09-06 15:00:00,2,False
+51b01f7c-8396-43e9-8b49-d825704dceac,76eaf0a1-7f99-44ae-af10-2ffd36ac6439,What can I do before sleeping?,2026-08-02 09:00:00,2,False
+10ff0de6-d43f-4528-a8b0-b3e746b8eb91,76eaf0a1-7f99-44ae-af10-2ffd36ac6439,Why did my stress increase?,2026-09-10 08:00:00,4,False
+088b1b1d-57b0-4129-8ee9-53fd83b85ef3,76eaf0a1-7f99-44ae-af10-2ffd36ac6439,What is affecting my stress?,2026-04-14 19:00:00,2,False
+fda951be-4846-478e-a9f9-925afb7923d3,f67f6ef0-65ed-491a-8fb4-d618d85c3080,How was my week?,2026-09-21 22:00:00,6,False
+fc53beff-0cd5-4421-9637-df96cebc7e24,f67f6ef0-65ed-491a-8fb4-d618d85c3080,Why did my stress increase?,2026-07-09 13:00:00,6,True
+39c4c191-1601-4166-8d5f-3b8527762bad,f67f6ef0-65ed-491a-8fb4-d618d85c3080,What is affecting my stress?,2026-05-07 22:00:00,2,False
+3452d238-849a-48f5-9fb9-091c6df579dd,f67f6ef0-65ed-491a-8fb4-d618d85c3080,How was my week?,2026-08-20 12:00:00,2,False
+9b622667-edcc-40e4-96dd-d727da4b2611,f67f6ef0-65ed-491a-8fb4-d618d85c3080,How was my week?,2026-06-21 17:00:00,2,False
+836ba7ef-ab88-4b4c-bed5-06d568c8fc5f,f67f6ef0-65ed-491a-8fb4-d618d85c3080,Why did my stress increase?,2026-07-24 13:00:00,6,False
+784e51da-ab19-41dd-a0db-c62d836ef5f6,f67f6ef0-65ed-491a-8fb4-d618d85c3080,What is affecting my stress?,2026-07-10 09:00:00,4,False
+44a289a0-0882-472d-8223-5968b0df284c,2049ea30-ae2c-43fc-bd02-01b8c1a2a5a4,What can I do before sleeping?,2026-04-29 09:00:00,2,False
+b71eb4b4-316e-488e-a274-1c86f6d98405,2049ea30-ae2c-43fc-bd02-01b8c1a2a5a4,How was my week?,2026-07-05 19:00:00,2,False
+235ecf53-01a2-4502-9aa3-56cd436b354e,2049ea30-ae2c-43fc-bd02-01b8c1a2a5a4,What can I do before sleeping?,2026-07-30 13:00:00,4,False
+7b272345-ee5b-480d-a1a1-de5b5f60356e,2049ea30-ae2c-43fc-bd02-01b8c1a2a5a4,What is affecting my stress?,2026-07-24 14:00:00,2,False
+44ba8a45-9992-41a0-b970-a623a8e24d6a,2049ea30-ae2c-43fc-bd02-01b8c1a2a5a4,What can I do before sleeping?,2026-07-05 08:00:00,2,False
+c898e76f-529d-4154-bd66-7390c1ca932f,2049ea30-ae2c-43fc-bd02-01b8c1a2a5a4,What can I do before sleeping?,2026-05-30 16:00:00,4,False
+f5e2547b-aa7f-4517-8ab5-381ece2677ad,2049ea30-ae2c-43fc-bd02-01b8c1a2a5a4,What is affecting my stress?,2026-06-28 16:00:00,6,False
+745bdaa8-2144-4259-a7e2-c38aeb616c8d,d682265b-1072-458d-be2e-11e1fbf8b1db,What is affecting my stress?,2026-05-20 08:00:00,6,False
+158764e4-51d3-4ae9-be76-bc21b5d6244c,d682265b-1072-458d-be2e-11e1fbf8b1db,What is affecting my stress?,2026-06-28 14:00:00,2,False
+e567067a-1a71-4a13-b2b7-e1d40dde842c,baf281f6-5e5a-4694-915a-fad18dc44797,What is affecting my stress?,2026-08-13 10:00:00,4,False
+100af338-15fe-4d8b-a90f-4663c23b8241,baf281f6-5e5a-4694-915a-fad18dc44797,Why did my stress increase?,2026-04-22 19:00:00,2,False
+e52b5470-cbec-4031-9777-d069ad39a38a,baf281f6-5e5a-4694-915a-fad18dc44797,How can I relax?,2026-05-26 18:00:00,4,False
+701ee61c-b82b-4949-8440-7aae7a09ef70,baf281f6-5e5a-4694-915a-fad18dc44797,How was my week?,2026-08-04 11:00:00,2,False
+39b278ce-da0e-42a1-af69-f9b11a2763fb,baf281f6-5e5a-4694-915a-fad18dc44797,Why did my stress increase?,2026-08-06 16:00:00,4,False
+5601abbe-f6cc-40ab-9614-e61965707e40,baf281f6-5e5a-4694-915a-fad18dc44797,Why did my stress increase?,2026-06-20 19:00:00,6,False
+255f8c2a-38f1-4f9f-b75f-a887f42b9248,004e1e8c-bee6-4632-894f-599327531f7d,What is affecting my stress?,2026-04-24 18:00:00,6,False
+97f1c5a7-4531-4363-8716-516be27258bf,004e1e8c-bee6-4632-894f-599327531f7d,Why did my stress increase?,2026-07-29 10:00:00,4,False
+b642c9ac-2065-49ae-b35a-07621aa81daa,004e1e8c-bee6-4632-894f-599327531f7d,What can I do before sleeping?,2026-07-02 10:00:00,6,False
+4a2b0b30-ade8-402c-9949-3d367695a34d,004e1e8c-bee6-4632-894f-599327531f7d,Why did my stress increase?,2026-05-09 09:00:00,4,False
+5c59d908-d59e-42e4-bd02-ede5f560b24f,004e1e8c-bee6-4632-894f-599327531f7d,What is affecting my stress?,2026-06-11 16:00:00,4,False
+31c0c004-5d0d-49a6-8528-fa1ed37c8bf0,004e1e8c-bee6-4632-894f-599327531f7d,How was my week?,2026-07-27 22:00:00,6,False
+5e884fd3-4053-47bd-b936-a88805bda487,004e1e8c-bee6-4632-894f-599327531f7d,What can I do before sleeping?,2026-04-28 16:00:00,4,False
+f6e3e122-e64f-4428-bf29-a1bd19139c0a,b01c7ca7-fd6d-4c6a-9d24-6c9c8e1584a1,How can I relax?,2026-07-14 17:00:00,6,False
+119f6325-bb7c-4bbd-88cd-a4dac9def891,b01c7ca7-fd6d-4c6a-9d24-6c9c8e1584a1,What can I do before sleeping?,2026-09-06 16:00:00,6,False
+45d71239-c402-48b0-bc4e-ad66cc846d66,b01c7ca7-fd6d-4c6a-9d24-6c9c8e1584a1,How was my week?,2026-04-09 09:00:00,2,False
+e9d94d21-7548-4e98-a1b2-936a714293f9,b01c7ca7-fd6d-4c6a-9d24-6c9c8e1584a1,How was my week?,2026-08-26 15:00:00,4,False
+6c3dbc53-a58c-479e-b79c-14f72bb41ba7,6b69444f-57b8-46fa-9fe1-b267d1f08b47,Why did my stress increase?,2026-07-10 11:00:00,8,True
+a37636c7-6992-4eb9-a094-1fdecd9f28e6,d3906ad2-7a53-472e-bee9-34d84d3e6b99,Why did my stress increase?,2026-05-18 21:00:00,2,False
+f2b3b1c5-828e-41be-a59b-35888ba238e9,d3906ad2-7a53-472e-bee9-34d84d3e6b99,Why did my stress increase?,2026-09-22 18:00:00,4,False
+56e016e9-3c9a-4f50-9484-e4abca0a0eec,d3906ad2-7a53-472e-bee9-34d84d3e6b99,What is affecting my stress?,2026-08-02 08:00:00,2,False
+e38be67e-7005-4512-83d2-3c3cdf18bc74,d3906ad2-7a53-472e-bee9-34d84d3e6b99,How can I relax?,2026-07-15 14:00:00,6,False
+2d3a826e-010e-4df2-aaa0-da1640a88e7a,d3906ad2-7a53-472e-bee9-34d84d3e6b99,What can I do before sleeping?,2026-09-08 15:00:00,6,False
+38a637fe-136a-4ec1-82a3-6ac3d42bd538,235762a2-a3ee-4e35-bb5d-de6493c7bce9,Why did my stress increase?,2026-07-01 12:00:00,6,False
+1fc7527a-9e9a-470b-967d-3c5d78c30cd9,235762a2-a3ee-4e35-bb5d-de6493c7bce9,How can I relax?,2026-06-24 17:00:00,2,False
+a735721d-5654-472a-a793-0c8369ed8892,235762a2-a3ee-4e35-bb5d-de6493c7bce9,How can I relax?,2026-07-10 13:00:00,2,False
+c5bd0c6a-d21d-4018-a449-c401ef7beb4f,235762a2-a3ee-4e35-bb5d-de6493c7bce9,How can I relax?,2026-06-11 19:00:00,6,True
+bc1e5d92-a3e4-479e-8a7e-44f5419d6cfa,235762a2-a3ee-4e35-bb5d-de6493c7bce9,Why did my stress increase?,2026-07-08 10:00:00,6,False
+923cbde1-ef34-4fb2-9d84-02bb8607a018,235762a2-a3ee-4e35-bb5d-de6493c7bce9,What can I do before sleeping?,2026-08-31 09:00:00,2,False
+cca7ec70-599e-45a2-b042-f688812814f5,235762a2-a3ee-4e35-bb5d-de6493c7bce9,How can I relax?,2026-04-20 18:00:00,2,False
+2b1ef07b-9dc2-4dee-a70f-b722a784e2dd,cdcf3131-fd12-4ea3-965c-867c97f45ba5,What is affecting my stress?,2026-08-06 12:00:00,4,False
+84eaa717-6989-4363-a673-e31f79903d69,9af5786b-ebe2-450f-a363-c64dfddbcdff,How can I relax?,2026-05-03 11:00:00,2,False
+c71276ed-4290-490a-9c3f-25d8fbdb6f18,d6e5ce90-4d9c-4365-a6d6-eb544c1150f5,Why did my stress increase?,2026-07-30 16:00:00,4,False
+d5612e3b-584e-407a-a08f-d1efa131eae6,d6e5ce90-4d9c-4365-a6d6-eb544c1150f5,What is affecting my stress?,2026-04-26 21:00:00,6,False
+a13f5260-bb0a-4eef-a6c9-b5e482853417,d6e5ce90-4d9c-4365-a6d6-eb544c1150f5,What is affecting my stress?,2026-04-16 09:00:00,4,False
+85764aa3-1cca-4ea9-b860-615563923642,d6e5ce90-4d9c-4365-a6d6-eb544c1150f5,How was my week?,2026-09-24 09:00:00,2,False
+bba9b785-fa12-489c-9134-e0e3f51fb34a,d6e5ce90-4d9c-4365-a6d6-eb544c1150f5,Why did my stress increase?,2026-09-23 13:00:00,6,False
+f0b12eaa-b876-478b-9945-4494a1a79567,d6e5ce90-4d9c-4365-a6d6-eb544c1150f5,How can I relax?,2026-07-11 18:00:00,2,False
+e2828113-fd9a-4d0d-a379-c6bb61ec21d4,87d93b98-fd51-403c-b3fa-a504792f5fea,Why did my stress increase?,2026-04-07 15:00:00,2,False
+a27d8518-0f1e-49c2-b024-fbedf0d97800,0ad082ae-ed07-419b-bdd3-f15927202fe1,What is affecting my stress?,2026-05-07 19:00:00,2,False
+cf29c242-67c6-4188-ac21-0b9db402ac5d,0ad082ae-ed07-419b-bdd3-f15927202fe1,How can I relax?,2026-05-25 15:00:00,4,False
+e24bc09a-3d70-45f5-af1f-a5cae73765c5,0ad082ae-ed07-419b-bdd3-f15927202fe1,What is affecting my stress?,2026-05-20 08:00:00,4,False
+2497e481-3c74-4ada-a731-4decec30cf22,0ad082ae-ed07-419b-bdd3-f15927202fe1,How was my week?,2026-04-11 08:00:00,2,False
+2d1490f0-2a16-4881-8968-5060fd7b8ea6,0ad082ae-ed07-419b-bdd3-f15927202fe1,How can I relax?,2026-06-29 09:00:00,4,False
+ab40c97e-d48b-4a16-a6b9-b6a364dfc359,0ad082ae-ed07-419b-bdd3-f15927202fe1,How can I relax?,2026-07-26 14:00:00,4,False
+06d04ad4-9e29-4478-9a61-4071986cd1f6,0ad082ae-ed07-419b-bdd3-f15927202fe1,How was my week?,2026-05-18 12:00:00,6,False
+2a2455de-945e-4ad4-bc10-ba57d9407c39,df59309d-738b-4d09-a0c8-f9bd7cafffbd,How was my week?,2026-05-06 18:00:00,4,False
+384f83ac-66b4-4111-a597-6932d94f5524,df59309d-738b-4d09-a0c8-f9bd7cafffbd,How was my week?,2026-07-02 22:00:00,2,False
+ed38d76d-0df1-44b4-b8b0-58e0b81d2113,df59309d-738b-4d09-a0c8-f9bd7cafffbd,What can I do before sleeping?,2026-08-08 09:00:00,2,False
+a3a40cc3-7be6-4a3a-8146-8fa45d9b88f3,9ce7f7bb-a2ea-4247-8c65-0d0211602e16,Why did my stress increase?,2026-05-31 12:00:00,4,False
+6cb23a16-f7e9-4464-bfe0-fb036a65e5a0,9ce7f7bb-a2ea-4247-8c65-0d0211602e16,How can I relax?,2026-04-19 14:00:00,2,False
+da3de256-4c79-433b-b2a4-a6f8342f9362,9ce7f7bb-a2ea-4247-8c65-0d0211602e16,Why did my stress increase?,2026-05-28 19:00:00,6,False
+09d38f5c-f39e-424a-92ac-4b466f3b5727,9ce7f7bb-a2ea-4247-8c65-0d0211602e16,How can I relax?,2026-05-27 09:00:00,4,False
+0a233588-f6e9-458e-92b8-067a7dcf7adb,65553e48-94ea-4dce-8bbb-3affc19b002a,What is affecting my stress?,2026-04-26 19:00:00,4,False
+069c2ed1-4a00-4906-a37f-91814341238b,65553e48-94ea-4dce-8bbb-3affc19b002a,What is affecting my stress?,2026-04-20 19:00:00,6,False
+739ceb23-7a2d-4943-b471-1d2968c98845,65553e48-94ea-4dce-8bbb-3affc19b002a,How can I relax?,2026-04-25 22:00:00,2,False
+5abc8b12-b084-43a3-9f65-2610af9dd356,11d68409-e768-4a4a-9b5d-e8489bbcdef1,What can I do before sleeping?,2026-07-26 19:00:00,2,False
+9f7c9f8e-cd0d-454e-905a-1c1a0ac80670,11d68409-e768-4a4a-9b5d-e8489bbcdef1,What can I do before sleeping?,2026-07-12 09:00:00,2,False
+7ae6c47d-b7ee-4915-a513-50935a7d629a,11d68409-e768-4a4a-9b5d-e8489bbcdef1,How can I relax?,2026-05-27 18:00:00,6,False
+feac76f9-521c-46a8-8e03-84cf189d455e,11d68409-e768-4a4a-9b5d-e8489bbcdef1,How can I relax?,2026-07-31 19:00:00,2,False
+8c3a53c9-979f-4937-a934-ae486f5dff46,da63db30-62f4-4937-93f2-17460a15ef74,What can I do before sleeping?,2026-08-02 08:00:00,4,False
+14765f64-2dc6-4337-865c-ddc1550c1416,da63db30-62f4-4937-93f2-17460a15ef74,What is affecting my stress?,2026-04-07 16:00:00,6,False
+8f052f7e-9680-4665-8f14-a6781c5633e4,da63db30-62f4-4937-93f2-17460a15ef74,What can I do before sleeping?,2026-04-07 17:00:00,4,False
+0a16637b-3609-4585-8c93-cf36d19061f9,da63db30-62f4-4937-93f2-17460a15ef74,Why did my stress increase?,2026-07-13 22:00:00,6,False
+a28b93e2-6fc2-4978-8738-6fde33580c61,da63db30-62f4-4937-93f2-17460a15ef74,Why did my stress increase?,2026-07-15 17:00:00,4,False
+7d335b45-bf40-47ab-8ccd-35813278b236,da63db30-62f4-4937-93f2-17460a15ef74,Why did my stress increase?,2026-05-08 19:00:00,6,False
+ff62f117-2be7-4fbb-9688-70cb395d6022,da63db30-62f4-4937-93f2-17460a15ef74,What can I do before sleeping?,2026-08-15 19:00:00,2,False
+ba4b1348-ebca-4340-adfe-285c8d3a6b87,f884767a-b25b-4cc6-9a74-2502f7588565,How was my week?,2026-04-17 15:00:00,2,False
+a758a001-6ad8-4942-a258-c6d3e56fc8a9,f884767a-b25b-4cc6-9a74-2502f7588565,What is affecting my stress?,2026-07-04 13:00:00,6,False
+c42792ec-c16c-4341-a0a5-72bb0727736c,f884767a-b25b-4cc6-9a74-2502f7588565,Why did my stress increase?,2026-04-21 19:00:00,2,False
+8aa34f1f-5523-4475-a1a3-c676ac6738cd,a49a8f29-dcbe-40eb-8684-df661c62936f,How was my week?,2026-06-09 08:00:00,4,False
+7ae6bd32-99ce-4f19-a670-d2f97bb327ae,a49a8f29-dcbe-40eb-8684-df661c62936f,How can I relax?,2026-05-12 18:00:00,2,False
+e16a50cc-e7de-41ea-a01d-e20589a30495,8e47043f-b366-42b5-ab46-24fe0324fb43,How was my week?,2026-07-01 21:00:00,4,False
+c0434ba5-fae1-43e4-b012-586485817579,8e47043f-b366-42b5-ab46-24fe0324fb43,How was my week?,2026-05-13 09:00:00,6,False
+36b97d35-83f0-499f-885e-a134fee666bb,8e47043f-b366-42b5-ab46-24fe0324fb43,What is affecting my stress?,2026-07-31 11:00:00,6,False
+8164197e-c1aa-4376-929a-2842103f0b33,8e47043f-b366-42b5-ab46-24fe0324fb43,How can I relax?,2026-07-10 20:00:00,6,False
+f4bd28f9-e5a4-43f7-9f22-2a72b63639d0,8e47043f-b366-42b5-ab46-24fe0324fb43,How was my week?,2026-09-17 22:00:00,6,False
+7b45a899-a010-4bb6-a95c-791b128c9077,8e47043f-b366-42b5-ab46-24fe0324fb43,Why did my stress increase?,2026-08-11 21:00:00,2,False
+f32dfffb-c536-462d-be29-3456ef18649c,96a80e6a-210d-4035-b6ab-0b8d3bafce54,How can I relax?,2026-08-20 08:00:00,2,False
+59fee679-8125-49fb-b61c-e68ffa3a38bb,96a80e6a-210d-4035-b6ab-0b8d3bafce54,How was my week?,2026-08-01 14:00:00,4,False
+e7dfff2c-70f7-4bbc-b323-8bb080ead7f3,96a80e6a-210d-4035-b6ab-0b8d3bafce54,What is affecting my stress?,2026-04-07 08:00:00,2,False
+cfcdd99b-3940-4067-9d54-ca7b76b39291,96a80e6a-210d-4035-b6ab-0b8d3bafce54,What is affecting my stress?,2026-06-17 20:00:00,6,False
+5b922d6a-f77a-41ed-9491-e7923fcb7d4e,96a80e6a-210d-4035-b6ab-0b8d3bafce54,What is affecting my stress?,2026-09-27 14:00:00,6,False
+0701016c-8cf7-4132-92b9-8ef890a824f7,96a80e6a-210d-4035-b6ab-0b8d3bafce54,What can I do before sleeping?,2026-08-21 22:00:00,2,False
+a2631b4e-9e2d-4b4b-a701-06e22ddd48d6,228ea7af-dee7-41d0-864c-9c366580c887,What is affecting my stress?,2026-09-15 16:00:00,6,False
+8baded9f-7299-42b3-b294-3558e72b4a38,fba391a8-f270-4973-9a53-979daa92cb81,How was my week?,2026-05-11 09:00:00,2,False
+11290802-875f-4007-b49a-858bc1913ea4,fba391a8-f270-4973-9a53-979daa92cb81,Why did my stress increase?,2026-07-22 15:00:00,2,False
+00b12857-0db7-4b67-8811-2940fecf9267,eceb1480-b3a3-48a3-b4b3-b59571d6e259,Why did my stress increase?,2026-08-07 11:00:00,4,False
+97368631-2038-4921-8d72-8599386d3403,eceb1480-b3a3-48a3-b4b3-b59571d6e259,How can I relax?,2026-08-27 16:00:00,4,False
+8e7dfb2c-58ad-4c0c-870c-656ac812fdb2,eceb1480-b3a3-48a3-b4b3-b59571d6e259,How can I relax?,2026-05-31 18:00:00,2,False
+b09de61a-eb3a-4fee-b1b8-c9e068311e09,eceb1480-b3a3-48a3-b4b3-b59571d6e259,What can I do before sleeping?,2026-05-27 17:00:00,4,False
+0386d480-1e58-41ac-bc21-aa4bd9871ad7,eceb1480-b3a3-48a3-b4b3-b59571d6e259,What can I do before sleeping?,2026-06-03 13:00:00,4,False
+7dea2331-af23-4d19-9d39-ef2c1d5471fe,9e41c74a-c1c0-4ba3-aa83-3bd377fdc917,What is affecting my stress?,2026-04-29 19:00:00,6,False
+a79715ea-8096-4d4f-90f9-4ccc8e9476c6,8f446c73-6068-49fc-b1ee-20238b827f94,Why did my stress increase?,2026-09-24 14:00:00,4,False
+eaaada13-55f5-49ea-b266-0efe9a0b80d5,8f446c73-6068-49fc-b1ee-20238b827f94,How was my week?,2026-04-12 17:00:00,2,False
+f7e0aa64-75fb-47e9-8d2f-05cfc925797c,8f446c73-6068-49fc-b1ee-20238b827f94,What is affecting my stress?,2026-06-23 08:00:00,4,False
+2dc13cc1-657d-40fe-b99a-2982cfd4dd51,8f446c73-6068-49fc-b1ee-20238b827f94,What is affecting my stress?,2026-05-18 20:00:00,8,True
+df970f42-10b8-45fb-8703-61d14771eac0,8f446c73-6068-49fc-b1ee-20238b827f94,Why did my stress increase?,2026-09-29 17:00:00,2,False
+53c3a0a1-8b6e-4624-a848-959d100db3c5,8f446c73-6068-49fc-b1ee-20238b827f94,How can I relax?,2026-08-28 10:00:00,6,False
+c0957eff-7075-4586-baf6-9519f7eec51f,1927b162-bed1-4bac-afd2-19a18044d6ab,How can I relax?,2026-04-29 13:00:00,2,False
+82be863b-1ccb-4e6d-b8f2-16b1dd51b4f1,1927b162-bed1-4bac-afd2-19a18044d6ab,How was my week?,2026-04-29 14:00:00,6,False
+3dcbfab6-1f0e-4867-a725-7b3a0e78ea22,3ca4ca92-b812-4451-93b3-46e1ae33a55a,How was my week?,2026-09-02 08:00:00,2,False
+0ba9f905-824b-4344-8c3e-4059e4d867f8,3ca4ca92-b812-4451-93b3-46e1ae33a55a,How can I relax?,2026-08-20 22:00:00,6,False
+669b8495-d94a-4140-9a8d-8ba1df9b0e55,3ca4ca92-b812-4451-93b3-46e1ae33a55a,How can I relax?,2026-05-30 18:00:00,4,False
+d606bd70-b8f9-43a1-b68c-1c9dc29643c3,3ca4ca92-b812-4451-93b3-46e1ae33a55a,What is affecting my stress?,2026-04-14 12:00:00,2,False
+e002a4e7-1b6b-4672-af6a-b2bc3eb30a88,3ca4ca92-b812-4451-93b3-46e1ae33a55a,How can I relax?,2026-07-24 22:00:00,6,False
+eaf01203-d28c-409a-8352-6d2e27db3da0,3ca4ca92-b812-4451-93b3-46e1ae33a55a,Why did my stress increase?,2026-05-01 11:00:00,6,False
+e00488a5-52db-418a-92c8-90ba36e7eda4,0e91684c-110d-4216-b53a-b94552632b0c,How can I relax?,2026-06-22 08:00:00,4,False
+97fefc11-2220-4f4d-b6f0-89d5d6bf28f1,0e91684c-110d-4216-b53a-b94552632b0c,What is affecting my stress?,2026-09-05 10:00:00,6,False
+7884174b-a9b6-4388-bd62-9f420ed69296,c867764b-53c5-4f24-bf67-124eeba045bf,How was my week?,2026-06-19 12:00:00,6,False
+c73e436b-b734-4cfa-b3eb-1cf9c2f01792,c867764b-53c5-4f24-bf67-124eeba045bf,How was my week?,2026-06-28 19:00:00,6,False
+73e916b9-6864-40a2-bf68-9166f6423253,26b92225-8ed6-4b1a-aa0c-810c58ad6535,How was my week?,2026-08-20 12:00:00,2,False
+91e43a0c-63f7-4491-adf8-1ce2c9c320e0,77394f3f-0fa0-4ba2-9ce5-aadd5b67c8e7,How can I relax?,2026-05-04 10:00:00,2,False
+fb14af70-d793-47c4-a92c-2183f8a93ab5,77394f3f-0fa0-4ba2-9ce5-aadd5b67c8e7,Why did my stress increase?,2026-04-21 15:00:00,2,False
+23005f81-871e-410f-9033-5ace610645b0,77394f3f-0fa0-4ba2-9ce5-aadd5b67c8e7,How can I relax?,2026-07-02 12:00:00,6,False
+2b550b0e-7bf0-4a43-a187-b7c4fba9754c,77394f3f-0fa0-4ba2-9ce5-aadd5b67c8e7,How can I relax?,2026-08-27 17:00:00,6,False
+11da63cc-5047-416e-940c-444d5c3ad4c4,8bf5ff13-d75d-4364-8274-35c3907a44bf,Why did my stress increase?,2026-07-15 15:00:00,6,False
+ce134e7f-431d-4cdd-a4f6-e9a4009ce0bf,8bf5ff13-d75d-4364-8274-35c3907a44bf,What is affecting my stress?,2026-05-15 08:00:00,6,False
+86942885-33eb-453b-a03e-04fc40874811,8bf5ff13-d75d-4364-8274-35c3907a44bf,What can I do before sleeping?,2026-06-10 08:00:00,6,False
+9e753a2c-d97d-4bcc-a965-c93a66237076,8bf5ff13-d75d-4364-8274-35c3907a44bf,How can I relax?,2026-05-26 11:00:00,2,False
+678d093c-adf0-4d4b-9871-41ada7293c46,8bf5ff13-d75d-4364-8274-35c3907a44bf,What can I do before sleeping?,2026-06-25 22:00:00,4,False
+e2663d27-e0f3-4975-b2b1-a422bab7c238,8bf5ff13-d75d-4364-8274-35c3907a44bf,Why did my stress increase?,2026-04-17 17:00:00,6,False
+6f421d98-d64d-43e8-9fe4-65a21a116dd4,1f543a15-1c6a-4233-bc14-fd3d78cd0910,Why did my stress increase?,2026-09-03 10:00:00,2,False
+863de9fc-29e3-4999-8659-c94560c5a9db,1f543a15-1c6a-4233-bc14-fd3d78cd0910,How was my week?,2026-06-15 13:00:00,2,False
+8545e04a-1d97-488e-bce7-faf15c9730d0,1f543a15-1c6a-4233-bc14-fd3d78cd0910,How can I relax?,2026-05-02 17:00:00,4,False
+ef896f9a-8ea0-4e75-bc45-2c21c41ef215,4eded2b6-2b1d-4427-99c2-663adef42816,How was my week?,2026-09-20 20:00:00,2,False
+7bd4fa8b-3787-48b9-919c-d2979ec577a3,4eded2b6-2b1d-4427-99c2-663adef42816,How was my week?,2026-06-07 15:00:00,2,False
+1e17d037-4d10-4fd3-a75e-d82c55cf18aa,4eded2b6-2b1d-4427-99c2-663adef42816,What can I do before sleeping?,2026-04-26 10:00:00,2,False
+ea19cf04-f589-413d-98cb-510662369727,4eded2b6-2b1d-4427-99c2-663adef42816,How was my week?,2026-04-20 19:00:00,4,False
+58b2f102-ebce-43b6-817e-e8fbee076953,8a9ee2da-5d3d-4002-bc55-4c6be26aefd0,What is affecting my stress?,2026-08-11 21:00:00,2,False
+a3e0a569-48bb-4eec-a91f-7a6a1f8d4636,8a9ee2da-5d3d-4002-bc55-4c6be26aefd0,How can I relax?,2026-06-07 13:00:00,6,False
+e7a4780f-e836-4712-9363-b901560bfaeb,8a9ee2da-5d3d-4002-bc55-4c6be26aefd0,What is affecting my stress?,2026-08-18 08:00:00,2,False
+889e4b06-2552-4eb3-888c-04f0e2bbd34c,8a9ee2da-5d3d-4002-bc55-4c6be26aefd0,Why did my stress increase?,2026-04-10 08:00:00,2,False
+30ae9def-a294-43bd-8ffe-a78aaf80e09e,8a9ee2da-5d3d-4002-bc55-4c6be26aefd0,What is affecting my stress?,2026-09-30 10:00:00,4,False
+9c8c1175-a1c8-467c-b620-17e147c3bb6e,8a9ee2da-5d3d-4002-bc55-4c6be26aefd0,What is affecting my stress?,2026-06-10 22:00:00,4,False
+1e8b446e-4dd4-4034-88a1-688a22f325a9,8a9ee2da-5d3d-4002-bc55-4c6be26aefd0,Why did my stress increase?,2026-04-29 10:00:00,6,False
+17f7fe13-9232-4d6b-b40c-8281dabd80f4,be98d21e-7519-4e58-8f79-07bec15b1ec0,Why did my stress increase?,2026-06-10 13:00:00,2,False
+9ffeefc0-3e23-4d23-b581-57259bbff44d,be98d21e-7519-4e58-8f79-07bec15b1ec0,What can I do before sleeping?,2026-09-08 15:00:00,6,False
+c7986860-c29c-4a85-8494-9aeeef18797b,be98d21e-7519-4e58-8f79-07bec15b1ec0,What can I do before sleeping?,2026-05-20 11:00:00,6,False
+d5f2f260-220c-4e62-9984-3c9905b46618,be98d21e-7519-4e58-8f79-07bec15b1ec0,What can I do before sleeping?,2026-06-29 09:00:00,2,False
+2e5ffb84-c62b-44b4-a197-f31fec35ac17,be98d21e-7519-4e58-8f79-07bec15b1ec0,What can I do before sleeping?,2026-05-11 18:00:00,4,False
+d67ac9e8-4337-4387-a877-695f5681403b,be98d21e-7519-4e58-8f79-07bec15b1ec0,What is affecting my stress?,2026-05-26 22:00:00,4,False
+ce309ceb-025a-4b17-b9da-acc16d782590,be98d21e-7519-4e58-8f79-07bec15b1ec0,How was my week?,2026-06-21 14:00:00,6,False
+cc9fea7c-fb93-4510-a3b5-6060829ee178,7f21c836-5b8b-452d-877d-d050bdf06dd5,How was my week?,2026-04-29 19:00:00,6,False
+bd5f4e7d-d111-4a3d-be38-af1435d6ff8d,7f21c836-5b8b-452d-877d-d050bdf06dd5,How can I relax?,2026-04-13 08:00:00,6,False
+40d90530-2436-4f0d-812b-a11184c65e0d,7f21c836-5b8b-452d-877d-d050bdf06dd5,What is affecting my stress?,2026-09-01 19:00:00,6,False
+21e4714f-af3e-4d79-b9f3-ceb22e33c7ac,7f21c836-5b8b-452d-877d-d050bdf06dd5,How can I relax?,2026-07-06 19:00:00,4,False
+c66ccd89-fd04-4159-8f18-675fe346275d,a82d17bd-527c-4f75-9242-30b90cfcf5c1,How was my week?,2026-09-27 15:00:00,6,False
+aef2da4f-0587-4365-9a0f-336c4a3fe9d3,a82d17bd-527c-4f75-9242-30b90cfcf5c1,How was my week?,2026-09-16 21:00:00,4,False
+a1c2a589-1834-4007-b5f8-8f9388093b00,a82d17bd-527c-4f75-9242-30b90cfcf5c1,How can I relax?,2026-07-22 21:00:00,4,False
+0c606d52-96fa-41ec-a22a-6bc785f315bc,c276e426-921a-4a04-91dc-cc097a62026a,How was my week?,2026-09-12 17:00:00,6,False
+8e9f7d50-4edf-40d2-a2c5-bea9f9ff7e5b,c276e426-921a-4a04-91dc-cc097a62026a,How can I relax?,2026-09-06 08:00:00,2,False
+dff35078-1957-453a-8652-5a8c86493565,c276e426-921a-4a04-91dc-cc097a62026a,What can I do before sleeping?,2026-06-24 14:00:00,6,False
+58fb7db1-2f3f-4aeb-8f75-e1e86f82716f,c276e426-921a-4a04-91dc-cc097a62026a,What is affecting my stress?,2026-09-24 08:00:00,6,False
+fc3ddfc7-defa-466d-b3c9-b5d44f7b1569,c276e426-921a-4a04-91dc-cc097a62026a,What is affecting my stress?,2026-09-09 11:00:00,2,False
+10f48e6f-4af3-4f99-a52e-4b65d0ddffb9,c48b20bc-05cc-4e9e-937e-a626a6e03394,What can I do before sleeping?,2026-08-10 18:00:00,6,False
+eb9e59d0-4d78-4af2-8ee1-913fa33dd4eb,c48b20bc-05cc-4e9e-937e-a626a6e03394,How was my week?,2026-09-26 19:00:00,6,False
+23d08951-ee85-4211-bd13-0284130aac76,c48b20bc-05cc-4e9e-937e-a626a6e03394,What is affecting my stress?,2026-09-10 20:00:00,6,False
+b9f2f52d-3fc2-4a9e-bed8-157ef2e2f408,c48b20bc-05cc-4e9e-937e-a626a6e03394,What can I do before sleeping?,2026-06-06 10:00:00,2,False
+b8a1d92b-7b6d-4f94-b836-a85df8c94220,db26bfcc-0c02-4d9b-9284-04d6f60e2092,How can I relax?,2026-09-18 14:00:00,2,False
+166dc921-4784-4d8a-ab47-5c95e1683def,db26bfcc-0c02-4d9b-9284-04d6f60e2092,How can I relax?,2026-07-26 16:00:00,2,False
+76a8404b-6c70-4068-8ee0-7f35f6602219,db26bfcc-0c02-4d9b-9284-04d6f60e2092,How was my week?,2026-07-27 13:00:00,2,False
+0efa16fc-2a9a-4423-b9f7-dec60c12b51e,db26bfcc-0c02-4d9b-9284-04d6f60e2092,What is affecting my stress?,2026-05-05 10:00:00,2,False
+9453a88b-aa8c-4011-bd93-41a82239c3f8,db26bfcc-0c02-4d9b-9284-04d6f60e2092,How was my week?,2026-08-16 12:00:00,4,False
+c3a5560d-d59e-4bd9-8f4b-cd40aaa50d8c,db26bfcc-0c02-4d9b-9284-04d6f60e2092,What can I do before sleeping?,2026-09-09 10:00:00,4,False
+7298af19-b982-4a52-bf99-a7d2c287bd1c,611a5a78-3048-4859-b447-f42ed7b6ed4c,What can I do before sleeping?,2026-09-20 19:00:00,6,False
+f1c88eed-739c-4d2e-bb58-17e1385559a9,611a5a78-3048-4859-b447-f42ed7b6ed4c,How can I relax?,2026-09-03 17:00:00,4,False
+7a9190fd-96d3-41c1-8846-d6f9ef668262,611a5a78-3048-4859-b447-f42ed7b6ed4c,What can I do before sleeping?,2026-08-28 16:00:00,4,False
+0d5d2a00-99d7-41e5-bef2-9602c746ab62,af11c062-245a-499a-9e15-180afc0a502e,What is affecting my stress?,2026-06-26 12:00:00,6,False
+e4b5f7fd-1d63-444d-bc09-f384fc50b7c5,af11c062-245a-499a-9e15-180afc0a502e,How can I relax?,2026-04-23 09:00:00,4,False
+67180d28-a853-4b02-b8c8-07190907f1ec,af11c062-245a-499a-9e15-180afc0a502e,What is affecting my stress?,2026-05-30 14:00:00,6,False
+c7959850-f3ff-4e02-96b5-d35201cf3c4c,9ed77495-6b4c-4984-8f8f-0311bd94981d,What can I do before sleeping?,2026-06-07 19:00:00,6,False
+b5119fd4-fd92-4bce-9474-c3a7c2bd24a1,9ed77495-6b4c-4984-8f8f-0311bd94981d,What is affecting my stress?,2026-04-15 22:00:00,6,False
+7dbc2c3b-a733-4278-b1fe-bafc972ec161,9ed77495-6b4c-4984-8f8f-0311bd94981d,How was my week?,2026-06-12 17:00:00,2,False
+7dc5b659-de12-49d0-bca1-77953c67c68a,9ed77495-6b4c-4984-8f8f-0311bd94981d,What can I do before sleeping?,2026-07-05 21:00:00,2,False
+42d38966-66e2-45fb-a507-d648cc1d00d9,9ed77495-6b4c-4984-8f8f-0311bd94981d,What can I do before sleeping?,2026-07-08 22:00:00,6,False
+e0cbb04c-5fd0-475a-8f52-459b33aff228,c9c3c0a0-7052-4bbb-994c-0ef3a43cde9b,How can I relax?,2026-05-24 14:00:00,4,False
+0db32749-dabf-418f-b8a7-87a8af54e9aa,c9c3c0a0-7052-4bbb-994c-0ef3a43cde9b,What is affecting my stress?,2026-04-30 11:00:00,6,False
+f8a1f4d4-9687-4182-b095-0492e3b46e4b,c9c3c0a0-7052-4bbb-994c-0ef3a43cde9b,What can I do before sleeping?,2026-05-12 17:00:00,6,False
+3e46fb5a-3325-44b8-a887-837c8e2d982e,c9c3c0a0-7052-4bbb-994c-0ef3a43cde9b,How can I relax?,2026-05-25 10:00:00,4,False
+9cfc9300-e7f4-43d3-9ae1-485d84083013,1f2c38ab-e4d6-449f-9696-237d12802f07,How can I relax?,2026-04-16 19:00:00,2,False
+1470fc66-fc25-421d-bff2-c00e0ab18acb,1f2c38ab-e4d6-449f-9696-237d12802f07,Why did my stress increase?,2026-04-30 21:00:00,4,False
+ac64d5bd-fe0d-4a7c-b623-3c71f91d951e,1f2c38ab-e4d6-449f-9696-237d12802f07,Why did my stress increase?,2026-05-22 08:00:00,2,False
+09d88ff5-8a99-4e9e-8369-ddeab9cea902,1f2c38ab-e4d6-449f-9696-237d12802f07,What is affecting my stress?,2026-08-23 20:00:00,2,False
+e115f010-8b3f-43cc-904c-9fa6ae1697f8,1f2c38ab-e4d6-449f-9696-237d12802f07,What can I do before sleeping?,2026-05-12 13:00:00,2,False
+248ea8b6-ffc3-4f32-947b-69e944ff6e9b,1f2c38ab-e4d6-449f-9696-237d12802f07,What can I do before sleeping?,2026-05-09 18:00:00,4,False
+8e35b3b2-4796-4973-8c5d-0f9a960da736,30bdad7b-dbb5-4ae5-93ec-be3da5d8181e,How was my week?,2026-05-07 22:00:00,4,False
+e2867034-cb0a-43d7-97a2-c67016449ab1,30bdad7b-dbb5-4ae5-93ec-be3da5d8181e,What is affecting my stress?,2026-05-03 21:00:00,2,False
+1a414079-8f94-4bd7-a888-679e9422178d,30bdad7b-dbb5-4ae5-93ec-be3da5d8181e,Why did my stress increase?,2026-08-19 18:00:00,4,False
+bf71f3e3-a464-4c47-b299-9efd3ce6b966,30bdad7b-dbb5-4ae5-93ec-be3da5d8181e,What is affecting my stress?,2026-04-12 12:00:00,6,False
+bd5f715c-9082-470c-977b-d9e0de6672d0,30bdad7b-dbb5-4ae5-93ec-be3da5d8181e,How can I relax?,2026-04-27 08:00:00,2,False
+89d04310-c77a-4ec2-9e99-660d097fd387,30bdad7b-dbb5-4ae5-93ec-be3da5d8181e,How was my week?,2026-05-03 09:00:00,2,False
+c2624580-53f2-49a4-995b-d5834634a39f,ed475951-5dde-4c66-8523-f8a745ea5fc5,How was my week?,2026-05-29 09:00:00,2,False
+44eff5a5-39ff-4e27-8e1e-2be644bd7451,ed475951-5dde-4c66-8523-f8a745ea5fc5,How was my week?,2026-06-01 12:00:00,2,False
+02015278-2947-4453-98e6-ab354512a8e7,ed475951-5dde-4c66-8523-f8a745ea5fc5,Why did my stress increase?,2026-06-17 17:00:00,4,False
+38d8c24b-7e9c-471b-a955-0779a4040992,ed475951-5dde-4c66-8523-f8a745ea5fc5,How can I relax?,2026-06-07 08:00:00,2,False
+14fcdb23-9233-4338-a447-e34660e53fe3,ed475951-5dde-4c66-8523-f8a745ea5fc5,How was my week?,2026-07-03 11:00:00,2,False
+996d4054-10c2-4a3b-821f-6aa6b4a59792,ed475951-5dde-4c66-8523-f8a745ea5fc5,How was my week?,2026-06-10 20:00:00,4,False
+5af3480a-609e-4e27-b43d-1ad6fd651ddf,bb659646-ef47-48aa-a874-8482aff33b9a,What can I do before sleeping?,2026-07-10 21:00:00,4,False
+5c7dc427-0817-416a-85d8-79cf750cf3f5,bb659646-ef47-48aa-a874-8482aff33b9a,What can I do before sleeping?,2026-08-25 15:00:00,4,False
+787e871c-2e51-4b62-8434-82663aa4341d,bb659646-ef47-48aa-a874-8482aff33b9a,What is affecting my stress?,2026-06-09 21:00:00,4,True
+f34d99ab-794e-4041-9da5-9d5b90f6d5bc,bb659646-ef47-48aa-a874-8482aff33b9a,What is affecting my stress?,2026-08-31 14:00:00,6,False
+233dfc5d-0b7e-4741-8472-60e75f0d742d,bb659646-ef47-48aa-a874-8482aff33b9a,What can I do before sleeping?,2026-05-01 08:00:00,2,False
+a7cc4545-23db-4b67-90c3-ebe300fa9a19,bb659646-ef47-48aa-a874-8482aff33b9a,How can I relax?,2026-09-23 09:00:00,2,False
+9ef057c8-5c90-4015-a07c-c244a332e9f2,bb659646-ef47-48aa-a874-8482aff33b9a,How can I relax?,2026-07-19 12:00:00,4,False
+0e77b7db-7a95-464b-9658-e41a93056133,0a46d338-97f2-4397-9a22-f45360a013f6,What can I do before sleeping?,2026-07-09 11:00:00,2,False
+8abb19fd-a1a0-4ed0-9b78-28e4e211e918,0a46d338-97f2-4397-9a22-f45360a013f6,What is affecting my stress?,2026-07-15 13:00:00,2,False
+7b19fc92-994f-4af3-968e-9b1b0e5b610f,0a46d338-97f2-4397-9a22-f45360a013f6,Why did my stress increase?,2026-04-17 10:00:00,4,False
+86e77ba2-2c30-49ff-9d7c-8b26b683ca91,0a46d338-97f2-4397-9a22-f45360a013f6,How can I relax?,2026-06-30 16:00:00,4,False
+e2d607c4-7af8-462e-bfe7-00c342f8926b,0a46d338-97f2-4397-9a22-f45360a013f6,What is affecting my stress?,2026-06-08 10:00:00,6,False
+bb41ada6-e735-42b3-99cd-1bdb8939598e,0a46d338-97f2-4397-9a22-f45360a013f6,How can I relax?,2026-05-19 09:00:00,2,False
+08982cea-90ea-4982-b4f1-583168a77939,0a46d338-97f2-4397-9a22-f45360a013f6,What is affecting my stress?,2026-04-21 11:00:00,4,False
+1dbcd608-43f4-4ff2-8938-e7eda50fb511,668c4aa8-d77a-472f-947b-8b6d54706e6f,What can I do before sleeping?,2026-05-14 08:00:00,4,False
+da6cb290-4c47-4cdc-9401-c127a9eb2dd2,668c4aa8-d77a-472f-947b-8b6d54706e6f,How was my week?,2026-09-22 18:00:00,6,False
+d537d2c8-0717-488d-b577-3a6280ac0bb5,668c4aa8-d77a-472f-947b-8b6d54706e6f,What can I do before sleeping?,2026-06-10 11:00:00,4,False
+f73e7f55-dde0-40f4-8d84-0413ccc0a868,668c4aa8-d77a-472f-947b-8b6d54706e6f,How can I relax?,2026-07-14 16:00:00,2,False
+b6c83a0c-e3b0-4810-91e4-af35822d76e2,668c4aa8-d77a-472f-947b-8b6d54706e6f,How was my week?,2026-09-22 16:00:00,2,False
+8ff6cfa7-eecb-45e0-a2de-5f2e480c86f1,668c4aa8-d77a-472f-947b-8b6d54706e6f,How was my week?,2026-05-05 10:00:00,2,False
+b07c41b2-2f47-4a5e-909a-eedd270db0ce,1e4ff6cb-1cca-4779-8a2f-915385cf1d7a,How can I relax?,2026-04-15 13:00:00,6,False
+50fc71a5-09e1-4de1-a4af-f26fafd0d0f8,1e4ff6cb-1cca-4779-8a2f-915385cf1d7a,How can I relax?,2026-04-12 22:00:00,4,False
+0d4539f0-322d-4ac4-8e10-8ab169ab7ec5,1e4ff6cb-1cca-4779-8a2f-915385cf1d7a,What is affecting my stress?,2026-04-07 22:00:00,6,False
+07e38d24-9a5f-44cf-b24e-021fac2c3416,1e4ff6cb-1cca-4779-8a2f-915385cf1d7a,How was my week?,2026-04-14 11:00:00,2,False
+cebfd092-8bf1-4838-a64a-4f0677625871,1e4ff6cb-1cca-4779-8a2f-915385cf1d7a,What is affecting my stress?,2026-04-18 10:00:00,6,False
+c9b48cd1-fed1-4039-8b1d-9a983c95ee1b,8d1b27be-7ce2-48a9-9953-af1983dff987,Why did my stress increase?,2026-05-14 20:00:00,4,False
+6bf77ba4-abe7-4785-9b9f-4046eb590c91,8d1b27be-7ce2-48a9-9953-af1983dff987,Why did my stress increase?,2026-06-16 21:00:00,4,False
+f933e45e-fb47-4242-8d25-9a910da18a5a,8f62d372-2e40-48da-b3c6-b5f918a9541d,What is affecting my stress?,2026-09-02 08:00:00,4,False
+00dca59e-177f-4f26-bbcf-56b3905cdbda,8f62d372-2e40-48da-b3c6-b5f918a9541d,Why did my stress increase?,2026-05-23 09:00:00,4,False
+bc7c1c97-bd9c-4314-bb86-22d36891858a,a62170ac-d808-4eb0-9928-553a9695e4bf,Why did my stress increase?,2026-06-19 19:00:00,4,False
+cb124bdb-55fd-4aea-a29c-598208bd4f97,a62170ac-d808-4eb0-9928-553a9695e4bf,How can I relax?,2026-06-20 20:00:00,2,False
+fa8c1e9f-e218-46c5-8d81-859926a8d629,a62170ac-d808-4eb0-9928-553a9695e4bf,What can I do before sleeping?,2026-09-09 11:00:00,4,False
+bc82945a-2f9d-481d-8068-04d85f9a752b,a62170ac-d808-4eb0-9928-553a9695e4bf,Why did my stress increase?,2026-04-18 15:00:00,6,False
+6b1ee750-f74f-4610-9ba6-bfb3c298beb3,a62170ac-d808-4eb0-9928-553a9695e4bf,What can I do before sleeping?,2026-04-07 20:00:00,4,False
+62afd2b2-0187-4a1e-83f7-f4924b818d32,a62170ac-d808-4eb0-9928-553a9695e4bf,What can I do before sleeping?,2026-06-21 22:00:00,6,False
+cc4d6bf2-1074-487e-ad8a-0456a9a2cc09,a62170ac-d808-4eb0-9928-553a9695e4bf,What can I do before sleeping?,2026-04-21 10:00:00,4,False

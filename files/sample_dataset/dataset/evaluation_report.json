@@ -1,0 +1,74 @@
+{
+  "best_model": "xgboost",
+  "holdout_metrics": {
+    "logistic_regression": {
+      "accuracy": 0.7888389690234098,
+      "precision": 0.5447909754479098,
+      "recall": 0.7986381322957199,
+      "f1": 0.6477317554240631,
+      "roc_auc": 0.8800545063130807,
+      "tn": 2515,
+      "fp": 686,
+      "fn": 207,
+      "tp": 821
+    },
+    "random_forest": {
+      "accuracy": 0.8278552849373374,
+      "precision": 0.6203852327447833,
+      "recall": 0.7519455252918288,
+      "f1": 0.6798592788038699,
+      "roc_auc": 0.8877487822993058,
+      "tn": 2728,
+      "fp": 473,
+      "fn": 255,
+      "tp": 773
+    },
+    "xgboost": {
+      "accuracy": 0.8089382832820998,
+      "precision": 0.5779036827195467,
+      "recall": 0.7937743190661478,
+      "f1": 0.6688524590163935,
+      "roc_auc": 0.8885705099452141,
+      "tn": 2605,
+      "fp": 596,
+      "fn": 212,
+      "tp": 816
+    },
+    "baseline_persistence": {
+      "accuracy": 0.8221801844407661,
+      "precision": 0.6350293542074364,
+      "recall": 0.6313229571984436,
+      "f1": 0.6331707317073171,
+      "roc_auc": 0.7573984358000965,
+      "tn": 2828,
+      "fp": 373,
+      "fn": 379,
+      "tp": 649
+    }
+  },
+  "features": [
+    "mood_score",
+    "stress_score",
+    "sleep_duration",
+    "sleep_quality",
+    "steps",
+    "active_minutes",
+    "resting_hr",
+    "hrv",
+    "habit_completion",
+    "previous_stress",
+    "stress_3d_mean",
+    "stress_7d_mean",
+    "mood_3d_mean",
+    "sleep_3d_mean",
+    "sleep_7d_std",
+    "steps_7d_mean",
+    "day_of_week",
+    "is_weekend",
+    "has_wearable"
+  ],
+  "target": "next-day stress score >= 61",
+  "split": "GroupShuffleSplit by user, 80/20",
+  "positive_rate": 0.24936674506965803,
+  "warning": "Trained on synthetic data. Not clinically validated. Not a medical tool."
+}

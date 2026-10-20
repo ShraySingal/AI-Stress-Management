@@ -1,0 +1,30 @@
+# Python cache & compiled files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+*.dist-info/
+
+# Data files (keep sample data only, not the full synthetic set)
+dataset/*.csv
+dataset/*.json
+dataset/*.joblib
+
+# Large binary – ignored (or use LFS if desired)
+capstone.db
+
+# IDE / editor artefacts
+.vscode/
+.idea/
+*.code-workspace
+
+# Build artefacts
+dist/
+build/
+*.egg
+
+# Temp files
+*.log
+*.tmp
+*.bak
