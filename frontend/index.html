@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MindPulse — Mental Health & Stress Analytics Platform</title>
+  <meta name="description" content="AI-Powered multi-dimensional stress prediction, mood tracking, sleep & activity analytics platform.">
+  
+  <!-- Chart.js for visualization -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Feather Icons -->
+  <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+  <!-- Auth Modal -->
+  <div id="authModal" class="auth-overlay">
+    <div class="auth-card">
+      <div class="brand-logo" style="justify-content: center; margin-bottom: 20px;">
+        <div class="logo-icon">M</div>
+        <div class="brand-name" style="font-size: 24px;">MindPulse</div>
+      </div>
+      <h3 style="text-align: center; margin-bottom: 8px; font-weight: 700;">Welcome Back</h3>
+      <p style="text-align: center; color: var(--text-muted); font-size: 13px; margin-bottom: 24px;">Sign in to access your personal stress analytics dashboard</p>
+      
+      <form id="loginForm" onsubmit="handleLogin(event)">
+        <div class="form-group">
+          <label class="form-label">Email Address</label>
+          <input type="email" id="loginEmail" class="form-input" value="demo@mindpulse.io" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Password</label>
+          <input type="password" id="loginPassword" class="form-input" value="Password123!" required>
+        </div>
+        <button type="submit" class="btn-primary" style="width: 100%; margin-top: 8px;">Sign In</button>
+        <button type="button" class="btn-secondary" onclick="autoDemoLogin()" style="width: 100%; margin-top: 10px;">Quick Demo Access</button>
+      </form>
+    </div>
+  </div>
+
+  <div class="app-container">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="brand-logo">
+        <div class="logo-icon">M</div>
+        <div class="brand-name">MindPulse</div>
+      </div>
+
+      <nav class="nav-menu">
+        <a class="nav-item active" onclick="switchTab('dashboard')">
+          <i data-feather="grid"></i>
+          <span>Dashboard</span>
+        </a>
+        <a class="nav-item" onclick="switchTab('prediction')">
+          <i data-feather="cpu"></i>
+          <span>AI Stress Risk</span>
+        </a>
+        <a class="nav-item" onclick="switchTab('mood')">
+          <i data-feather="smile"></i>
+          <span>Mood Log</span>
+        </a>
+        <a class="nav-item" onclick="switchTab('stress')">
+          <i data-feather="activity"></i>
+          <span>Stress Tracker</span>
+        </a>
+        <a class="nav-item" onclick="switchTab('sleep')">
+          <i data-feather="moon"></i>
+          <span>Sleep & Fitness</span>
+        </a>
+        <a class="nav-item" onclick="switchTab('habits')">
+          <i data-feather="check-square"></i>
+          <span>Habits</span>
+        </a>
+        <a class="nav-item" onclick="switchTab('analytics')">
+          <i data-feather="bar-chart-2"></i>
+          <span>Analytics</span>
+        </a>
+        <a class="nav-item" onclick="switchTab('settings')">
+          <i data-feather="settings"></i>
+          <span>Settings</span>
+        </a>
+      </nav>
+
+      <div class="user-profile-badge">
+        <div class="user-info">
+          <h4 id="userNameBadge">Shray Demo</h4>
+          <p id="userEmailBadge">demo@mindpulse.io</p>
+        </div>
+        <button class="btn-logout" onclick="logout()" title="Sign Out">
+          <i data-feather="log-out"></i>
+        </button>
+      </div>
+    </aside>
+
+    <!-- Main Content View -->
+    <main class="main-content">
+      <header class="header-bar">
+        <div>
+          <h1 class="page-title" id="pageTitle">Dashboard</h1>
+          <p class="page-subtitle" id="pageSubtitle">Multi-dimensional health overview and today's summary</p>
+        </div>
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <div class="date-pill" id="currentDatePill">Today, Oct 10</div>
+          <button class="btn-primary" onclick="openLogModal()">
+            <i data-feather="plus" style="vertical-align: middle; margin-right: 4px;"></i> Log Today
+          </button>
+        </div>
+      </header>
+
+      <!-- TAB 1: DASHBOARD -->
+      <section id="tab-dashboard" class="tab-content active">
+        <!-- Metric Cards -->
+        <div class="card-grid">
+          <div class="glass-card">
+            <div class="card-title">
+              <span>Today's Stress Risk</span>
+              <i data-feather="shield-alert" style="color: var(--accent-purple);"></i>
+            </div>
+            <div style="display: flex; align-items: baseline;">
+              <span class="metric-value" id="dashRiskScore">38</span>
+              <span class="metric-unit">/ 100</span>
+            </div>
+            <div id="dashRiskBadge" class="metric-status status-moderate">Moderate Risk</div>
+          </div>
+
+          <div class="glass-card">
+            <div class="card-title">
+              <span>Mood Rating</span>
+              <i data-feather="smile" style="color: var(--accent-cyan);"></i>
+            </div>
+            <div style="display: flex; align-items: baseline;">
+              <span class="metric-value" id="dashMoodScore">7.5</span>
+              <span class="metric-unit">/ 10</span>
+            </div>
+            <div class="metric-status status-low">Positive Balance</div>
+          </div>
+
+          <div class="glass-card">
+            <div class="card-title">
+              <span>Sleep Duration</span>
+              <i data-feather="moon" style="color: var(--status-low);"></i>
+            </div>
+            <div style="display: flex; align-items: baseline;">
+              <span class="metric-value" id="dashSleepDuration">7.8</span>
+              <span class="metric-unit">hrs</span>
+            </div>
+            <div class="metric-status status-low">Restorative</div>
+          </div>
+
+          <div class="glass-card">
+            <div class="card-title">
+              <span>Active Streak</span>
+              <i data-feather="zap" style="color: var(--status-moderate);"></i>
+            </div>
+            <div style="display: flex; align-items: baseline;">
+              <span class="metric-value" id="dashStreak">14</span>
+              <span class="metric-unit">days</span>
+            </div>
+            <div class="metric-status status-low">Top 5% Consistent</div>
+          </div>
+        </div>
+
+        <!-- Main Chart & AI Insights -->
+        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px;">
+          <div class="glass-card chart-card">
+            <div class="card-title">
+              <span>7-Day Stress vs Sleep Trend</span>
+              <select class="form-select" style="width: auto; padding: 4px 10px; font-size: 12px;" onchange="updateDashboardChart(this.value)">
+                <option value="7">Last 7 Days</option>
+                <option value="30">Last 30 Days</option>
+              </select>
+            </div>
+            <div class="chart-wrapper">
+              <canvas id="dashboardTrendChart"></canvas>
+            </div>
+          </div>
+
+          <div class="glass-card">
+            <div class="card-title">
+              <span>AI Recommendations</span>
+              <i data-feather="sparkles" style="color: var(--accent-purple);"></i>
+            </div>
+            <div class="recommendation-list" id="dashboardRecList">
+              <div class="rec-item">
+                <div class="rec-title">Optimal Sleep Recovery Window</div>
+                <div class="rec-body">Your HRV increased by 14% after sleeping 7.5+ hours. Maintain 23:00 bedtime today.</div>
+              </div>
+              <div class="rec-item">
+                <div class="rec-title">Evening Wind-down Practice</div>
+                <div class="rec-body">Workload stress peaks on Wednesdays. Schedule a 15-minute mindfulness session at 20:00.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 2: AI STRESS RISK PREDICTION -->
+      <section id="tab-prediction" class="tab-content">
+        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 24px; margin-bottom: 28px;">
+          <div class="glass-card gauge-card">
+            <div class="card-title" style="width: 100%;">
+              <span>Next-Day Stress Risk</span>
+              <i data-feather="cpu"></i>
+            </div>
+            <div class="gauge-circle" id="riskGaugeCircle">
+              <div class="gauge-inner">
+                <span style="font-size: 28px; font-weight: 800;" id="predRiskScore">42</span>
+                <span style="font-size: 11px; color: var(--text-muted);">RISK SCORE</span>
+              </div>
+            </div>
+            <div id="predRiskBadge" class="metric-status status-moderate" style="margin-bottom: 12px;">MODERATE RISK</div>
+            <p style="font-size: 12px; color: var(--text-muted);" id="predConfidenceText">Model Confidence: 89.2% (RandomForest v1.0)</p>
+            <button class="btn-primary" style="margin-top: 16px; width: 100%;" onclick="runMLPrediction()">Re-Calculate Risk</button>
+          </div>
+
+          <div class="glass-card">
+            <div class="card-title">
+              <span>Risk Factor Breakdown (ML Feature Attribution)</span>
+              <span style="font-size: 12px; color: var(--text-muted);">Explainable AI</span>
+            </div>
+            <div style="margin-top: 16px;">
+              <canvas id="factorImpactChart" style="max-height: 250px;"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <div class="glass-card">
+          <div class="card-title">Targeted Interventions & Recommendations</div>
+          <div class="recommendation-list" id="predictionRecList">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 3: MOOD LOG -->
+      <section id="tab-mood" class="tab-content">
+        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 24px;">
+          <div class="glass-card">
+            <h3 style="font-size: 18px; margin-bottom: 16px;">Log Today's Mood</h3>
+            <form id="moodForm" onsubmit="handleMoodSubmit(event)">
+              <div class="form-group">
+                <label class="form-label">Mood Score (1 - 10)</label>
+                <input type="range" id="moodScoreInput" min="1" max="10" value="7" class="form-input" oninput="document.getElementById('moodValDisplay').innerText = this.value">
+                <div style="text-align: right; font-weight: 700; color: var(--accent-purple);" id="moodValDisplay">7</div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Dominant Emotion</label>
+                <select id="moodEmotionInput" class="form-select">
+                  <option value="Calm">Calm & Content</option>
+                  <option value="Focused">Focused & Productive</option>
+                  <option value="Anxious">Anxious / Overwhelmed</option>
+                  <option value="Tired">Fatigued / Low Energy</option>
+                  <option value="Happy">Joyful / Energized</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Notes & Reflection</label>
+                <textarea id="moodNotesInput" class="form-textarea" rows="3" placeholder="What factors influenced your mood today?"></textarea>
+              </div>
+              <button type="submit" class="btn-primary" style="width: 100%;">Save Mood Entry</button>
+            </form>
+          </div>
+
+          <div class="glass-card">
+            <div class="card-title">Mood Score History (30 Days)</div>
+            <div class="chart-wrapper">
+              <canvas id="moodTrendChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 4: STRESS TRACKER -->
+      <section id="tab-stress" class="tab-content">
+        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 24px;">
+          <div class="glass-card">
+            <h3 style="font-size: 18px; margin-bottom: 16px;">Record Stress Assessment</h3>
+            <form id="stressForm" onsubmit="handleStressSubmit(event)">
+              <div class="form-group">
+                <label class="form-label">Self-Reported Stress (1 - 10)</label>
+                <input type="number" id="stressRatingInput" class="form-input" min="1" max="10" value="5" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Heart Rate Variability (HRV ms)</label>
+                <input type="number" id="hrvInput" class="form-input" value="58" placeholder="e.g. 55">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Resting Heart Rate (BPM)</label>
+                <input type="number" id="rhrInput" class="form-input" value="68" placeholder="e.g. 68">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Perceived Workload (1 - 10)</label>
+                <input type="number" id="workloadInput" class="form-input" min="1" max="10" value="6">
+              </div>
+              <button type="submit" class="btn-primary" style="width: 100%;">Record Assessment</button>
+            </form>
+          </div>
+
+          <div class="glass-card">
+            <div class="card-title">Stress vs HRV Biometric Correlation</div>
+            <div class="chart-wrapper">
+              <canvas id="stressHrvChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 5: SLEEP & FITNESS -->
+      <section id="tab-sleep" class="tab-content">
+        <div class="card-grid">
+          <div class="glass-card">
+            <h3 style="font-size: 18px; margin-bottom: 16px;">Log Sleep & Activity</h3>
+            <form id="sleepForm" onsubmit="handleSleepSubmit(event)">
+              <div class="form-group">
+                <label class="form-label">Sleep Duration (Hours)</label>
+                <input type="number" step="0.1" id="sleepDurationInput" class="form-input" value="7.5" required>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Sleep Quality Score (1 - 10)</label>
+                <input type="number" id="sleepQualityInput" class="form-input" value="8" min="1" max="10">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Daily Steps</label>
+                <input type="number" id="stepsInput" class="form-input" value="8500">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Active Minutes</label>
+                <input type="number" id="activeMinsInput" class="form-input" value="45">
+              </div>
+              <button type="submit" class="btn-primary" style="width: 100%;">Save Sleep & Fitness</button>
+            </form>
+          </div>
+
+          <div class="glass-card" style="grid-column: span 2;">
+            <div class="card-title">Sleep Quality & Activity Minutes Trend</div>
+            <div class="chart-wrapper">
+              <canvas id="sleepActivityChart"></canvas>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 6: HABITS -->
+      <section id="tab-habits" class="tab-content">
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+          <h3 style="font-size: 20px; font-weight: 700;">Daily Habits & Routines</h3>
+          <button class="btn-secondary" onclick="promptNewHabit()">+ Add Custom Habit</button>
+        </div>
+        <div class="habit-list" id="habitContainer">
+          <!-- Populated dynamically via JS -->
+        </div>
+      </section>
+
+      <!-- TAB 7: ANALYTICS -->
+      <section id="tab-analytics" class="tab-content">
+        <div class="glass-card chart-card">
+          <div class="card-title">90-Day Multi-Variable Correlation Analysis</div>
+          <div class="chart-wrapper" style="height: 380px;">
+            <canvas id="analyticsMultiChart"></canvas>
+          </div>
+        </div>
+      </section>
+
+      <!-- TAB 8: SETTINGS & PRIVACY -->
+      <section id="tab-settings" class="tab-content">
+        <div style="max-width: 700px;">
+          <div class="glass-card" style="margin-bottom: 24px;">
+            <h3 style="font-size: 18px; margin-bottom: 16px;">User Profile & Preferences</h3>
+            <form id="settingsForm" onsubmit="handleSaveSettings(event)">
+              <div class="form-group">
+                <label class="form-label">Full Name</label>
+                <input type="text" id="settingFullName" class="form-input" value="Shray Demo">
+              </div>
+              <div class="form-group">
+                <label class="form-label">Wellness Goal</label>
+                <input type="text" id="settingGoal" class="form-input" value="Reduce Workplace Stress & Improve HRV">
+              </div>
+              <button type="submit" class="btn-primary">Save Preferences</button>
+            </form>
+          </div>
+
+          <div class="glass-card" style="margin-bottom: 24px;">
+            <h3 style="font-size: 18px; margin-bottom: 16px;">Data Privacy & Governance (GDPR / HIPAA)</h3>
+            <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 16px;">
+              You own your personal health data. You can export a full copy or request complete account erasure at any time.
+            </p>
+            <div style="display: flex; gap: 12px;">
+              <button class="btn-secondary" onclick="exportUserData()">Export All Data (JSON)</button>
+              <button class="btn-danger" onclick="deleteAccountData()">Delete Account & All Data</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="js/app.js"></script>
+  <script>
+    feather.replace();
+  </script>
+</body>
+</html>
