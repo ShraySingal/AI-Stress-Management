@@ -1,50 +1,31 @@
-# Python cache & compiled files
-__pycache__/
-*.pyc
-*.pyo
-*.pyd
-*.egg-info/
-*.dist-info/
-
-# Virtual environment
-.venv/
-venv/
-env/
-
-# Data files (keep metadata, evaluation reports, and best_model.joblib tracked)
-dataset/*.csv
-
-# Large binary - ignored (105MB exceeds GitHub limit)
-capstone.db
-
-# Compressed archives
-files.zip
-*.zip
-
-# Screen recordings / media
-*.mp4
-*.avi
-*.mkv
-*.mov
-
-# IDE / editor artefacts
-.vscode/
-.idea/
-*.code-workspace
-
-# Build artefacts
+node_modules/
+.next/
+out/
 dist/
 build/
-*.egg
-
-# Temp files
+.cache/
+.env*
+next-env.d.ts
+*.tsbuildinfo
+*-debug.log*
+logs/
 *.log
-*.tmp
-*.bak
+.claude-replay.*
+.figma/runtime/
+.tmp-*
+/.figma/design-context/
 
-# OS files
-Thumbs.db
-.DS_Store
+# Platform-managed agentplat state, not project source. In the
+# client-initiated single-repo workspace layout (make's `Path: "."` spec) the
+# repo root IS the workspace root, so these land inside this repo rather than
+# beside it.
+/.plugins/
+/.opencode-skills/
 
-# pytest cache
+# Python & testing
+__pycache__/
+*.py[cod]
+*$py.class
+*.db
 .pytest_cache/
+

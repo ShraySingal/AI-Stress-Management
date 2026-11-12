@@ -2,449 +2,918 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MindPulse — Mental Health & Stress Analytics Platform</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>MindEase — Mental Health, Stress Intelligence & Wellbeing Platform</title>
   <meta name="description" content="AI-Powered multi-dimensional stress prediction, mood tracking, sleep & activity analytics platform.">
   <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
   <link rel="manifest" href="/manifest.webmanifest">
   <link rel="stylesheet" href="/css/style.css">
   
-  <!-- Chart.js for visualization -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <!-- Feather Icons -->
-  <script src="https://unpkg.com/feather-icons"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
 </head>
 <body>
-  <!-- Auth Modal -->
-  <div id="authModal" class="auth-overlay">
-    <div class="auth-card">
-      <div class="brand-logo" style="justify-content: center; margin-bottom: 20px;">
-        <div class="logo-icon">M</div>
-        <div class="brand-name" style="font-size: 24px;">MindPulse</div>
+  <div class="app-canvas">
+    <!-- Desktop Presentation Side Caption (Visible on desktop screens > 800px) -->
+    <aside class="desktop-caption">
+      <div class="brand-mark large">
+        <span></span><span></span><span></span><span></span><div></div>
       </div>
-
-      <!-- Login View -->
-      <div id="loginView">
-        <h3 style="text-align: center; margin-bottom: 8px; font-weight: 700;">Welcome Back</h3>
-        <p style="text-align: center; color: var(--text-muted); font-size: 13px; margin-bottom: 24px;">Sign in to access your personal stress analytics dashboard</p>
-        
-        <form id="loginForm" onsubmit="handleLogin(event)">
-          <div class="form-group">
-            <label class="form-label">Email Address</label>
-            <input type="email" id="loginEmail" class="form-input" value="demo@mindpulse.io" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Password</label>
-            <input type="password" id="loginPassword" class="form-input" value="Password123!" required>
-          </div>
-          <button type="submit" class="btn-primary" style="width: 100%; margin-top: 8px;">Sign In</button>
-          <button type="button" class="btn-secondary" onclick="autoDemoLogin()" style="width: 100%; margin-top: 10px;">Quick Demo Access</button>
-        </form>
-
-        <p style="text-align: center; color: var(--text-secondary); font-size: 13px; margin-top: 18px;">
-          Don't have an account? 
-          <a href="#" onclick="toggleAuthView('register'); return false;" style="color: var(--accent-purple); text-decoration: none; font-weight: 600;">Create one</a>
-        </p>
+      <div class="title-lg">MindEase</div>
+      <div class="body">
+        Understand your feelings. Find your balance. A calm, intelligent space to track your daily stress, build healthy habits, and reflect with personalized AI guidance.
       </div>
-
-      <!-- Register View -->
-      <div id="registerView" style="display: none;">
-        <h3 style="text-align: center; margin-bottom: 8px; font-weight: 700;">Create Account</h3>
-        <p style="text-align: center; color: var(--text-muted); font-size: 13px; margin-bottom: 20px;">Join MindPulse for personalized stress monitoring</p>
-        
-        <form id="registerForm" onsubmit="handleRegister(event)">
-          <div class="form-group">
-            <label class="form-label">Full Name</label>
-            <input type="text" id="regFullName" class="form-input" placeholder="e.g. Jane Doe" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Email Address</label>
-            <input type="email" id="regEmail" class="form-input" placeholder="jane@example.com" required>
-          </div>
-          <div class="form-group">
-            <label class="form-label">Password</label>
-            <input type="password" id="regPassword" class="form-input" placeholder="Min. 6 characters" minlength="6" required>
-          </div>
-          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
-            <div class="form-group">
-              <label class="form-label">Age</label>
-              <input type="number" id="regAge" class="form-input" placeholder="25" min="13" max="120">
-            </div>
-            <div class="form-group">
-              <label class="form-label">Occupation</label>
-              <input type="text" id="regOccupation" class="form-input" placeholder="Software Engineer">
-            </div>
-          </div>
-          <button type="submit" class="btn-primary" style="width: 100%; margin-top: 8px;">Create Account</button>
-        </form>
-
-        <p style="text-align: center; color: var(--text-secondary); font-size: 13px; margin-top: 18px;">
-          Already have an account? 
-          <a href="#" onclick="toggleAuthView('login'); return false;" style="color: var(--accent-purple); text-decoration: none; font-weight: 600;">Sign in</a>
-        </p>
-      </div>
-    </div>
-  </div>
-
-  <div class="app-container">
-    <!-- Sidebar -->
-    <aside class="sidebar">
-      <div class="brand-logo">
-        <div class="logo-icon">M</div>
-        <div class="brand-name">MindPulse</div>
-      </div>
-
-      <nav class="nav-menu">
-        <a class="nav-item active" onclick="switchTab('dashboard')">
-          <i data-feather="grid"></i>
-          <span>Dashboard</span>
-        </a>
-        <a class="nav-item" onclick="switchTab('prediction')">
-          <i data-feather="cpu"></i>
-          <span>AI Stress Risk</span>
-        </a>
-        <a class="nav-item" onclick="switchTab('mood')">
-          <i data-feather="smile"></i>
-          <span>Mood Log</span>
-        </a>
-        <a class="nav-item" onclick="switchTab('stress')">
-          <i data-feather="activity"></i>
-          <span>Stress Tracker</span>
-        </a>
-        <a class="nav-item" onclick="switchTab('sleep')">
-          <i data-feather="moon"></i>
-          <span>Sleep & Fitness</span>
-        </a>
-        <a class="nav-item" onclick="switchTab('habits')">
-          <i data-feather="check-square"></i>
-          <span>Habits</span>
-        </a>
-        <a class="nav-item" onclick="switchTab('analytics')">
-          <i data-feather="bar-chart-2"></i>
-          <span>Analytics</span>
-        </a>
-        <a class="nav-item" onclick="switchTab('settings')">
-          <i data-feather="settings"></i>
-          <span>Settings</span>
-        </a>
-      </nav>
-
-      <div class="user-profile-badge">
-        <div class="user-info">
-          <h4 id="userNameBadge">Shray Demo</h4>
-          <p id="userEmailBadge">demo@mindpulse.io</p>
-        </div>
-        <button class="btn-logout" onclick="logout()" title="Sign Out">
-          <i data-feather="log-out"></i>
-        </button>
+      <div class="desktop-pills">
+        <span>Daily Check-In</span>
+        <span>AI Stress Risk</span>
+        <span>CBT Coping Assistant</span>
+        <span>Breathing Pacer</span>
+        <span>Habit Streaks</span>
+        <span>Wearables Sync</span>
+        <span>Private & HIPAA / GDPR</span>
       </div>
     </aside>
 
-    <!-- Main Content View -->
-    <main class="main-content">
-      <header class="header-bar">
-        <div>
-          <h1 class="page-title" id="pageTitle">Dashboard</h1>
-          <p class="page-subtitle" id="pageSubtitle">Multi-dimensional health overview and today's summary</p>
+    <!-- Main Phone Shell Presentation -->
+    <div class="phone-shell has-nav" id="phoneShell">
+      
+      <!-- SCREEN 1: SPLASH SCREEN -->
+      <section class="splash" id="screen-splash" style="display: none;">
+        <div class="brand-mark large">
+          <span></span><span></span><span></span><span></span><div></div>
         </div>
-        <div style="display: flex; gap: 12px; align-items: center;">
-          <div class="date-pill" id="currentDatePill">Today, Oct 10</div>
-          <button class="btn-primary" onclick="openLogModal()">
-            <i data-feather="plus" style="vertical-align: middle; margin-right: 4px;"></i> Log Today
+        <div class="display">MindEase</div>
+        <div class="splash-subtitle">Understand your feelings. Find your balance.</div>
+        <div class="loading-dots">
+          <span></span><span></span><span></span>
+        </div>
+      </section>
+
+      <!-- SCREEN 2: AUTH SCREEN (Sign In & Sign Up) -->
+      <section class="auth-page" id="screen-signin" style="display: none;">
+        <div class="auth-brand">
+          <div class="brand-mark">
+            <span></span><span></span><span></span><span></span><div></div>
+          </div>
+          <div>
+            <div class="title-lg" id="authTitle">Welcome to MindEase</div>
+            <div class="body-sm" id="authSubtitle">Your calmer days start here.</div>
+          </div>
+        </div>
+
+        <form class="auth-form" id="authForm" onsubmit="handleAuthSubmit(event)">
+          <div id="signupNameGroup" style="display: none;">
+            <label class="field-label" for="authName">Name</label>
+            <input id="authName" class="input" placeholder="Your full name" autocomplete="name">
+          </div>
+
+          <label class="field-label" for="authEmail">Email</label>
+          <input id="authEmail" class="input" type="email" placeholder="you@example.com" value="demo@mindpulse.io" required>
+
+          <label class="field-label" for="authPassword">Password</label>
+          <div class="input-with-action">
+            <input id="authPassword" class="input" type="password" placeholder="At least 6 characters" value="Password123!" required>
+            <button type="button" onclick="togglePasswordVisibility()" aria-label="Toggle password">
+              <i data-lucide="eye" id="eyeIcon"></i>
+            </button>
+          </div>
+
+          <div id="authFeedback" class="auth-feedback" style="display: none;"></div>
+
+          <button type="submit" class="button button-primary full" id="authSubmitBtn" style="margin-top: 16px;">Sign In</button>
+          <button type="button" class="button button-secondary full" onclick="autoDemoLogin()" style="margin-top: 10px;">Quick Demo Access</button>
+
+          <div class="auth-footer" style="margin-top: 20px;">
+            <span id="authToggleText">New to MindEase?</span>
+            <button type="button" onclick="toggleAuthMode()" id="authToggleBtn">Create account</button>
+          </div>
+        </form>
+
+        <div class="demo-note" style="margin-top: 24px;">
+          <i data-lucide="shield" style="width: 15px; height: 15px;"></i> Private beta · Your health entries are encrypted.
+        </div>
+      </section>
+
+      <!-- SCREEN 3: HOME DASHBOARD -->
+      <section class="page home-page" id="screen-home">
+        <div class="home-top">
+          <div>
+            <div class="caption" id="homeTodayLabel">TODAY</div>
+            <div class="title-lg" id="homeGreeting">Good morning, Shray.</div>
+          </div>
+          <button class="avatar" onclick="switchScreen('profile')" aria-label="Open profile">
+            <span id="avatarInitials">SD</span>
+            <span></span>
           </button>
         </div>
-      </header>
 
-      <!-- TAB 1: DASHBOARD -->
-      <section id="tab-dashboard" class="tab-content active">
-        <!-- Metric Cards -->
-        <div class="card-grid">
-          <div class="glass-card">
-            <div class="card-title">
-              <span>Today's Stress Risk</span>
-              <i data-feather="shield-alert" style="color: var(--accent-purple);"></i>
-            </div>
-            <div style="display: flex; align-items: baseline;">
-              <span class="metric-value" id="dashRiskScore">38</span>
-              <span class="metric-unit">/ 100</span>
-            </div>
-            <div id="dashRiskBadge" class="metric-status status-moderate">Moderate Risk</div>
+        <!-- Daily Check-In Hero Card -->
+        <div class="card hero-card" id="homeCheckinHero">
+          <div class="hero-copy">
+            <div class="eyebrow light">DAILY CHECK-IN</div>
+            <div class="title-lg">How are you feeling today?</div>
+            <div class="body-sm light">A small pause can make a meaningful difference.</div>
+            <button class="button button-secondary" onclick="switchScreen('checkin')">
+              <i data-lucide="heart" style="width: 17px; height: 17px;"></i> Check In
+            </button>
           </div>
-
-          <div class="glass-card">
-            <div class="card-title">
-              <span>Mood Rating</span>
-              <i data-feather="smile" style="color: var(--accent-cyan);"></i>
-            </div>
-            <div style="display: flex; align-items: baseline;">
-              <span class="metric-value" id="dashMoodScore">7.5</span>
-              <span class="metric-unit">/ 10</span>
-            </div>
-            <div class="metric-status status-low">Positive Balance</div>
-          </div>
-
-          <div class="glass-card">
-            <div class="card-title">
-              <span>Sleep Duration</span>
-              <i data-feather="moon" style="color: var(--status-low);"></i>
-            </div>
-            <div style="display: flex; align-items: baseline;">
-              <span class="metric-value" id="dashSleepDuration">7.8</span>
-              <span class="metric-unit">hrs</span>
-            </div>
-            <div class="metric-status status-low">Restorative</div>
-          </div>
-
-          <div class="glass-card">
-            <div class="card-title">
-              <span>Active Streak</span>
-              <i data-feather="zap" style="color: var(--status-moderate);"></i>
-            </div>
-            <div style="display: flex; align-items: baseline;">
-              <span class="metric-value" id="dashStreak">14</span>
-              <span class="metric-unit">days</span>
-            </div>
-            <div class="metric-status status-low">Top 5% Consistent</div>
+          <div class="hero-flower">
+            <span></span><span></span><span></span><span></span><div></div>
           </div>
         </div>
 
-        <!-- Main Chart & AI Insights -->
-        <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 24px;">
-          <div class="glass-card chart-card">
-            <div class="card-title">
-              <span>7-Day Stress vs Sleep Trend</span>
-              <select class="form-select" style="width: auto; padding: 4px 10px; font-size: 12px;" onchange="updateDashboardChart(this.value)">
-                <option value="7">Last 7 Days</option>
-                <option value="30">Last 30 Days</option>
-              </select>
-            </div>
-            <div class="chart-wrapper">
-              <canvas id="dashboardTrendChart"></canvas>
+        <!-- Wellness Outlook Card -->
+        <div class="section-heading">
+          <div>
+            <div class="title-sm">Your wellness outlook</div>
+            <div class="caption" id="outlookSubtitle">Based on your saved entries</div>
+          </div>
+          <button class="text-button" onclick="switchScreen('prediction')">Details</button>
+        </div>
+
+        <div class="card outlook-card card-clickable" onclick="switchScreen('prediction')">
+          <div class="ring" style="width: 122px; height: 122px;">
+            <svg viewBox="0 0 100 100" aria-label="Stress outlook score">
+              <circle class="ring-track" cx="50" cy="50" r="43"></circle>
+              <circle class="ring-value" id="outlookRingValue" cx="50" cy="50" r="43" stroke-dasharray="270.17" stroke-dashoffset="130"></circle>
+            </svg>
+            <div class="ring-copy">
+              <strong id="outlookScoreNum">38</strong>
+              <span>/100</span>
+              <small id="outlookScoreLabel">Moderate</small>
             </div>
           </div>
+          <div class="outlook-copy">
+            <div class="caption">TOMORROW'S OUTLOOK</div>
+            <div class="title-md" id="outlookRiskText">38% moderate risk</div>
+            <div class="body-sm">AI multi-dimensional forecast based on sleep, activity, and HRV.</div>
+            <div class="trend-pill">
+              <i data-lucide="activity" style="width: 14px; height: 14px;"></i> Latest stress: <span id="latestStressVal">3.5</span>/10
+            </div>
+          </div>
+          <i data-lucide="chevron-right" class="card-chevron"></i>
+        </div>
 
-          <div class="glass-card">
-            <div class="card-title">
-              <span>AI Recommendations</span>
-              <i data-feather="sparkles" style="color: var(--accent-purple);"></i>
+        <!-- 4 Key Health Metric Cards -->
+        <div class="stat-grid">
+          <div class="card card-clickable" onclick="switchScreen('checkin')">
+            <div class="stat-icon mood" id="statMoodEmoji">😌</div>
+            <div class="caption">MOOD</div>
+            <div class="title-sm" id="statMoodName">Calm</div>
+            <div class="microcopy">Latest check-in</div>
+          </div>
+          <div class="card card-clickable" onclick="switchScreen('wearables')">
+            <div class="stat-icon sleep"><i data-lucide="moon"></i></div>
+            <div class="caption">SLEEP</div>
+            <div class="title-sm" id="statSleepVal">7h 45m</div>
+            <div class="microcopy positive">88% quality</div>
+          </div>
+          <div class="card card-clickable" onclick="switchScreen('wearables')">
+            <div class="stat-icon activity"><i data-lucide="zap"></i></div>
+            <div class="caption">ACTIVITY</div>
+            <div class="title-sm" id="statStepsVal">8,420</div>
+            <div class="microcopy">Steps today</div>
+          </div>
+          <div class="card card-clickable" onclick="switchScreen('habits')">
+            <div class="stat-icon habits"><i data-lucide="check"></i></div>
+            <div class="caption">HABITS</div>
+            <div class="title-sm" id="statHabitsVal">4/5</div>
+            <div class="microcopy positive">5-day streak</div>
+          </div>
+        </div>
+
+        <!-- Quick Actions Grid -->
+        <div class="section-heading">
+          <div class="title-sm">Quick actions</div>
+        </div>
+        <div class="quick-grid">
+          <button class="card quick-action" onclick="switchScreen('checkin')">
+            <i data-lucide="heart"></i>
+            <span>Log Mood</span>
+          </button>
+          <button class="card quick-action" onclick="switchScreen('breathing')">
+            <i data-lucide="wind"></i>
+            <span>Breathing</span>
+          </button>
+          <button class="card quick-action" onclick="switchScreen('chat')">
+            <i data-lucide="message-circle"></i>
+            <span>AI Coping</span>
+          </button>
+          <button class="card quick-action" onclick="switchScreen('assessment')">
+            <i data-lucide="brain"></i>
+            <span>PSS Test</span>
+          </button>
+        </div>
+
+        <!-- Recommendation Feature Card -->
+        <div class="card recommendation-feature card-clickable" onclick="switchScreen('breathing')">
+          <div class="recommend-icon"><i data-lucide="wind"></i></div>
+          <div class="grow">
+            <div class="duration">5 MIN · CALMING</div>
+            <div class="title-md">Box Breathing Exercise</div>
+            <div class="body-sm">Regulate your autonomic nervous system and lower elevated cortisol levels.</div>
+          </div>
+          <div class="round-play"><i data-lucide="play" style="fill: currentColor; width: 14px;"></i></div>
+        </div>
+
+        <!-- Crisis Support Banner -->
+        <div class="support-banner card-clickable" onclick="switchScreen('support')">
+          <i data-lucide="phone" style="width: 18px; height: 18px;"></i>
+          <div class="grow">
+            <strong>Need immediate support?</strong>
+            <div>Access free, confidential 24/7 crisis helplines and resources.</div>
+          </div>
+          <i data-lucide="chevron-right" style="width: 16px;"></i>
+        </div>
+      </section>
+
+      <!-- SCREEN 4: DAILY CHECK-IN -->
+      <section class="page" id="screen-checkin" style="display: none;">
+        <div class="page-header">
+          <div class="header-side">
+            <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
+              <i data-lucide="arrow-left"></i>
+            </button>
+          </div>
+          <div class="header-copy">
+            <div class="title-md">Daily Check-In</div>
+            <div class="caption">Track your feelings & state</div>
+          </div>
+          <div class="header-side header-action"></div>
+        </div>
+
+        <div class="checkin-intro">
+          <div class="eyebrow">STEP 1 OF 3</div>
+          <div class="title-lg">How are you feeling right now?</div>
+          <div class="body-sm">Tune in to your current emotional state.</div>
+        </div>
+
+        <!-- 5 Mood Emojis -->
+        <div class="mood-row">
+          <button class="mood-option" onclick="selectMood('Very Happy', '😊', this)">
+            <span style="font-size: 28px;">😊</span>
+            <span class="microcopy">Very Happy</span>
+          </button>
+          <button class="mood-option active" onclick="selectMood('Calm', '😌', this)">
+            <span style="font-size: 28px;">😌</span>
+            <span class="microcopy">Calm</span>
+          </button>
+          <button class="mood-option" onclick="selectMood('Neutral', '😐', this)">
+            <span style="font-size: 28px;">😐</span>
+            <span class="microcopy">Neutral</span>
+          </button>
+          <button class="mood-option" onclick="selectMood('Anxious', '😟', this)">
+            <span style="font-size: 28px;">😟</span>
+            <span class="microcopy">Anxious</span>
+          </button>
+          <button class="mood-option" onclick="selectMood('Sad', '😔', this)">
+            <span style="font-size: 28px;">😔</span>
+            <span class="microcopy">Sad</span>
+          </button>
+        </div>
+
+        <!-- Sliders -->
+        <div class="form-stack" style="margin-top: 24px;">
+          <div class="field-heading">
+            <label class="field-label">Stress Level: <strong id="stressSliderVal">4</strong> / 10</label>
+            <div class="caption">1 = Very Relaxed, 10 = Severe Stress</div>
+          </div>
+          <input type="range" class="range" id="checkinStressSlider" min="1" max="10" value="4" oninput="document.getElementById('stressSliderVal').innerText = this.value">
+
+          <div class="field-heading" style="margin-top: 18px;">
+            <label class="field-label">Energy Level: <strong id="energySliderVal">7</strong> / 10</label>
+            <div class="caption">1 = Exhausted, 10 = Fully Energized</div>
+          </div>
+          <input type="range" class="range" id="checkinEnergySlider" min="1" max="10" value="7" oninput="document.getElementById('energySliderVal').innerText = this.value">
+
+          <!-- Tags -->
+          <div class="field-heading" style="margin-top: 20px;">
+            <label class="field-label">What is influencing your mood?</label>
+          </div>
+          <div class="tag-wrap">
+            <button type="button" class="tag active" onclick="toggleTag(this)">Work</button>
+            <button type="button" class="tag" onclick="toggleTag(this)">Study</button>
+            <button type="button" class="tag" onclick="toggleTag(this)">Family</button>
+            <button type="button" class="tag active" onclick="toggleTag(this)">Health</button>
+            <button type="button" class="tag" onclick="toggleTag(this)">Social</button>
+            <button type="button" class="tag" onclick="toggleTag(this)">Rest</button>
+            <button type="button" class="tag" onclick="toggleTag(this)">Sleep</button>
+            <button type="button" class="tag" onclick="toggleTag(this)">Finances</button>
+          </div>
+
+          <!-- Notes Textarea -->
+          <div class="field-heading" style="margin-top: 20px;">
+            <label class="field-label">Daily Notes / Reflections</label>
+          </div>
+          <textarea class="textarea" id="checkinNotes" placeholder="Describe any thoughts or challenges you are experiencing today..."></textarea>
+
+          <button class="button button-primary full" style="margin-top: 24px;" onclick="submitDailyCheckIn()">
+            Save Daily Check-In
+          </button>
+        </div>
+      </section>
+
+      <!-- SCREEN 5: AI STRESS RISK PREDICTION -->
+      <section class="page" id="screen-prediction" style="display: none;">
+        <div class="page-header">
+          <div class="header-side">
+            <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
+              <i data-lucide="arrow-left"></i>
+            </button>
+          </div>
+          <div class="header-copy">
+            <div class="title-md">AI Stress Risk</div>
+            <div class="caption">Multi-Factor Predictive Intelligence</div>
+          </div>
+          <div class="header-side header-action"></div>
+        </div>
+
+        <div class="prediction-hero" style="text-align: center; padding: 20px 0 16px;">
+          <div class="ring" style="width: 140px; height: 140px; margin: auto;">
+            <svg viewBox="0 0 100 100">
+              <circle class="ring-track" cx="50" cy="50" r="43"></circle>
+              <circle class="ring-value" id="predRingValue" cx="50" cy="50" r="43" stroke-dasharray="270.17" stroke-dashoffset="135"></circle>
+            </svg>
+            <div class="ring-copy">
+              <strong id="predScoreVal">38%</strong>
+              <small id="predCategoryVal">Moderate Risk</small>
             </div>
-            <div class="recommendation-list" id="dashboardRecList">
-              <div class="rec-item">
-                <div class="rec-title">Optimal Sleep Recovery Window</div>
-                <div class="rec-body">Your HRV increased by 14% after sleeping 7.5+ hours. Maintain 23:00 bedtime today.</div>
-              </div>
-              <div class="rec-item">
-                <div class="rec-title">Evening Wind-down Practice</div>
-                <div class="rec-body">Workload stress peaks on Wednesdays. Schedule a 15-minute mindfulness session at 20:00.</div>
-              </div>
+          </div>
+          <div class="title-lg" style="margin-top: 14px;">Next-Day Stress Forecast</div>
+          <div class="body-sm">Predicted from XGBoost model trained on multi-sensor physiological & behavioral metrics.</div>
+        </div>
+
+        <div class="disclaimer">
+          <i data-lucide="shield" style="width: 16px; height: 16px;"></i>
+          <span>Clinical Disclaimer: For proactive wellness tracking only. Not a medical or diagnostic substitute.</span>
+        </div>
+
+        <div class="section-heading">
+          <div class="title-sm">Primary Risk Contributors</div>
+        </div>
+
+        <div class="factor-list">
+          <div class="card factor-card">
+            <div class="stat-icon sleep"><i data-lucide="moon"></i></div>
+            <div class="grow">
+              <div class="title-sm">Sleep Restoration</div>
+              <div class="body-sm">7h 45m · HRV 58ms indicates healthy parasympathetic recovery.</div>
             </div>
+            <div class="impact positive">-15% Risk</div>
+          </div>
+
+          <div class="card factor-card">
+            <div class="stat-icon mood"><i data-lucide="activity"></i></div>
+            <div class="grow">
+              <div class="title-sm">Workload & Screen Time</div>
+              <div class="body-sm">8.5 hrs continuous screen exposure with few breaks.</div>
+            </div>
+            <div class="impact amber">+22% Risk</div>
+          </div>
+
+          <div class="card factor-card">
+            <div class="stat-icon activity"><i data-lucide="zap"></i></div>
+            <div class="grow">
+              <div class="title-sm">Physical Movement</div>
+              <div class="body-sm">8,420 steps logged today mitigating tension buildup.</div>
+            </div>
+            <div class="impact positive">-10% Risk</div>
+          </div>
+        </div>
+
+        <div class="section-heading" style="margin-top: 24px;">
+          <div class="title-sm">Recommended Action Plan</div>
+        </div>
+
+        <div class="card plan-card">
+          <div class="plan-icon"><i data-lucide="wind"></i></div>
+          <div class="grow">
+            <div class="eyebrow">EVENING PROTOCOL</div>
+            <div class="title-md">10-Minute Wind Down</div>
+            <div class="body-sm">Power down screens 45 minutes before sleep and perform box breathing.</div>
+          </div>
+          <button class="button button-secondary" onclick="switchScreen('breathing')">Start</button>
+        </div>
+      </section>
+
+      <!-- SCREEN 6: INSIGHTS & ANALYTICS -->
+      <section class="page" id="screen-insights" style="display: none;">
+        <div class="page-header">
+          <div class="header-side">
+            <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
+              <i data-lucide="arrow-left"></i>
+            </button>
+          </div>
+          <div class="header-copy">
+            <div class="title-md">Trends & Insights</div>
+            <div class="caption">Longitudinal Wellness Analytics</div>
+          </div>
+          <div class="header-side header-action"></div>
+        </div>
+
+        <div class="segmented" style="display: flex; gap: 8px; margin-bottom: 20px;">
+          <button class="button button-primary active" style="flex: 1;" onclick="setInsightsRange('7d', this)">7 Days</button>
+          <button class="button button-ghost" style="flex: 1;" onclick="setInsightsRange('30d', this)">30 Days</button>
+          <button class="button button-ghost" style="flex: 1;" onclick="setInsightsRange('90d', this)">90 Days</button>
+        </div>
+
+        <div class="card">
+          <div class="section-heading" style="margin-bottom: 12px;">
+            <div>
+              <div class="title-sm">Stress Trend Line</div>
+              <div class="caption">Daily calculated stress index</div>
+            </div>
+          </div>
+          <!-- SVG Trend Line Chart -->
+          <div class="chart-wrap">
+            <svg viewBox="0 0 320 150" role="img" aria-label="Stress trend line chart">
+              <line x1="28" x2="310" y1="40" y2="40" class="grid-line" stroke="var(--line)"></line>
+              <line x1="28" x2="310" y1="80" y2="80" class="grid-line" stroke="var(--line)"></line>
+              <line x1="28" x2="310" y1="120" y2="120" class="grid-line" stroke="var(--line)"></line>
+              <polyline points="30,110 75,95 120,65 165,85 210,50 255,70 300,45" class="chart-area" fill="rgba(81, 70, 229, 0.08)"></polyline>
+              <polyline points="30,110 75,95 120,65 165,85 210,50 255,70 300,45" class="chart-line" fill="none" stroke="var(--primary)" stroke-width="3"></polyline>
+              <circle cx="30" cy="110" r="4" class="chart-dot" fill="var(--primary)"></circle>
+              <circle cx="75" cy="95" r="4" class="chart-dot" fill="var(--primary)"></circle>
+              <circle cx="120" cy="65" r="4" class="chart-dot" fill="var(--primary)"></circle>
+              <circle cx="165" cy="85" r="4" class="chart-dot" fill="var(--primary)"></circle>
+              <circle cx="210" cy="50" r="4" class="chart-dot" fill="var(--primary)"></circle>
+              <circle cx="255" cy="70" r="4" class="chart-dot" fill="var(--primary)"></circle>
+              <circle cx="300" cy="45" r="4" class="chart-dot" fill="var(--primary)"></circle>
+            </svg>
+            <div class="chart-labels" style="display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-top: 8px;">
+              <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="section-heading" style="margin-top: 24px;">
+          <div class="title-sm">Correlations & Triggers</div>
+        </div>
+
+        <div class="card">
+          <div class="trigger-row" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line);">
+            <div>
+              <strong>Work Deadlines</strong>
+              <div class="caption">Associated with 68% of elevated stress events</div>
+            </div>
+            <span class="microcopy amber">High Impact</span>
+          </div>
+          <div class="trigger-row" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line);">
+            <div>
+              <strong>Sleep Deficit (&lt;6.5 hrs)</strong>
+              <div class="caption">Increases next-day anxiety probability by 2.4x</div>
+            </div>
+            <span class="microcopy amber">High Impact</span>
+          </div>
+          <div class="trigger-row" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0;">
+            <div>
+              <strong>Daily Walking (&gt;7,500 steps)</strong>
+              <div class="caption">Reduces average stress score by 18 points</div>
+            </div>
+            <span class="microcopy positive">Protective</span>
           </div>
         </div>
       </section>
 
-      <!-- TAB 2: AI STRESS RISK PREDICTION -->
-      <section id="tab-prediction" class="tab-content">
-        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 24px; margin-bottom: 28px;">
-          <div class="glass-card gauge-card">
-            <div class="card-title" style="width: 100%;">
-              <span>Next-Day Stress Risk</span>
-              <i data-feather="cpu"></i>
-            </div>
-            <div class="gauge-circle" id="riskGaugeCircle">
-              <div class="gauge-inner">
-                <span style="font-size: 28px; font-weight: 800;" id="predRiskScore">42</span>
-                <span style="font-size: 11px; color: var(--text-muted);">RISK SCORE</span>
-              </div>
-            </div>
-            <div id="predRiskBadge" class="metric-status status-moderate" style="margin-bottom: 12px;">MODERATE RISK</div>
-            <p style="font-size: 12px; color: var(--text-muted);" id="predConfidenceText">Model Confidence: 89.2% (RandomForest v1.0)</p>
-            <button class="btn-primary" style="margin-top: 16px; width: 100%;" onclick="runMLPrediction()">Re-Calculate Risk</button>
+      <!-- SCREEN 7: AI SUPPORT CHAT -->
+      <section class="page chat-page" id="screen-chat" style="display: none;">
+        <div class="page-header">
+          <div class="header-side">
+            <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
+              <i data-lucide="arrow-left"></i>
+            </button>
           </div>
+          <div class="header-copy">
+            <div class="title-md">AI Coping Assistant</div>
+            <div class="caption"><span class="online-dot" style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--positive); margin-right: 4px;"></span> Online · Evidence-Based CBT</div>
+          </div>
+          <div class="header-side header-action"></div>
+        </div>
 
-          <div class="glass-card">
-            <div class="card-title">
-              <span>Risk Factor Breakdown (ML Feature Attribution)</span>
-              <span style="font-size: 12px; color: var(--text-muted);">Explainable AI</span>
+        <div class="chat-safety" style="background: var(--primary-soft); color: var(--primary); padding: 8px 12px; border-radius: 12px; font-size: 11px; margin-bottom: 12px;">
+          <i data-lucide="shield" style="width: 14px; height: 14px; vertical-align: middle;"></i> Private & confidential session. In case of emergency, please dial 988.
+        </div>
+
+        <div class="chat-scroll" id="chatMessageStream" style="flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; padding-bottom: 16px; min-height: 280px; max-height: 380px;">
+          <!-- Assistant welcome -->
+          <div class="message-row" style="display: flex; gap: 10px; align-items: flex-start;">
+            <div class="bot-avatar" style="width: 32px; height: 32px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; color: white;">
+              <i data-lucide="sparkles" style="width: 16px; height: 16px;"></i>
             </div>
-            <div style="margin-top: 16px;">
-              <canvas id="factorImpactChart" style="max-height: 250px;"></canvas>
+            <div class="bubble" style="background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 12px 16px; max-width: 80%; font-size: 13px; line-height: 1.5;">
+              Hi Shray! I'm your MindEase wellness companion. I'm here to listen, offer cognitive reframing techniques, and guide you through calming exercises. How are you feeling right now?
             </div>
           </div>
         </div>
 
-        <div class="glass-card">
-          <div class="card-title">Targeted Interventions & Recommendations</div>
-          <div class="recommendation-list" id="predictionRecList">
-            <!-- Populated via JS -->
+        <!-- Quick Prompts -->
+        <div class="prompt-list" style="display: flex; gap: 8px; overflow-x: auto; padding: 8px 0; margin-bottom: 8px;">
+          <button class="button button-ghost" style="font-size: 11px; white-space: nowrap; padding: 6px 12px;" onclick="sendQuickPrompt('Help me calm down right now')">Calm me down</button>
+          <button class="button button-ghost" style="font-size: 11px; white-space: nowrap; padding: 6px 12px;" onclick="sendQuickPrompt('I feel overwhelmed with work')">Work stress</button>
+          <button class="button button-ghost" style="font-size: 11px; white-space: nowrap; padding: 6px 12px;" onclick="sendQuickPrompt('Can you guide me through 4-7-8 breathing?')">Breathing guide</button>
+          <button class="button button-ghost" style="font-size: 11px; white-space: nowrap; padding: 6px 12px;" onclick="sendQuickPrompt('Tips for better sleep tonight')">Sleep tips</button>
+        </div>
+
+        <!-- Compose Bar -->
+        <form class="chat-compose" onsubmit="handleChatSubmit(event)" style="display: flex; gap: 8px; padding-top: 8px; border-top: 1px solid var(--line);">
+          <input class="input" id="chatInput" placeholder="Message MindEase Assistant..." style="flex: 1;" autocomplete="off">
+          <button type="submit" class="button button-primary send-button" style="width: 44px; height: 44px; border-radius: 50%; padding: 0; display: flex; align-items: center; justify-content: center;">
+            <i data-lucide="send" style="width: 18px; height: 18px;"></i>
+          </button>
+        </form>
+      </section>
+
+      <!-- SCREEN 8: BREATHING PACER -->
+      <section class="page breathing-page" id="screen-breathing" style="display: none;">
+        <div class="page-header">
+          <div class="header-side">
+            <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
+              <i data-lucide="arrow-left"></i>
+            </button>
+          </div>
+          <div class="header-copy">
+            <div class="title-md">Breathing Pacer</div>
+            <div class="caption">Vagal Nerve Stimulation</div>
+          </div>
+          <div class="header-side header-action"></div>
+        </div>
+
+        <div class="duration-picker" style="display: flex; gap: 8px; margin-bottom: 24px;">
+          <button class="button button-primary active" id="btnModeBox" style="flex: 1;" onclick="setBreathingMode('box', this)">Box (4-4-4-4)</button>
+          <button class="button button-ghost" id="btnMode478" style="flex: 1;" onclick="setBreathingMode('478', this)">Relax (4-7-8)</button>
+        </div>
+
+        <!-- Breathing Animated Visualizer -->
+        <div class="breathing-stage" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 320px; position: relative;">
+          <div class="breathing-halo" id="breathHalo" style="position: absolute; width: 220px; height: 220px; border-radius: 50%; background: var(--primary-soft); transition: transform 4s ease-in-out; transform: scale(0.8);"></div>
+          <div class="breathing-circle" id="breathCircle" style="position: absolute; width: 150px; height: 150px; border-radius: 50%; background: var(--primary); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; transition: transform 4s ease-in-out; transform: scale(0.9); box-shadow: 0 10px 30px rgba(81, 70, 229, 0.4);">
+            <strong id="breathAction" style="font-size: 18px; letter-spacing: 1px;">IN-HALE</strong>
+            <span id="breathCount" style="font-size: 28px; font-weight: 700; margin-top: 4px;">4</span>
+          </div>
+        </div>
+
+        <div class="body-sm" id="breathInstruction" style="text-align: center; color: var(--muted); margin-bottom: 24px;">
+          Breathe in slowly through your nose, filling your diaphragm.
+        </div>
+
+        <div class="breath-controls" style="display: flex; gap: 12px;">
+          <button class="button button-primary full" id="breathToggleBtn" onclick="toggleBreathingPacer()">
+            Start Session
+          </button>
+          <button class="button button-ghost" onclick="resetBreathingPacer()">
+            Reset
+          </button>
+        </div>
+      </section>
+
+      <!-- SCREEN 9: HABITS TRACKER -->
+      <section class="page" id="screen-habits" style="display: none;">
+        <div class="page-header">
+          <div class="header-side">
+            <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
+              <i data-lucide="arrow-left"></i>
+            </button>
+          </div>
+          <div class="header-copy">
+            <div class="title-md">Daily Habits</div>
+            <div class="caption">Streaks & Wellness Routines</div>
+          </div>
+          <div class="header-side header-action"></div>
+        </div>
+
+        <div class="card habit-summary" style="margin-bottom: 20px;">
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <div>
+              <div class="eyebrow">THIS WEEK</div>
+              <div class="title-md"><span id="habitsCompletedNum">4</span> of 5 Completed Today</div>
+            </div>
+            <div class="streak" style="display: flex; align-items: center; gap: 6px; color: var(--amber); font-weight: 700;">
+              <i data-lucide="flame" style="width: 18px; height: 18px;"></i> 5 Days
+            </div>
+          </div>
+          <!-- Weekly circle dots -->
+          <div class="habit-week" style="display: flex; justify-content: space-between; margin-top: 14px;">
+            <div style="text-align: center;"><div class="score-badge" style="width: 28px; height: 28px; border-radius: 50%; background: var(--positive-soft); color: var(--positive); display: flex; align-items: center; justify-content: center; margin: auto;">✓</div><small class="caption">M</small></div>
+            <div style="text-align: center;"><div class="score-badge" style="width: 28px; height: 28px; border-radius: 50%; background: var(--positive-soft); color: var(--positive); display: flex; align-items: center; justify-content: center; margin: auto;">✓</div><small class="caption">T</small></div>
+            <div style="text-align: center;"><div class="score-badge" style="width: 28px; height: 28px; border-radius: 50%; background: var(--positive-soft); color: var(--positive); display: flex; align-items: center; justify-content: center; margin: auto;">✓</div><small class="caption">W</small></div>
+            <div style="text-align: center;"><div class="score-badge" style="width: 28px; height: 28px; border-radius: 50%; background: var(--positive-soft); color: var(--positive); display: flex; align-items: center; justify-content: center; margin: auto;">✓</div><small class="caption">T</small></div>
+            <div style="text-align: center;"><div class="score-badge" style="width: 28px; height: 28px; border-radius: 50%; background: var(--primary); color: white; display: flex; align-items: center; justify-content: center; margin: auto;">✓</div><small class="caption">F</small></div>
+            <div style="text-align: center;"><div class="score-badge" style="width: 28px; height: 28px; border-radius: 50%; background: var(--line); color: var(--muted); display: flex; align-items: center; justify-content: center; margin: auto;">-</div><small class="caption">S</small></div>
+            <div style="text-align: center;"><div class="score-badge" style="width: 28px; height: 28px; border-radius: 50%; background: var(--line); color: var(--muted); display: flex; align-items: center; justify-content: center; margin: auto;">-</div><small class="caption">S</small></div>
+          </div>
+        </div>
+
+        <div class="habit-list" style="display: flex; flex-direction: column; gap: 12px;" id="habitsListContainer">
+          <!-- Dynamic Habits injected by JS -->
+        </div>
+      </section>
+
+      <!-- SCREEN 10: WEARABLES SYNC -->
+      <section class="page" id="screen-wearables" style="display: none;">
+        <div class="page-header">
+          <div class="header-side">
+            <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
+              <i data-lucide="arrow-left"></i>
+            </button>
+          </div>
+          <div class="header-copy">
+            <div class="title-md">Wearables & Sensor Sync</div>
+            <div class="caption">Biometric Feed Integration</div>
+          </div>
+          <div class="header-side header-action"></div>
+        </div>
+
+        <div class="card device-card" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
+          <div style="display: flex; gap: 12px; align-items: center;">
+            <div class="device-icon" style="width: 44px; height: 44px; border-radius: 12px; background: var(--primary-soft); color: var(--primary); display: flex; align-items: center; justify-content: center;">
+              <i data-lucide="watch"></i>
+            </div>
+            <div>
+              <div class="title-sm">Apple Health & Watch</div>
+              <div class="body-sm"><span class="status-dot" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--positive); margin-right: 4px;"></span> Connected · Synced 5m ago</div>
+            </div>
+          </div>
+          <button class="button button-secondary" onclick="simulateWearableSync(this)">Sync</button>
+        </div>
+
+        <div class="section-heading">
+          <div class="title-sm">Current Biometric Readings</div>
+        </div>
+
+        <div class="stat-grid">
+          <div class="card">
+            <div class="stat-icon activity"><i data-lucide="heart"></i></div>
+            <div class="caption">RESTING HR</div>
+            <div class="title-sm">64 bpm</div>
+            <div class="microcopy positive">Optimal</div>
+          </div>
+          <div class="card">
+            <div class="stat-icon habits"><i data-lucide="activity"></i></div>
+            <div class="caption">HRV (RMSSD)</div>
+            <div class="title-sm">58 ms</div>
+            <div class="microcopy positive">+6ms vs baseline</div>
+          </div>
+          <div class="card">
+            <div class="stat-icon sleep"><i data-lucide="moon"></i></div>
+            <div class="caption">SLEEP</div>
+            <div class="title-sm">7h 45m</div>
+            <div class="microcopy">1h 40m Deep REM</div>
+          </div>
+          <div class="card">
+            <div class="stat-icon activity"><i data-lucide="footprints"></i></div>
+            <div class="caption">STEPS</div>
+            <div class="title-sm">8,420</div>
+            <div class="microcopy">Goal: 10,000</div>
           </div>
         </div>
       </section>
 
-      <!-- TAB 3: MOOD LOG -->
-      <section id="tab-mood" class="tab-content">
-        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 24px;">
-          <div class="glass-card">
-            <h3 style="font-size: 18px; margin-bottom: 16px;">Log Today's Mood</h3>
-            <form id="moodForm" onsubmit="handleMoodSubmit(event)">
-              <div class="form-group">
-                <label class="form-label">Mood Score (1 - 10)</label>
-                <input type="range" id="moodScoreInput" min="1" max="10" value="7" class="form-input" oninput="document.getElementById('moodValDisplay').innerText = this.value">
-                <div style="text-align: right; font-weight: 700; color: var(--accent-purple);" id="moodValDisplay">7</div>
-              </div>
-              <div class="form-group">
-                <label class="form-label">Dominant Emotion</label>
-                <select id="moodEmotionInput" class="form-select">
-                  <option value="Calm">Calm & Content</option>
-                  <option value="Focused">Focused & Productive</option>
-                  <option value="Anxious">Anxious / Overwhelmed</option>
-                  <option value="Tired">Fatigued / Low Energy</option>
-                  <option value="Happy">Joyful / Energized</option>
-                </select>
-              </div>
-              <div class="form-group">
-                <label class="form-label">Notes & Reflection</label>
-                <textarea id="moodNotesInput" class="form-textarea" rows="3" placeholder="What factors influenced your mood today?"></textarea>
-              </div>
-              <button type="submit" class="btn-primary" style="width: 100%;">Save Mood Entry</button>
-            </form>
+      <!-- SCREEN 11: CLINICAL STRESS ASSESSMENT (PSS-10) -->
+      <section class="page" id="screen-assessment" style="display: none;">
+        <div class="page-header">
+          <div class="header-side">
+            <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
+              <i data-lucide="arrow-left"></i>
+            </button>
           </div>
+          <div class="header-copy">
+            <div class="title-md">PSS-10 Assessment</div>
+            <div class="caption">Perceived Stress Scale</div>
+          </div>
+          <div class="header-side header-action"></div>
+        </div>
 
-          <div class="glass-card">
-            <div class="card-title">Mood Score History (30 Days)</div>
-            <div class="chart-wrapper">
-              <canvas id="moodTrendChart"></canvas>
+        <div class="card" style="margin-bottom: 20px;">
+          <div class="eyebrow" id="pssQuestionCounter">QUESTION 1 OF 10</div>
+          <div class="title-lg" id="pssQuestionText" style="margin: 12px 0 16px;">
+            In the last month, how often have you been upset because of something that happened unexpectedly?
+          </div>
+          <div class="radio-grid" style="display: flex; flex-direction: column; gap: 8px;">
+            <button class="button button-ghost" style="text-align: left; justify-content: flex-start;" onclick="answerPSS(0)">0 - Never</button>
+            <button class="button button-ghost" style="text-align: left; justify-content: flex-start;" onclick="answerPSS(1)">1 - Almost Never</button>
+            <button class="button button-ghost" style="text-align: left; justify-content: flex-start;" onclick="answerPSS(2)">2 - Sometimes</button>
+            <button class="button button-ghost" style="text-align: left; justify-content: flex-start;" onclick="answerPSS(3)">3 - Fairly Often</button>
+            <button class="button button-ghost" style="text-align: left; justify-content: flex-start;" onclick="answerPSS(4)">4 - Very Often</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- SCREEN 12: CRISIS SUPPORT & HELPLINES -->
+      <section class="page" id="screen-support" style="display: none;">
+        <div class="page-header">
+          <div class="header-side">
+            <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
+              <i data-lucide="arrow-left"></i>
+            </button>
+          </div>
+          <div class="header-copy">
+            <div class="title-md">Crisis Resources</div>
+            <div class="caption">Immediate & Confidential Support</div>
+          </div>
+          <div class="header-side header-action"></div>
+        </div>
+
+        <div class="card" style="border-left: 4px solid var(--coral); margin-bottom: 16px;">
+          <div class="title-md" style="color: var(--coral);">Emergency / Urgent Support</div>
+          <div class="body-sm" style="margin: 6px 0 14px;">
+            If you or someone you know is in immediate danger or experiencing severe emotional distress, please reach out now.
+          </div>
+          <div style="display: flex; gap: 10px;">
+            <a href="tel:988" class="button button-danger" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+              <i data-lucide="phone"></i> Call 988 Lifeline
+            </a>
+            <a href="sms:741741" class="button button-secondary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+              Text HOME to 741741
+            </a>
+          </div>
+        </div>
+
+        <div class="section-heading">
+          <div class="title-sm">Free Helplines</div>
+        </div>
+
+        <div class="card" style="margin-bottom: 12px;">
+          <div class="title-sm">988 Suicide & Crisis Lifeline</div>
+          <div class="body-sm">Free, confidential 24/7 support available across the US & Canada.</div>
+          <a href="tel:988" class="text-button" style="margin-top: 8px; display: inline-block;">Call or Text 988</a>
+        </div>
+
+        <div class="card" style="margin-bottom: 12px;">
+          <div class="title-sm">Crisis Text Line</div>
+          <div class="body-sm">Connect with a volunteer crisis counselor 24/7 over SMS.</div>
+          <a href="sms:741741" class="text-button" style="margin-top: 8px; display: inline-block;">Text 741741</a>
+        </div>
+
+        <div class="card">
+          <div class="title-sm">International Helplines</div>
+          <div class="body-sm">Find localized helplines in the UK (111), India (KIRAN 1800-599-0019), and worldwide.</div>
+          <a href="https://findahelpline.com" target="_blank" rel="noopener noreferrer" class="text-button" style="margin-top: 8px; display: inline-block;">Visit FindAHelpline.com</a>
+        </div>
+      </section>
+
+      <!-- SCREEN 13: PRIVACY & DATA GOVERNANCE -->
+      <section class="page" id="screen-privacy" style="display: none;">
+        <div class="page-header">
+          <div class="header-side">
+            <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
+              <i data-lucide="arrow-left"></i>
+            </button>
+          </div>
+          <div class="header-copy">
+            <div class="title-md">Privacy & Governance</div>
+            <div class="caption">GDPR & HIPAA Compliance</div>
+          </div>
+          <div class="header-side header-action"></div>
+        </div>
+
+        <div class="card" style="margin-bottom: 16px;">
+          <div class="title-sm">Your Data Ownership Guarantee</div>
+          <div class="body-sm" style="margin-top: 6px;">
+            Your personal mental health and biometric data belongs exclusively to you. MindEase never sells your data to third parties, advertisers, or insurers.
+          </div>
+        </div>
+
+        <div class="section-heading">
+          <div class="title-sm">Data Controls</div>
+        </div>
+
+        <div class="card" style="margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <strong>Biometric Data Sync</strong>
+            <div class="caption">Allow reading Apple Health / Wearable feeds</div>
+          </div>
+          <button class="toggle active" onclick="this.classList.toggle('active')"><span></span></button>
+        </div>
+
+        <div class="card" style="margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <strong>Anonymous AI Telemetry</strong>
+            <div class="caption">Help improve prediction model accuracy</div>
+          </div>
+          <button class="toggle" onclick="this.classList.toggle('active')"><span></span></button>
+        </div>
+
+        <div class="section-heading">
+          <div class="title-sm">Export & Erasure Rights</div>
+        </div>
+
+        <div style="display: flex; flex-direction: column; gap: 10px;">
+          <button class="button button-secondary full" onclick="exportUserData()">
+            <i data-lucide="download"></i> Export All Health Data (JSON)
+          </button>
+          <button class="button button-danger full" onclick="deleteAccountData()">
+            <i data-lucide="trash-2"></i> Delete Account & All Data
+          </button>
+        </div>
+      </section>
+
+      <!-- SCREEN 14: PROFILE & SETTINGS -->
+      <section class="page" id="screen-profile" style="display: none;">
+        <div class="page-header">
+          <div class="header-side">
+            <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
+              <i data-lucide="arrow-left"></i>
+            </button>
+          </div>
+          <div class="header-copy">
+            <div class="title-md">Profile & Settings</div>
+            <div class="caption">Personal Preferences</div>
+          </div>
+          <div class="header-side header-action"></div>
+        </div>
+
+        <div class="card profile-card" style="text-align: center; margin-bottom: 20px;">
+          <div class="avatar" style="width: 64px; height: 64px; font-size: 24px; margin: 0 auto 12px;">
+            <span id="profileAvatarInitials">SD</span>
+            <span></span>
+          </div>
+          <div class="title-md" id="profileFullName">Shray Demo</div>
+          <div class="caption" id="profileEmail">demo@mindpulse.io</div>
+        </div>
+
+        <div class="section-heading">
+          <div class="title-sm">Preferences</div>
+        </div>
+
+        <div class="card" style="margin-bottom: 12px;">
+          <label class="field-label">Wellness Goal</label>
+          <input class="input" id="profileGoalInput" value="Reduce Workplace Stress & Improve Sleep" style="margin-top: 6px;">
+          <button class="button button-secondary" style="margin-top: 10px;" onclick="saveWellnessGoal()">Update Goal</button>
+        </div>
+
+        <div class="card" style="margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
+          <div>
+            <strong>Dark Theme</strong>
+            <div class="caption">Sleek high-contrast dark appearance</div>
+          </div>
+          <button class="toggle" id="themeToggleBtn" onclick="toggleTheme()"><span></span></button>
+        </div>
+
+        <div class="card card-clickable" style="margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;" onclick="switchScreen('privacy')">
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <i data-lucide="shield" style="color: var(--primary);"></i>
+            <div>
+              <strong>Privacy & Data Rights</strong>
+              <div class="caption">GDPR export, erase, and consents</div>
             </div>
           </div>
+          <i data-lucide="chevron-right"></i>
         </div>
-      </section>
 
-      <!-- TAB 4: STRESS TRACKER -->
-      <section id="tab-stress" class="tab-content">
-        <div style="display: grid; grid-template-columns: 1fr 2fr; gap: 24px;">
-          <div class="glass-card">
-            <h3 style="font-size: 18px; margin-bottom: 16px;">Record Stress Assessment</h3>
-            <form id="stressForm" onsubmit="handleStressSubmit(event)">
-              <div class="form-group">
-                <label class="form-label">Self-Reported Stress (1 - 10)</label>
-                <input type="number" id="stressRatingInput" class="form-input" min="1" max="10" value="5" required>
-              </div>
-              <div class="form-group">
-                <label class="form-label">Heart Rate Variability (HRV ms)</label>
-                <input type="number" id="hrvInput" class="form-input" value="58" placeholder="e.g. 55">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Resting Heart Rate (BPM)</label>
-                <input type="number" id="rhrInput" class="form-input" value="68" placeholder="e.g. 68">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Perceived Workload (1 - 10)</label>
-                <input type="number" id="workloadInput" class="form-input" min="1" max="10" value="6">
-              </div>
-              <button type="submit" class="btn-primary" style="width: 100%;">Record Assessment</button>
-            </form>
-          </div>
-
-          <div class="glass-card">
-            <div class="card-title">Stress vs HRV Biometric Correlation</div>
-            <div class="chart-wrapper">
-              <canvas id="stressHrvChart"></canvas>
+        <div class="card card-clickable" style="margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center;" onclick="switchScreen('support')">
+          <div style="display: flex; gap: 10px; align-items: center;">
+            <i data-lucide="phone" style="color: var(--coral);"></i>
+            <div>
+              <strong>Crisis & Mental Health Support</strong>
+              <div class="caption">24/7 helplines & emergency contacts</div>
             </div>
           </div>
+          <i data-lucide="chevron-right"></i>
         </div>
+
+        <button class="button button-danger full" onclick="logout()">
+          <i data-lucide="log-out"></i> Sign Out
+        </button>
       </section>
 
-      <!-- TAB 5: SLEEP & FITNESS -->
-      <section id="tab-sleep" class="tab-content">
-        <div class="card-grid">
-          <div class="glass-card">
-            <h3 style="font-size: 18px; margin-bottom: 16px;">Log Sleep & Activity</h3>
-            <form id="sleepForm" onsubmit="handleSleepSubmit(event)">
-              <div class="form-group">
-                <label class="form-label">Sleep Duration (Hours)</label>
-                <input type="number" step="0.1" id="sleepDurationInput" class="form-input" value="7.5" required>
-              </div>
-              <div class="form-group">
-                <label class="form-label">Sleep Quality Score (1 - 10)</label>
-                <input type="number" id="sleepQualityInput" class="form-input" value="8" min="1" max="10">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Daily Steps</label>
-                <input type="number" id="stepsInput" class="form-input" value="8500">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Active Minutes</label>
-                <input type="number" id="activeMinsInput" class="form-input" value="45">
-              </div>
-              <button type="submit" class="btn-primary" style="width: 100%;">Save Sleep & Fitness</button>
-            </form>
-          </div>
+      <!-- PERSISTENT BOTTOM NAVIGATION BAR -->
+      <nav class="bottom-nav" id="bottomNav">
+        <button class="nav-button active" onclick="switchScreen('home')" data-screen="home">
+          <i data-lucide="home"></i>
+          <span>Home</span>
+        </button>
+        <button class="nav-button" onclick="switchScreen('checkin')" data-screen="checkin">
+          <i data-lucide="heart"></i>
+          <span>Check-In</span>
+        </button>
+        <button class="nav-button" onclick="switchScreen('insights')" data-screen="insights">
+          <i data-lucide="bar-chart-3"></i>
+          <span>Insights</span>
+        </button>
+        <button class="nav-button" onclick="switchScreen('chat')" data-screen="chat">
+          <i data-lucide="message-circle"></i>
+          <span>AI Support</span>
+        </button>
+        <button class="nav-button" onclick="switchScreen('profile')" data-screen="profile">
+          <i data-lucide="user"></i>
+          <span>Profile</span>
+        </button>
+      </nav>
 
-          <div class="glass-card" style="grid-column: span 2;">
-            <div class="card-title">Sleep Quality & Activity Minutes Trend</div>
-            <div class="chart-wrapper">
-              <canvas id="sleepActivityChart"></canvas>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- TAB 6: HABITS -->
-      <section id="tab-habits" class="tab-content">
-        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-          <h3 style="font-size: 20px; font-weight: 700;">Daily Habits & Routines</h3>
-          <button class="btn-secondary" onclick="promptNewHabit()">+ Add Custom Habit</button>
-        </div>
-        <div class="habit-list" id="habitContainer">
-          <!-- Populated dynamically via JS -->
-        </div>
-      </section>
-
-      <!-- TAB 7: ANALYTICS -->
-      <section id="tab-analytics" class="tab-content">
-        <div class="glass-card chart-card">
-          <div class="card-title">90-Day Multi-Variable Correlation Analysis</div>
-          <div class="chart-wrapper" style="height: 380px;">
-            <canvas id="analyticsMultiChart"></canvas>
-          </div>
-        </div>
-      </section>
-
-      <!-- TAB 8: SETTINGS & PRIVACY -->
-      <section id="tab-settings" class="tab-content">
-        <div style="max-width: 700px;">
-          <div class="glass-card" style="margin-bottom: 24px;">
-            <h3 style="font-size: 18px; margin-bottom: 16px;">User Profile & Preferences</h3>
-            <form id="settingsForm" onsubmit="handleSaveSettings(event)">
-              <div class="form-group">
-                <label class="form-label">Full Name</label>
-                <input type="text" id="settingFullName" class="form-input" value="Shray Demo">
-              </div>
-              <div class="form-group">
-                <label class="form-label">Wellness Goal</label>
-                <input type="text" id="settingGoal" class="form-input" value="Reduce Workplace Stress & Improve HRV">
-              </div>
-              <button type="submit" class="btn-primary">Save Preferences</button>
-            </form>
-          </div>
-
-          <div class="glass-card" style="margin-bottom: 24px;">
-            <h3 style="font-size: 18px; margin-bottom: 16px;">Data Privacy & Governance (GDPR / HIPAA)</h3>
-            <p style="font-size: 13px; color: var(--text-secondary); margin-bottom: 16px;">
-              You own your personal health data. You can export a full copy or request complete account erasure at any time.
-            </p>
-            <div style="display: flex; gap: 12px;">
-              <button class="btn-secondary" onclick="exportUserData()">Export All Data (JSON)</button>
-              <button class="btn-danger" onclick="deleteAccountData()">Delete Account & All Data</button>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
+    </div>
   </div>
 
-  <script src="js/app.js"></script>
+  <!-- Toast Notification Container -->
+  <div id="toastNotification" class="toast" style="display: none;">
+    <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+    <span id="toastMessage">Check-in saved successfully!</span>
+  </div>
+
+  <script src="/js/app.js"></script>
   <script>
-    feather.replace();
+    document.addEventListener("DOMContentLoaded", () => {
+      if (window.lucide) lucide.createIcons();
+    });
   </script>
 </body>
 </html>
