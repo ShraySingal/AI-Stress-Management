@@ -131,7 +131,7 @@ def get_dashboard(user_id: str = Depends(get_current_user)):
 
 @router.get("/analytics")
 def get_analytics(
-    period: str = Query("7d", regex="^(7d|30d|90d)$"),
+    period: str = Query("7d", pattern="^(7d|30d|90d)$"),
     user_id: str = Depends(get_current_user)
 ):
     """

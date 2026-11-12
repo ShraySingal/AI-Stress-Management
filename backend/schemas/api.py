@@ -192,6 +192,7 @@ class DashboardResponse(BaseModel):
 # Predictions
 # ══════════════════════════════════════════════════════════
 class PredictionResponse(BaseModel):
+    model_config = {"protected_namespaces": ()}
     id: str
     risk_score: int
     risk_level: str
