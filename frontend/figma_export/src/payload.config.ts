@@ -1,3 +1,6 @@
+if (!process.env.FIGMA_EID) process.env.FIGMA_EID = 'env_mindease_build';
+if (!process.env.PAYLOAD_SECRET) process.env.PAYLOAD_SECRET = 'secret_mindease_build';
+
 import path from 'path'
 import { buildFigmaConfig } from '@payloadcms/figma'
 import { mcpPlugin } from '@payloadcms/plugin-mcp'

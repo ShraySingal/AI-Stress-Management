@@ -1,3 +1,6 @@
+if (!process.env.FIGMA_EID) process.env.FIGMA_EID = 'env_mindease_build';
+if (!process.env.PAYLOAD_SECRET) process.env.PAYLOAD_SECRET = 'secret_mindease_build';
+
 import { withPayload } from '@payloadcms/next/withPayload'
 import type { NextConfig } from 'next'
 import path from 'path'
