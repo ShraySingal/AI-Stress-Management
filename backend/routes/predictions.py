@@ -175,20 +175,34 @@ def trigger_prediction(user_id: str = Depends(get_current_user)):
         "has_wearable": 1 if has_wearable and has_wearable["c"] > 0 else 0,
     }
 
-    # Try to use the ML model
-    try:
-        from ml_service.predictor import StressPredictor
-        import os
-        model_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
-                                   "dataset", "best_model.joblib")
-        predictor = StressPredictor(model_path)
-        if predictor.is_loaded:
-            result = predictor.predict(features)
-        else:
-            # Fallback: rule-based estimate
+    # Predict using internal ML microservice (injected via Vercel binding ML_SERVICE_URL) or fallback
+    result = None
+    from backend.config import ML_SERVICE_URL
+    if ML_SERVICE_URL:
+        try:
+            import httpx
+            ml_endpoint = f"{ML_SERVICE_URL.rstrip('/')}/predict"
+            resp = httpx.post(ml_endpoint, json=features, timeout=4.0)
+            if resp.status_code == 200:
+                result = resp.json()
+        except Exception:
+            # Internal service unavailable; fall through to in-process predictor
+            pass
+
+    # Fallback to in-process model prediction
+    if not result:
+        try:
+            from ml_service.predictor import StressPredictor
+            import os
+            model_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
+                                       "dataset", "best_model.joblib")
+            predictor = StressPredictor(model_path)
+            if predictor.is_loaded:
+                result = predictor.predict(features)
+            else:
+                result = _rule_based_estimate(features)
+        except Exception:
             result = _rule_based_estimate(features)
-    except Exception:
-        result = _rule_based_estimate(features)
 
     # Store prediction
     pred_id = str(uuid.uuid4())

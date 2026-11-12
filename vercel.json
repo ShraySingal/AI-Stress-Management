@@ -1,13 +1,40 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "services": {
+    "app": {
+      "root": ".",
+      "framework": "fastapi",
+      "bindings": [
+        {
+          "type": "service",
+          "service": "ml_service",
+          "format": "url",
+          "env": "ML_SERVICE_URL"
+        }
+      ]
+    },
+    "ml_service": {
+      "root": "ml_service",
+      "framework": "fastapi",
+      "entrypoint": "main.py"
+    },
+    "figma_export": {
+      "root": "frontend/figma_export",
+      "framework": "nextjs"
+    }
+  },
   "rewrites": [
-    { "source": "/css/(.*)", "destination": "/frontend/css/$1" },
-    { "source": "/js/(.*)", "destination": "/frontend/js/$1" },
-    { "source": "/assets/(.*)", "destination": "/frontend/assets/$1" },
-    { "source": "/sw.js", "destination": "/frontend/sw.js" },
-    { "source": "/manifest.webmanifest", "destination": "/frontend/manifest.webmanifest" },
-    { "source": "/manifest.json", "destination": "/frontend/manifest.webmanifest" },
-    { "source": "/api/(.*)", "destination": "/api/index.py" },
-    { "source": "/(.*)", "destination": "/api/index.py" }
+    {
+      "source": "/figma/(.*)",
+      "destination": {
+        "service": "figma_export"
+      }
+    },
+    {
+      "source": "/(.*)",
+      "destination": {
+        "service": "app"
+      }
+    }
   ]
 }
-

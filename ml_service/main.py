@@ -11,7 +11,12 @@ from fastapi.middleware.cors import CORSMiddleware
 from ml_service.schemas import PredictionInput, PredictionOutput, FactorImpact, ModelInfo, HealthCheck
 from ml_service.predictor import StressPredictor, FEATURES, RISK_THRESHOLDS
 
-MODEL_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "dataset", "best_model.joblib")
+candidate_paths = [
+    os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "dataset", "best_model.joblib"),
+    os.path.join(os.path.dirname(os.path.abspath(__file__)), "best_model.joblib"),
+    os.path.join(os.getcwd(), "dataset", "best_model.joblib"),
+]
+MODEL_PATH = next((p for p in candidate_paths if os.path.exists(p)), candidate_paths[0])
 
 app = FastAPI(
     title="Stress Risk ML Service",
