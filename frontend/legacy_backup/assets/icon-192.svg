@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 192 192" width="192" height="192">
+  <defs>
+    <radialGradient id="bgGlow192" cx="50%" cy="40%" r="60%">
+      <stop offset="0%" stop-color="#1e1b4b"/>
+      <stop offset="60%" stop-color="#0c1022"/>
+      <stop offset="100%" stop-color="#070a12"/>
+    </radialGradient>
+    <linearGradient id="brainGrad192" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#a855f7"/>
+      <stop offset="50%" stop-color="#6366f1"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+    <linearGradient id="pulseGrad192" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#ec4899"/>
+      <stop offset="50%" stop-color="#8b5cf6"/>
+      <stop offset="100%" stop-color="#06b6d4"/>
+    </linearGradient>
+  </defs>
+  <rect width="192" height="192" rx="48" fill="url(#bgGlow192)"/>
+  <rect width="190" height="190" x="1" y="1" rx="47" fill="none" stroke="rgba(255,255,255,0.12)" stroke-width="1.5"/>
+
+  <!-- Left Hemisphere -->
+  <path d="M 88 56 C 77 48 56 54 52 69 C 48 82 54 90 58 95 C 50 101 48 114 56 125 C 61 134 73 140 88 140 L 88 56 Z" 
+        fill="none" stroke="url(#brainGrad192)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+  <!-- Right Hemisphere -->
+  <path d="M 104 56 C 115 48 136 54 140 69 C 144 82 138 90 134 95 C 142 101 144 114 136 125 C 131 134 119 140 104 140 L 104 56 Z" 
+        fill="none" stroke="url(#brainGrad192)" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- ECG Pulse -->
+  <path d="M 34 96 L 60 96 L 69 78 L 80 112 L 96 60 L 111 127 L 122 86 L 132 103 L 138 96 L 158 96" 
+        fill="none" stroke="url(#pulseGrad192)" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="96" cy="60" r="4" fill="#a855f7"/>
+  <circle cx="111" cy="127" r="3.5" fill="#06b6d4"/>
+</svg>

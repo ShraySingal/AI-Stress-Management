@@ -11,9 +11,8 @@ __pycache__/
 venv/
 env/
 
-# Data files (keep metadata, evaluation reports tracked)
+# Data files (keep metadata, evaluation reports, and best_model.joblib tracked)
 dataset/*.csv
-dataset/*.joblib
 
 # Large binary - ignored (105MB exceeds GitHub limit)
 capstone.db
