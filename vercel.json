@@ -17,19 +17,9 @@
       "root": "ml_service",
       "framework": "fastapi",
       "entrypoint": "main.py"
-    },
-    "figma_export": {
-      "root": "frontend/figma_export",
-      "framework": "nextjs"
     }
   },
   "rewrites": [
-    {
-      "source": "/figma/(.*)",
-      "destination": {
-        "service": "figma_export"
-      }
-    },
     {
       "source": "/(.*)",
       "destination": {
