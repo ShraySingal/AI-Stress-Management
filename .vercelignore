@@ -1,4 +1,0 @@
-# Ignore inactive Figma export and legacy folders so Vercel does not build them
-frontend/figma_export
-frontend/legacy_backup
-files

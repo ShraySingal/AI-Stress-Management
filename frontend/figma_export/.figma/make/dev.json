@@ -1,9 +1,0 @@
-{
-  "installOn": [
-    "package.json",
-    "pnpm-workspace.yaml"
-  ],
-  "restartOn": [
-    "next.config.ts"
-  ]
-}
