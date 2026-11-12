@@ -58,10 +58,13 @@ FRONTEND_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__fi
 if os.path.exists(FRONTEND_DIR):
     css_dir = os.path.join(FRONTEND_DIR, "css")
     js_dir = os.path.join(FRONTEND_DIR, "js")
+    assets_dir = os.path.join(FRONTEND_DIR, "assets")
     if os.path.exists(css_dir):
         app.mount("/css", StaticFiles(directory=css_dir), name="css")
     if os.path.exists(js_dir):
         app.mount("/js", StaticFiles(directory=js_dir), name="js")
+    if os.path.exists(assets_dir):
+        app.mount("/assets", StaticFiles(directory=assets_dir), name="assets")
 
 
 @app.get("/")
@@ -71,6 +74,33 @@ def read_root():
     if os.path.exists(index_path):
         return FileResponse(index_path)
     return {"message": "MindPulse API Service Running. Frontend index.html not found."}
+
+
+@app.get("/favicon.ico")
+def get_favicon():
+    """Serve icon for browser tab."""
+    icon_path = os.path.join(FRONTEND_DIR, "assets", "icon.svg")
+    if os.path.exists(icon_path):
+        return FileResponse(icon_path, media_type="image/svg+xml")
+    return {"status": "no icon"}
+
+
+@app.get("/manifest.webmanifest")
+def get_manifest():
+    """Serve PWA manifest."""
+    manifest_path = os.path.join(FRONTEND_DIR, "manifest.webmanifest")
+    if os.path.exists(manifest_path):
+        return FileResponse(manifest_path, media_type="application/manifest+json")
+    return {}
+
+
+@app.get("/sw.js")
+def get_service_worker():
+    """Serve service worker."""
+    sw_path = os.path.join(FRONTEND_DIR, "sw.js")
+    if os.path.exists(sw_path):
+        return FileResponse(sw_path, media_type="application/javascript")
+    return {}
 
 
 @app.get("/api/health")

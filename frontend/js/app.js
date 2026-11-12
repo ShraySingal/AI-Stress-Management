@@ -3,9 +3,9 @@
  * Handles Authentication, API Calls, Chart rendering, and Interactive State
  */
 
-const API_BASE = window.location.origin.includes('8000') 
-  ? '/api' 
-  : 'http://127.0.0.1:8000/api';
+const API_BASE = (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') && window.location.port !== '8000' && window.location.port !== ''
+  ? 'http://127.0.0.1:8000/api'
+  : '/api';
 
 let authToken = localStorage.getItem("mindpulse_token") || "";
 let charts = {};
@@ -36,6 +36,58 @@ function showAuthModal() {
 function hideAuthModal() {
   const modal = document.getElementById("authModal");
   if (modal) modal.style.display = "none";
+}
+
+function toggleAuthView(view) {
+  const loginView = document.getElementById("loginView");
+  const registerView = document.getElementById("registerView");
+  if (!loginView || !registerView) return;
+  if (view === 'register') {
+    loginView.style.display = 'none';
+    registerView.style.display = 'block';
+  } else {
+    registerView.style.display = 'none';
+    loginView.style.display = 'block';
+  }
+}
+
+async function handleRegister(e) {
+  if (e) e.preventDefault();
+  const fullName = document.getElementById("regFullName").value.trim();
+  const email = document.getElementById("regEmail").value.trim();
+  const password = document.getElementById("regPassword").value;
+  const ageVal = document.getElementById("regAge")?.value;
+  const occupation = document.getElementById("regOccupation")?.value?.trim() || null;
+  const age = ageVal ? parseInt(ageVal, 10) : null;
+
+  try {
+    const res = await fetch(`${API_BASE}/auth/register`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        full_name: fullName,
+        email: email,
+        password: password,
+        age: age,
+        occupation: occupation
+      })
+    });
+
+    if (!res.ok) {
+      const errData = await res.json();
+      throw new Error(errData.detail || "Registration failed");
+    }
+
+    const data = await res.json();
+    authToken = data.access_token;
+    localStorage.setItem("mindpulse_token", authToken);
+
+    hideAuthModal();
+    loadDashboardData();
+    loadHabits();
+  } catch (err) {
+    alert(`Registration Failed: ${err.message}`);
+  }
 }
 
 async function handleLogin(e) {
@@ -109,11 +161,10 @@ async function handleResetRequest(e) {
 function showResetConfirmModal(token) {
   const modal = document.getElementById("resetConfirmModal");
   if (modal) {
-+    // Store token in hidden field
-+    const tokenInput = document.getElementById("resetToken");
-+    if (tokenInput) tokenInput.value = token;
-+    modal.style.display = "flex";
-+  }
+    const tokenInput = document.getElementById("resetToken");
+    if (tokenInput) tokenInput.value = token;
+    modal.style.display = "flex";
+  }
 }
 async function handleResetConfirm(e) {
   if (e) e.preventDefault();
@@ -121,18 +172,17 @@ async function handleResetConfirm(e) {
   const newPassword = document.getElementById("newPassword").value;
   try {
     const res = await fetch(`${API_BASE}/auth/reset-confirm`, {
-+      method: "POST",
-+      headers: { "Content-Type": "application/json" },
-+      body: JSON.stringify({ token, new_password: newPassword })
-+    });
-+    const data = await res.json();
-+    alert(data.message || "Password reset successful.");
-+    // After success, redirect to login
-+    hideResetConfirmModal();
-+    showAuthModal();
-+  } catch (err) {
-+    alert(`Reset confirm failed: ${err.message}`);
-+  }
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ token, new_password: newPassword })
+    });
+    const data = await res.json();
+    alert(data.message || "Password reset successful.");
+    hideResetConfirmModal();
+    showAuthModal();
+  } catch (err) {
+    alert(`Reset confirm failed: ${err.message}`);
+  }
 }
 function hideResetConfirmModal() {
   const modal = document.getElementById("resetConfirmModal");

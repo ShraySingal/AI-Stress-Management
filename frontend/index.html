@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MindPulse — Mental Health & Stress Analytics Platform</title>
   <meta name="description" content="AI-Powered multi-dimensional stress prediction, mood tracking, sleep & activity analytics platform.">
+  <link rel="icon" href="/assets/icon.svg" type="image/svg+xml">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="stylesheet" href="/css/style.css">
   
   <!-- Chart.js for visualization -->
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -19,21 +22,67 @@
         <div class="logo-icon">M</div>
         <div class="brand-name" style="font-size: 24px;">MindPulse</div>
       </div>
-      <h3 style="text-align: center; margin-bottom: 8px; font-weight: 700;">Welcome Back</h3>
-      <p style="text-align: center; color: var(--text-muted); font-size: 13px; margin-bottom: 24px;">Sign in to access your personal stress analytics dashboard</p>
-      
-      <form id="loginForm" onsubmit="handleLogin(event)">
-        <div class="form-group">
-          <label class="form-label">Email Address</label>
-          <input type="email" id="loginEmail" class="form-input" value="demo@mindpulse.io" required>
-        </div>
-        <div class="form-group">
-          <label class="form-label">Password</label>
-          <input type="password" id="loginPassword" class="form-input" value="Password123!" required>
-        </div>
-        <button type="submit" class="btn-primary" style="width: 100%; margin-top: 8px;">Sign In</button>
-        <button type="button" class="btn-secondary" onclick="autoDemoLogin()" style="width: 100%; margin-top: 10px;">Quick Demo Access</button>
-      </form>
+
+      <!-- Login View -->
+      <div id="loginView">
+        <h3 style="text-align: center; margin-bottom: 8px; font-weight: 700;">Welcome Back</h3>
+        <p style="text-align: center; color: var(--text-muted); font-size: 13px; margin-bottom: 24px;">Sign in to access your personal stress analytics dashboard</p>
+        
+        <form id="loginForm" onsubmit="handleLogin(event)">
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" id="loginEmail" class="form-input" value="demo@mindpulse.io" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <input type="password" id="loginPassword" class="form-input" value="Password123!" required>
+          </div>
+          <button type="submit" class="btn-primary" style="width: 100%; margin-top: 8px;">Sign In</button>
+          <button type="button" class="btn-secondary" onclick="autoDemoLogin()" style="width: 100%; margin-top: 10px;">Quick Demo Access</button>
+        </form>
+
+        <p style="text-align: center; color: var(--text-secondary); font-size: 13px; margin-top: 18px;">
+          Don't have an account? 
+          <a href="#" onclick="toggleAuthView('register'); return false;" style="color: var(--accent-purple); text-decoration: none; font-weight: 600;">Create one</a>
+        </p>
+      </div>
+
+      <!-- Register View -->
+      <div id="registerView" style="display: none;">
+        <h3 style="text-align: center; margin-bottom: 8px; font-weight: 700;">Create Account</h3>
+        <p style="text-align: center; color: var(--text-muted); font-size: 13px; margin-bottom: 20px;">Join MindPulse for personalized stress monitoring</p>
+        
+        <form id="registerForm" onsubmit="handleRegister(event)">
+          <div class="form-group">
+            <label class="form-label">Full Name</label>
+            <input type="text" id="regFullName" class="form-input" placeholder="e.g. Jane Doe" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Email Address</label>
+            <input type="email" id="regEmail" class="form-input" placeholder="jane@example.com" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Password</label>
+            <input type="password" id="regPassword" class="form-input" placeholder="Min. 6 characters" minlength="6" required>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 12px;">
+            <div class="form-group">
+              <label class="form-label">Age</label>
+              <input type="number" id="regAge" class="form-input" placeholder="25" min="13" max="120">
+            </div>
+            <div class="form-group">
+              <label class="form-label">Occupation</label>
+              <input type="text" id="regOccupation" class="form-input" placeholder="Software Engineer">
+            </div>
+          </div>
+          <button type="submit" class="btn-primary" style="width: 100%; margin-top: 8px;">Create Account</button>
+        </form>
+
+        <p style="text-align: center; color: var(--text-secondary); font-size: 13px; margin-top: 18px;">
+          Already have an account? 
+          <a href="#" onclick="toggleAuthView('login'); return false;" style="color: var(--accent-purple); text-decoration: none; font-weight: 600;">Sign in</a>
+        </p>
+      </div>
     </div>
   </div>
 
