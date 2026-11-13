@@ -76,6 +76,50 @@ button:disabled {
   opacity: 0.55;
   cursor: not-allowed;
 }
+/* Universal Lucide Icon Styling */
+svg.lucide,
+.lucide {
+  width: 20px;
+  height: 20px;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  fill: none;
+  display: inline-block;
+  vertical-align: middle;
+  flex-shrink: 0;
+}
+.icon-button svg.lucide,
+.icon-button svg {
+  width: 22px;
+  height: 22px;
+}
+.quick-action .quick-icon svg.lucide,
+.quick-action .quick-icon svg {
+  width: 22px;
+  height: 22px;
+}
+.bottom-nav .nav-button svg.lucide,
+.bottom-nav .nav-button svg {
+  width: 22px;
+  height: 22px;
+}
+.stat-icon svg.lucide,
+.stat-icon svg {
+  width: 17px;
+  height: 17px;
+}
+.bot-avatar svg.lucide,
+.bot-avatar svg {
+  width: 16px;
+  height: 16px;
+}
+.support-banner svg.lucide,
+.support-banner svg {
+  width: 18px;
+  height: 18px;
+}
 .app-canvas {
   min-height: 100vh;
   display: flex;

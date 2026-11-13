@@ -30,8 +30,8 @@
     }
   </script>
 
-  <!-- Lucide Icons -->
-  <script src="https://unpkg.com/lucide@latest"></script>
+  <!-- Lucide Icons (Local Bundle) -->
+  <script src="/js/lucide.min.js"></script>
 </head>
 <body>
   <div class="app-canvas">
@@ -933,7 +933,8 @@
   <script src="/js/app.js"></script>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      if (window.lucide) lucide.createIcons();
+      if (typeof renderAppIcons === "function") renderAppIcons();
+      else if (window.lucide) lucide.createIcons({ icons: window.lucide.icons || window.lucide });
     });
   </script>
 </body>
