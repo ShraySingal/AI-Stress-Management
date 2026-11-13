@@ -69,10 +69,17 @@ if os.path.exists(FRONTEND_DIR):
 
 @app.get("/")
 def read_root():
-    """Serve the frontend SPA."""
+    """Serve the frontend SPA with no-cache headers to prevent stale service worker caching."""
     index_path = os.path.join(FRONTEND_DIR, "index.html")
     if os.path.exists(index_path):
-        return FileResponse(index_path)
+        return FileResponse(
+            index_path,
+            headers={
+                "Cache-Control": "no-cache, no-store, must-revalidate",
+                "Pragma": "no-cache",
+                "Expires": "0",
+            },
+        )
     return {"message": "MindPulse API Service Running. Frontend index.html not found."}
 
 
@@ -96,10 +103,18 @@ def get_manifest():
 
 @app.get("/sw.js")
 def get_service_worker():
-    """Serve service worker."""
+    """Serve service worker with no-cache headers."""
     sw_path = os.path.join(FRONTEND_DIR, "sw.js")
     if os.path.exists(sw_path):
-        return FileResponse(sw_path, media_type="application/javascript")
+        return FileResponse(
+            sw_path,
+            media_type="application/javascript",
+            headers={
+                "Cache-Control": "no-cache, no-store, must-revalidate",
+                "Pragma": "no-cache",
+                "Expires": "0",
+            },
+        )
     return {}
 
 
