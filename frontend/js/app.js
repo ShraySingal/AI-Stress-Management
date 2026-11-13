@@ -63,14 +63,13 @@ const ICON_SVGS = {
   "book-open": "<path d=\"M12 5v16\"></path><path d=\"M20.001 19A2 2 0 0022 17V5a2 2 0 00-1.999-2L16 3.002A5 5 0 0012 5a5 5 0 00-4-2H4a2 2 0 00-2 2v12a2 2 0 001.999 2H8a5 5 0 014 2 5 5 0 014-2z\"></path>"
 };
 
-function renderAppIcons() {
-  if (window.lucide && typeof window.lucide.createIcons === 'function') {
-    try {
-      window.lucide.createIcons({ icons: window.lucide.icons || window.lucide });
-    } catch (e) {}
-  }
+function getIconSvgHtml(name, size = 20) {
+  const inner = ICON_SVGS[name] || "";
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${size}" height="${size}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-${name}">${inner}</svg>`;
+}
 
-  // Guaranteed fallback: replace any remaining i[data-lucide] with exact inline SVG
+function renderAppIcons() {
+  // Guaranteed replacement: replace any i[data-lucide] with exact inline SVG
   document.querySelectorAll('i[data-lucide]').forEach((el) => {
     const iconName = el.getAttribute('data-lucide');
     const svgInner = ICON_SVGS[iconName];
@@ -655,7 +654,7 @@ async function handleChatSubmit(e) {
   typingRow.style.cssText = "display: flex; gap: 10px; align-items: flex-start;";
   typingRow.innerHTML = `
     <div class="bot-avatar" style="width: 32px; height: 32px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; color: white;">
-      <i data-lucide="sparkles" style="width: 16px; height: 16px;"></i>
+      ${getIconSvgHtml('sparkles', 16)}
     </div>
     <div class="bubble" style="background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 10px 16px; font-size: 12px; color: var(--muted);">
       MindEase Assistant is reflecting…
@@ -688,7 +687,7 @@ async function handleChatSubmit(e) {
     botRow.style.cssText = "display: flex; gap: 10px; align-items: flex-start;";
     botRow.innerHTML = `
       <div class="bot-avatar" style="width: 32px; height: 32px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; color: white;">
-        <i data-lucide="sparkles" style="width: 16px; height: 16px;"></i>
+        ${getIconSvgHtml('sparkles', 16)}
       </div>
       <div class="bubble" style="background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 12px 16px; max-width: 80%; font-size: 13px; line-height: 1.5;">
         ${escapeHtml(botResponse)}
@@ -703,7 +702,7 @@ async function handleChatSubmit(e) {
     fallbackRow.style.cssText = "display: flex; gap: 10px; align-items: flex-start;";
     fallbackRow.innerHTML = `
       <div class="bot-avatar" style="width: 32px; height: 32px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; color: white;">
-        <i data-lucide="sparkles" style="width: 16px; height: 16px;"></i>
+        ${getIconSvgHtml('sparkles', 16)}
       </div>
       <div class="bubble" style="background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 12px 16px; max-width: 80%; font-size: 13px; line-height: 1.5;">
         Take a moment to exhale fully. Ground your feet into the floor, release your shoulders down, and remind yourself that you are in control of this present moment.
@@ -837,7 +836,7 @@ function renderHabitsList() {
           <div class="microcopy">${habit.streak}-day streak</div>
         </div>
       </div>
-      <div class="habit-icon" style="color: var(--muted);"><i data-lucide="${habit.icon}"></i></div>
+      <div class="habit-icon" style="color: var(--muted);">${getIconSvgHtml(habit.icon, 20)}</div>
     </div>
   `).join("");
 

@@ -30,8 +30,6 @@
     }
   </script>
 
-  <!-- Lucide Icons (Local Bundle) -->
-  <script src="/js/lucide.min.js"></script>
 </head>
 <body>
   <div class="app-canvas">
@@ -95,7 +93,7 @@
           <div class="input-with-action">
             <input id="authPassword" class="input" type="password" placeholder="At least 6 characters" value="Password123!" required>
             <button type="button" onclick="togglePasswordVisibility()" aria-label="Toggle password">
-              <i data-lucide="eye" id="eyeIcon"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-eye" id="eyeIcon"><path d="M2.062 12.348a1 1 0 0 1 0-.696 10.75 10.75 0 0 1 19.876 0 1 1 0 0 1 0 .696 10.75 10.75 0 0 1-19.876 0"></path><circle cx="12" cy="12" r="3"></circle></svg>
             </button>
           </div>
 
@@ -111,7 +109,7 @@
         </form>
 
         <div class="demo-note" style="margin-top: 24px;">
-          <i data-lucide="shield" style="width: 15px; height: 15px;"></i> Private beta · Your health entries are encrypted.
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield" style="width: 15px; height: 15px;"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg> Private beta · Your health entries are encrypted.
         </div>
       </section>
 
@@ -135,7 +133,7 @@
             <div class="title-lg">How are you feeling today?</div>
             <div class="body-sm light">A small pause can make a meaningful difference.</div>
             <button class="button button-secondary" onclick="switchScreen('checkin')">
-              <i data-lucide="heart" style="width: 17px; height: 17px;"></i> Check In
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart" style="width: 17px; height: 17px;"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path></svg> Check In
             </button>
           </div>
           <div class="hero-flower">
@@ -169,10 +167,10 @@
             <div class="title-md" id="outlookRiskText">38% moderate risk</div>
             <div class="body-sm">AI multi-dimensional forecast based on sleep, activity, and HRV.</div>
             <div class="trend-pill">
-              <i data-lucide="activity" style="width: 14px; height: 14px;"></i> Latest stress: <span id="latestStressVal">3.5</span>/10
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-activity" style="width: 14px; height: 14px;"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"></path></svg> Latest stress: <span id="latestStressVal">3.5</span>/10
             </div>
           </div>
-          <i data-lucide="chevron-right" class="card-chevron"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right card-chevron"><path d="m9 18 6-6-6-6"></path></svg>
         </div>
 
         <!-- 4 Key Health Metric Cards -->
@@ -184,19 +182,19 @@
             <div class="microcopy">Latest check-in</div>
           </div>
           <div class="card card-clickable" onclick="switchScreen('wearables')">
-            <div class="stat-icon sleep"><i data-lucide="moon"></i></div>
+            <div class="stat-icon sleep"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path></svg></div>
             <div class="caption">SLEEP</div>
             <div class="title-sm" id="statSleepVal">7h 45m</div>
             <div class="microcopy positive">88% quality</div>
           </div>
           <div class="card card-clickable" onclick="switchScreen('wearables')">
-            <div class="stat-icon activity"><i data-lucide="zap"></i></div>
+            <div class="stat-icon activity"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap"><path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z"></path></svg></div>
             <div class="caption">ACTIVITY</div>
             <div class="title-sm" id="statStepsVal">8,420</div>
             <div class="microcopy">Steps today</div>
           </div>
           <div class="card card-clickable" onclick="switchScreen('habits')">
-            <div class="stat-icon habits"><i data-lucide="check"></i></div>
+            <div class="stat-icon habits"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check"><path d="M20 6 9 17l-5-5"></path></svg></div>
             <div class="caption">HABITS</div>
             <div class="title-sm" id="statHabitsVal">4/5</div>
             <div class="microcopy positive">5-day streak</div>
@@ -209,42 +207,42 @@
         </div>
         <div class="quick-grid">
           <button class="quick-action" onclick="switchScreen('checkin')">
-            <div class="quick-icon"><i data-lucide="heart"></i></div>
+            <div class="quick-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path></svg></div>
             <span class="quick-label">Log Mood</span>
           </button>
           <button class="quick-action" onclick="switchScreen('breathing')">
-            <div class="quick-icon"><i data-lucide="wind"></i></div>
+            <div class="quick-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wind"><path d="M12.8 19.6A2 2 0 1 0 14 16H2"></path><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"></path><path d="M9.8 4.4A2 2 0 1 1 11 8H2"></path></svg></div>
             <span class="quick-label">Breathing</span>
           </button>
           <button class="quick-action" onclick="switchScreen('chat')">
-            <div class="quick-icon"><i data-lucide="message-circle"></i></div>
+            <div class="quick-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"></path></svg></div>
             <span class="quick-label">AI Coping</span>
           </button>
           <button class="quick-action" onclick="switchScreen('assessment')">
-            <div class="quick-icon"><i data-lucide="brain"></i></div>
+            <div class="quick-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-brain"><path d="M12 18V5"></path><path d="M15 13a4.17 4.17 0 01-3-4 4.17 4.17 0 01-3 4"></path><path d="M17.707 6.294A3 3 0 1012 5a3 3 0 10-5.707 1.294"></path><path d="M17.996 5.125a4 4 0 012.526 5.77"></path><path d="M18 18a4 4 0 002-7.465"></path><path d="M19.967 17.482a4 4 0 11-7.967.517 4 4 0 11-7.967-.517"></path><path d="M6 18a4 4 0 01-2-7.465"></path><path d="M6.004 5.125a4 4 0 00-2.526 5.77"></path></svg></div>
             <span class="quick-label">PSS Test</span>
           </button>
         </div>
 
         <!-- Recommendation Feature Card -->
         <div class="card recommendation-feature card-clickable" onclick="switchScreen('breathing')">
-          <div class="recommend-icon"><i data-lucide="wind"></i></div>
+          <div class="recommend-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wind"><path d="M12.8 19.6A2 2 0 1 0 14 16H2"></path><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"></path><path d="M9.8 4.4A2 2 0 1 1 11 8H2"></path></svg></div>
           <div class="grow">
             <div class="duration">5 MIN · CALMING</div>
             <div class="title-md">Box Breathing Exercise</div>
             <div class="body-sm">Regulate your autonomic nervous system and lower elevated cortisol levels.</div>
           </div>
-          <div class="round-play"><i data-lucide="play" style="fill: currentColor; width: 14px;"></i></div>
+          <div class="round-play"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play" style="fill: currentColor; width: 14px;"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path></svg></div>
         </div>
 
         <!-- Crisis Support Banner -->
         <div class="support-banner card-clickable" onclick="switchScreen('support')">
-          <i data-lucide="phone" style="width: 18px; height: 18px;"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone" style="width: 18px; height: 18px;"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg>
           <div class="grow">
             <strong>Need immediate support?</strong>
             <div>Access free, confidential 24/7 crisis helplines and resources.</div>
           </div>
-          <i data-lucide="chevron-right" style="width: 16px;"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" style="width: 16px;"><path d="m9 18 6-6-6-6"></path></svg>
         </div>
       </section>
 
@@ -253,7 +251,7 @@
         <div class="page-header">
           <div class="header-side">
             <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
-              <i data-lucide="arrow-left"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
             </button>
           </div>
           <div class="header-copy">
@@ -339,7 +337,7 @@
         <div class="page-header">
           <div class="header-side">
             <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
-              <i data-lucide="arrow-left"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
             </button>
           </div>
           <div class="header-copy">
@@ -365,7 +363,7 @@
         </div>
 
         <div class="disclaimer">
-          <i data-lucide="shield" style="width: 16px; height: 16px;"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield" style="width: 16px; height: 16px;"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>
           <span>Clinical Disclaimer: For proactive wellness tracking only. Not a medical or diagnostic substitute.</span>
         </div>
 
@@ -375,7 +373,7 @@
 
         <div class="factor-list">
           <div class="card factor-card">
-            <div class="stat-icon sleep"><i data-lucide="moon"></i></div>
+            <div class="stat-icon sleep"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path></svg></div>
             <div class="grow">
               <div class="title-sm">Sleep Restoration</div>
               <div class="body-sm">7h 45m · HRV 58ms indicates healthy parasympathetic recovery.</div>
@@ -384,7 +382,7 @@
           </div>
 
           <div class="card factor-card">
-            <div class="stat-icon mood"><i data-lucide="activity"></i></div>
+            <div class="stat-icon mood"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-activity"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"></path></svg></div>
             <div class="grow">
               <div class="title-sm">Workload & Screen Time</div>
               <div class="body-sm">8.5 hrs continuous screen exposure with few breaks.</div>
@@ -393,7 +391,7 @@
           </div>
 
           <div class="card factor-card">
-            <div class="stat-icon activity"><i data-lucide="zap"></i></div>
+            <div class="stat-icon activity"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-zap"><path d="M15.914 4a1.5 1.5 0 00-2.474-1.561l-9 9A1.5 1.5 0 005.5 14h4.002a.5.5 0 01.471.666L8.086 20a1.5 1.5 0 002.475 1.56l9-9A1.5 1.5 0 0018.5 10h-3.997a.5.5 0 01-.472-.667z"></path></svg></div>
             <div class="grow">
               <div class="title-sm">Physical Movement</div>
               <div class="body-sm">8,420 steps logged today mitigating tension buildup.</div>
@@ -407,7 +405,7 @@
         </div>
 
         <div class="card plan-card">
-          <div class="plan-icon"><i data-lucide="wind"></i></div>
+          <div class="plan-icon"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-wind"><path d="M12.8 19.6A2 2 0 1 0 14 16H2"></path><path d="M17.5 8a2.5 2.5 0 1 1 2 4H2"></path><path d="M9.8 4.4A2 2 0 1 1 11 8H2"></path></svg></div>
           <div class="grow">
             <div class="eyebrow">EVENING PROTOCOL</div>
             <div class="title-md">10-Minute Wind Down</div>
@@ -422,7 +420,7 @@
         <div class="page-header">
           <div class="header-side">
             <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
-              <i data-lucide="arrow-left"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
             </button>
           </div>
           <div class="header-copy">
@@ -501,7 +499,7 @@
         <div class="page-header">
           <div class="header-side">
             <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
-              <i data-lucide="arrow-left"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
             </button>
           </div>
           <div class="header-copy">
@@ -512,14 +510,14 @@
         </div>
 
         <div class="chat-safety" style="background: var(--primary-soft); color: var(--primary); padding: 8px 12px; border-radius: 12px; font-size: 11px; margin-bottom: 12px;">
-          <i data-lucide="shield" style="width: 14px; height: 14px; vertical-align: middle;"></i> Private & confidential session. In case of emergency, please dial 988.
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield" style="width: 14px; height: 14px; vertical-align: middle;"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg> Private & confidential session. In case of emergency, please dial 988.
         </div>
 
         <div class="chat-scroll" id="chatMessageStream" style="flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; padding-bottom: 16px; min-height: 280px; max-height: 380px;">
           <!-- Assistant welcome -->
           <div class="message-row" style="display: flex; gap: 10px; align-items: flex-start;">
             <div class="bot-avatar" style="width: 32px; height: 32px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; color: white;">
-              <i data-lucide="sparkles" style="width: 16px; height: 16px;"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles" style="width: 16px; height: 16px;"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>
             </div>
             <div class="bubble" id="chatWelcomeBubble" style="background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 12px 16px; max-width: 80%; font-size: 13px; line-height: 1.5;">
               Hi! I'm your MindEase wellness companion. I'm here to listen, offer cognitive reframing techniques, and guide you through calming exercises. How are you feeling right now?
@@ -539,7 +537,7 @@
         <form class="chat-compose" onsubmit="handleChatSubmit(event)" style="display: flex; gap: 8px; padding-top: 8px; border-top: 1px solid var(--line);">
           <input class="input" id="chatInput" placeholder="Message MindEase Assistant..." style="flex: 1;" autocomplete="off">
           <button type="submit" class="button button-primary send-button" style="width: 44px; height: 44px; border-radius: 50%; padding: 0; display: flex; align-items: center; justify-content: center;">
-            <i data-lucide="send" style="width: 18px; height: 18px;"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send" style="width: 18px; height: 18px;"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg>
           </button>
         </form>
       </section>
@@ -549,7 +547,7 @@
         <div class="page-header">
           <div class="header-side">
             <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
-              <i data-lucide="arrow-left"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
             </button>
           </div>
           <div class="header-copy">
@@ -592,7 +590,7 @@
         <div class="page-header">
           <div class="header-side">
             <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
-              <i data-lucide="arrow-left"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
             </button>
           </div>
           <div class="header-copy">
@@ -609,7 +607,7 @@
               <div class="title-md"><span id="habitsCompletedNum">4</span> of 5 Completed Today</div>
             </div>
             <div class="streak" style="display: flex; align-items: center; gap: 6px; color: var(--amber); font-weight: 700;">
-              <i data-lucide="flame" style="width: 18px; height: 18px;"></i> 5 Days
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flame" style="width: 18px; height: 18px;"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"></path></svg> 5 Days
             </div>
           </div>
           <!-- Weekly circle dots -->
@@ -634,7 +632,7 @@
         <div class="page-header">
           <div class="header-side">
             <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
-              <i data-lucide="arrow-left"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
             </button>
           </div>
           <div class="header-copy">
@@ -647,7 +645,7 @@
         <div class="card device-card" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
           <div style="display: flex; gap: 12px; align-items: center;">
             <div class="device-icon" style="width: 44px; height: 44px; border-radius: 12px; background: var(--primary-soft); color: var(--primary); display: flex; align-items: center; justify-content: center;">
-              <i data-lucide="watch"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-watch"><path d="M12 10v2.2l1.6 1"></path><path d="m16.13 7.66-.81-4.05a2 2 0 0 0-2-1.61h-2.68a2 2 0 0 0-2 1.61l-.78 4.05"></path><path d="m7.88 16.36.8 4a2 2 0 0 0 2 1.61h2.72a2 2 0 0 0 2-1.61l.81-4.05"></path><circle cx="12" cy="12" r="6"></circle></svg>
             </div>
             <div>
               <div class="title-sm">Apple Health & Watch</div>
@@ -663,25 +661,25 @@
 
         <div class="stat-grid">
           <div class="card">
-            <div class="stat-icon activity"><i data-lucide="heart"></i></div>
+            <div class="stat-icon activity"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path></svg></div>
             <div class="caption">RESTING HR</div>
             <div class="title-sm">64 bpm</div>
             <div class="microcopy positive">Optimal</div>
           </div>
           <div class="card">
-            <div class="stat-icon habits"><i data-lucide="activity"></i></div>
+            <div class="stat-icon habits"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-activity"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"></path></svg></div>
             <div class="caption">HRV (RMSSD)</div>
             <div class="title-sm">58 ms</div>
             <div class="microcopy positive">+6ms vs baseline</div>
           </div>
           <div class="card">
-            <div class="stat-icon sleep"><i data-lucide="moon"></i></div>
+            <div class="stat-icon sleep"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-moon"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"></path></svg></div>
             <div class="caption">SLEEP</div>
             <div class="title-sm">7h 45m</div>
             <div class="microcopy">1h 40m Deep REM</div>
           </div>
           <div class="card">
-            <div class="stat-icon activity"><i data-lucide="footprints"></i></div>
+            <div class="stat-icon activity"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-footprints"><path d="M4 16v-2.38C4 11.5 2.97 10.5 3 8c.03-2.72 1.49-6 4.5-6C9.37 2 10 3.8 10 5.5c0 3.11-2 5.66-2 8.68V16a2 2 0 1 1-4 0Z"></path><path d="M20 20v-2.38c0-2.12 1.03-3.12 1-5.62-.03-2.72-1.49-6-4.5-6C14.63 6 14 7.8 14 9.5c0 3.11 2 5.66 2 8.68V20a2 2 0 1 0 4 0Z"></path><path d="M16 17h4"></path><path d="M4 13h4"></path></svg></div>
             <div class="caption">STEPS</div>
             <div class="title-sm">8,420</div>
             <div class="microcopy">Goal: 10,000</div>
@@ -694,7 +692,7 @@
         <div class="page-header">
           <div class="header-side">
             <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
-              <i data-lucide="arrow-left"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
             </button>
           </div>
           <div class="header-copy">
@@ -724,7 +722,7 @@
         <div class="page-header">
           <div class="header-side">
             <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
-              <i data-lucide="arrow-left"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
             </button>
           </div>
           <div class="header-copy">
@@ -741,7 +739,7 @@
           </div>
           <div style="display: flex; gap: 10px;">
             <a href="tel:988" class="button button-danger" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
-              <i data-lucide="phone"></i> Call 988 Lifeline
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg> Call 988 Lifeline
             </a>
             <a href="sms:741741" class="button button-secondary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
               Text HOME to 741741
@@ -777,7 +775,7 @@
         <div class="page-header">
           <div class="header-side">
             <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
-              <i data-lucide="arrow-left"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
             </button>
           </div>
           <div class="header-copy">
@@ -820,10 +818,10 @@
 
         <div style="display: flex; flex-direction: column; gap: 10px;">
           <button class="button button-secondary full" onclick="exportUserData()">
-            <i data-lucide="download"></i> Export All Health Data (JSON)
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg> Export All Health Data (JSON)
           </button>
           <button class="button button-danger full" onclick="deleteAccountData()">
-            <i data-lucide="trash-2"></i> Delete Account & All Data
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-trash-2"><path d="M10 11v6"></path><path d="M14 11v6"></path><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6"></path><path d="M3 6h18"></path><path d="M8 6V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg> Delete Account & All Data
           </button>
         </div>
       </section>
@@ -833,7 +831,7 @@
         <div class="page-header">
           <div class="header-side">
             <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
-              <i data-lucide="arrow-left"></i>
+              <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-left"><path d="m12 19-7-7 7-7"></path><path d="M19 12H5"></path></svg>
             </button>
           </div>
           <div class="header-copy">
@@ -872,51 +870,51 @@
 
         <div class="card card-clickable" style="margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;" onclick="switchScreen('privacy')">
           <div style="display: flex; gap: 10px; align-items: center;">
-            <i data-lucide="shield" style="color: var(--primary);"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield" style="color: var(--primary);"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>
             <div>
               <strong>Privacy & Data Rights</strong>
               <div class="caption">GDPR export, erase, and consents</div>
             </div>
           </div>
-          <i data-lucide="chevron-right"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6"></path></svg>
         </div>
 
         <div class="card card-clickable" style="margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center;" onclick="switchScreen('support')">
           <div style="display: flex; gap: 10px; align-items: center;">
-            <i data-lucide="phone" style="color: var(--coral);"></i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone" style="color: var(--coral);"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg>
             <div>
               <strong>Crisis & Mental Health Support</strong>
               <div class="caption">24/7 helplines & emergency contacts</div>
             </div>
           </div>
-          <i data-lucide="chevron-right"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6"></path></svg>
         </div>
 
         <button class="button button-danger full" onclick="logout()">
-          <i data-lucide="log-out"></i> Sign Out
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-log-out"><path d="m16 17 5-5-5-5"></path><path d="M21 12H9"></path><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path></svg> Sign Out
         </button>
       </section>
 
       <!-- PERSISTENT BOTTOM NAVIGATION BAR -->
       <nav class="bottom-nav" id="bottomNav">
         <button class="nav-button active" onclick="switchScreen('home')" data-screen="home">
-          <i data-lucide="home"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-home"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"></path><path d="M3 10a2 2 0 0 1 .709-1.528l7-6a2 2 0 0 1 2.582 0l7 6A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
           <span>Home</span>
         </button>
         <button class="nav-button" onclick="switchScreen('checkin')" data-screen="checkin">
-          <i data-lucide="heart"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path></svg>
           <span>Check-In</span>
         </button>
         <button class="nav-button" onclick="switchScreen('insights')" data-screen="insights">
-          <i data-lucide="bar-chart-3"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-bar-chart-3"><path d="M3 3v16a2 2 0 0 0 2 2h16"></path><path d="M18 17V9"></path><path d="M13 17V5"></path><path d="M8 17v-3"></path></svg>
           <span>Insights</span>
         </button>
         <button class="nav-button" onclick="switchScreen('chat')" data-screen="chat">
-          <i data-lucide="message-circle"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-circle"><path d="M2.992 16.342a2 2 0 0 1 .094 1.167l-1.065 3.29a1 1 0 0 0 1.236 1.168l3.413-.998a2 2 0 0 1 1.099.092 10 10 0 1 0-4.777-4.719"></path></svg>
           <span>AI Support</span>
         </button>
         <button class="nav-button" onclick="switchScreen('profile')" data-screen="profile">
-          <i data-lucide="user"></i>
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
           <span>Profile</span>
         </button>
       </nav>
@@ -926,7 +924,7 @@
 
   <!-- Toast Notification Container -->
   <div id="toastNotification" class="toast" style="display: none;">
-    <i data-lucide="check" style="width: 16px; height: 16px;"></i>
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" style="width: 16px; height: 16px;"><path d="M20 6 9 17l-5-5"></path></svg>
     <span id="toastMessage">Check-in saved successfully!</span>
   </div>
 
@@ -934,7 +932,6 @@
   <script>
     document.addEventListener("DOMContentLoaded", () => {
       if (typeof renderAppIcons === "function") renderAppIcons();
-      else if (window.lucide) lucide.createIcons({ icons: window.lucide.icons || window.lucide });
     });
   </script>
 </body>
