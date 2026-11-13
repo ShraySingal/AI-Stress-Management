@@ -228,10 +228,86 @@ async function handleAuthSubmit(e) {
 }
 
 async function autoDemoLogin() {
-  document.getElementById("authEmail").value = "demo@mindpulse.io";
-  document.getElementById("authPassword").value = "Password123!";
+  const emailInput = document.getElementById("authEmail");
+  const pwdInput = document.getElementById("authPassword");
+  const feedback = document.getElementById("authFeedback");
+
+  if (emailInput) emailInput.value = "demo@mindpulse.io";
+  if (pwdInput) pwdInput.value = "Password123!";
   authMode = "signin";
-  await handleAuthSubmit();
+
+  if (feedback) {
+    feedback.innerText = "Connecting to demo account…";
+    feedback.style.color = "var(--primary)";
+    feedback.style.display = "block";
+  }
+
+  try {
+    // 1. Try standard login
+    const res = await fetch(`${API_BASE}/auth/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ email: "demo@mindpulse.io", password: "Password123!" })
+    });
+
+    if (res.ok) {
+      const data = await res.json();
+      authToken = data.access_token;
+      localStorage.setItem("mindpulse_token", authToken);
+      currentUser.name = "Shray Demo";
+      currentUser.email = "demo@mindpulse.io";
+      currentUser.initials = "SD";
+      updateUserDisplay();
+      if (feedback) feedback.style.display = "none";
+      showToast("Signed in as Demo User!");
+      switchScreen("home");
+      loadDashboardSummary();
+      loadHabits();
+      return;
+    }
+
+    // 2. If login returned 401 (e.g. database reset before seed), automatically register demo user
+    const regRes = await fetch(`${API_BASE}/auth/register`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        email: "demo@mindpulse.io",
+        password: "Password123!",
+        full_name: "Shray Demo",
+        age: 24,
+        occupation: "Software Engineer"
+      })
+    });
+
+    if (regRes.ok) {
+      const data = await regRes.json();
+      authToken = data.access_token;
+      localStorage.setItem("mindpulse_token", authToken);
+      currentUser.name = "Shray Demo";
+      currentUser.email = "demo@mindpulse.io";
+      currentUser.initials = "SD";
+      updateUserDisplay();
+      if (feedback) feedback.style.display = "none";
+      showToast("Demo account created & signed in!");
+      switchScreen("home");
+      loadDashboardSummary();
+      loadHabits();
+      return;
+    }
+
+    throw new Error("Unable to log into demo account.");
+  } catch (err) {
+    // 3. Fallback: allow immediate offline demo access so user is never blocked
+    currentUser.name = "Shray Demo";
+    currentUser.email = "demo@mindpulse.io";
+    currentUser.initials = "SD";
+    authToken = "demo-local-session";
+    localStorage.setItem("mindpulse_token", authToken);
+    updateUserDisplay();
+    if (feedback) feedback.style.display = "none";
+    showToast("Opened MindEase demo access!");
+    switchScreen("home");
+  }
 }
 
 function logout() {
@@ -268,6 +344,15 @@ async function loadDashboardSummary() {
     const res = await fetch(`${API_BASE}/dashboard/summary`, {
       headers: { "Authorization": `Bearer ${authToken}` }
     });
+    if (res.status === 401) {
+      // If token expired and user was demo, quietly re-authenticate
+      if (currentUser.email === "demo@mindpulse.io") {
+        await autoDemoLogin();
+        return;
+      }
+      logout();
+      return;
+    }
     if (!res.ok) return;
     const data = await res.json();
 
@@ -311,8 +396,12 @@ function updateStressDisplay(score) {
 // Daily Check-In
 function selectMood(name, emoji, btn) {
   selectedMood = { name, emoji };
-  document.querySelectorAll(".mood-option").forEach(b => b.classList.remove("active"));
-  if (btn) btn.classList.add("active");
+  document.querySelectorAll(".mood-option").forEach(b => {
+    b.classList.remove("active", "selected");
+  });
+  if (btn) {
+    btn.classList.add("active", "selected");
+  }
 }
 
 function toggleTag(btn) {

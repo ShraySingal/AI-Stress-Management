@@ -34,8 +34,86 @@ def get_db():
         conn.close()
 
 
+def ensure_demo_user():
+    """Ensure the default demo user exists with valid credentials and settings."""
+    from backend.middleware.auth import hash_password
+    from datetime import datetime, timezone
+
+    DEMO_USER_ID = "00000000-0000-0000-0000-000000000001"
+    DEMO_EMAIL = "demo@mindpulse.io"
+    DEMO_PASS = "Password123!"
+
+    conn = get_connection()
+    try:
+        cursor = conn.cursor()
+        cursor.execute("SELECT id FROM users WHERE email = ?", (DEMO_EMAIL,))
+        existing = cursor.fetchone()
+        now = datetime.now(timezone.utc).isoformat()
+
+        if not existing:
+            pw_hash = hash_password(DEMO_PASS)
+            cursor.execute(
+                """
+                INSERT INTO users (id, email, password_hash, full_name, age, gender, occupation, country_code, email_verified, is_active, created_at)
+                VALUES (?, ?, ?, 'Shray Demo', 24, 'male', 'Software Engineer', 'IN', 1, 1, ?)
+                """,
+                (DEMO_USER_ID, DEMO_EMAIL, pw_hash, now),
+            )
+            cursor.execute(
+                """
+                INSERT OR IGNORE INTO user_preferences (user_id, wellness_goal, stress_sources, typical_bedtime, typical_wake_time, activity_level, theme, mood_reminder_time, notifications_enabled, language)
+                VALUES (?, 'Stress Reduction', 'Work|Deadlines', '23:00', '07:30', 'moderate', 'dark', '09:00', 1, 'en')
+                """,
+                (DEMO_USER_ID,),
+            )
+            cursor.execute(
+                """
+                INSERT OR IGNORE INTO privacy_settings (user_id, wearable_access, ai_personalization, chat_data_retention_days, allow_anonymous_analytics)
+                VALUES (?, 1, 1, 90, 0)
+                """,
+                (DEMO_USER_ID,),
+            )
+            print(f"[OK] Demo user ({DEMO_EMAIL}) created successfully.")
+
+        # Seed initial entries if empty so dashboard is immediately ready
+        cursor.execute("SELECT COUNT(*) FROM mood_entries WHERE user_id = ?", (DEMO_USER_ID,))
+        if cursor.fetchone()[0] == 0:
+            import uuid
+            from datetime import date
+            mood_id = str(uuid.uuid4())
+            today_str = date.today().isoformat()
+            cursor.execute(
+                """
+                INSERT INTO mood_entries (id, user_id, entry_date, mood_score, mood_label, emotions, activities, triggers, note, created_at)
+                VALUES (?, ?, ?, 4, 'good', 'Calm|Focused', 'Work|Meditation', 'Productive morning', 'Feeling balanced and ready for the day.', ?)
+                """,
+                (mood_id, DEMO_USER_ID, today_str, now),
+            )
+
+        cursor.execute("SELECT COUNT(*) FROM stress_assessments WHERE user_id = ?", (DEMO_USER_ID,))
+        if cursor.fetchone()[0] == 0:
+            import uuid
+            from datetime import date
+            stress_id = str(uuid.uuid4())
+            today_str = date.today().isoformat()
+            cursor.execute(
+                """
+                INSERT INTO stress_assessments (id, user_id, assessment_date, q_stress, q_sleep_quality, q_energy, stress_score, stress_level, created_at)
+                VALUES (?, ?, ?, 2, 4, 4, 38, 'moderate', ?)
+                """,
+                (stress_id, DEMO_USER_ID, today_str, now),
+            )
+
+        conn.commit()
+    except Exception as e:
+        conn.rollback()
+        print(f"[WARNING] Could not ensure demo user: {e}")
+    finally:
+        conn.close()
+
+
 def init_db():
-    """Initialize the database with the schema."""
+    """Initialize the database with the schema and ensure default demo user."""
     conn = get_connection()
     try:
         with open(SCHEMA_PATH, "r") as f:
@@ -44,6 +122,8 @@ def init_db():
         print(f"[OK] Database initialized at {DB_PATH}")
     finally:
         conn.close()
+
+    ensure_demo_user()
 
 
 def seed_db():

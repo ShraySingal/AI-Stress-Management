@@ -12,8 +12,8 @@ ML_SERVICE_URL = os.getenv("ML_SERVICE_URL", "http://localhost:8001")
 # ── Auth ────────────────────────────────────────────────
 SECRET_KEY = os.getenv("SECRET_KEY", "capstone-dev-secret-change-in-prod-2026")
 ALGORITHM = "HS256"
-ACCESS_TOKEN_EXPIRE = timedelta(minutes=30)
-REFRESH_TOKEN_EXPIRE = timedelta(days=7)
+ACCESS_TOKEN_EXPIRE = timedelta(days=30)
+REFRESH_TOKEN_EXPIRE = timedelta(days=60)
 
 # ── Risk Thresholds ─────────────────────────────────────
 RISK_THRESHOLDS = {
