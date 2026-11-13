@@ -36,16 +36,18 @@ html {
   scroll-padding-top: calc(var(--app-safe-top) + 12px);
 }
 html.dark {
-  --bg: #12131e;
-  --card: #1c1d2b;
-  --text: #f2f2fa;
-  --muted: #a2a5b9;
-  --line: #2d2e40;
-  --primary-soft: #2b2850;
-  --positive-soft: #18392e;
-  --amber-soft: #392f1c;
-  --coral-soft: #3f2528;
-  background: #0d0e17;
+  --primary: #818cf8;
+  --primary-dark: #6366f1;
+  --bg: #0f172a;
+  --card: #1e293b;
+  --text: #f8fafc;
+  --muted: #94a3b8;
+  --line: #334155;
+  --primary-soft: #2a2c4e;
+  --positive-soft: #143528;
+  --amber-soft: #382c16;
+  --coral-soft: #3f1e24;
+  background: #0a0f1d;
 }
 html.large-text {
   font-size: 18px;
@@ -279,6 +281,20 @@ button:disabled {
   font-weight: 700;
   font-size: 12px;
   cursor: pointer;
+  text-decoration: none;
+}
+html.dark .text-button,
+html.dark a.text-button {
+  color: #818cf8 !important;
+  text-decoration: underline !important;
+}
+html.dark .button-secondary {
+  background: #1e293b;
+  color: #c7d2fe;
+  border-color: #334155;
+}
+html.dark .button-ghost {
+  color: #c7d2fe;
 }
 .card {
   background: var(--card);
@@ -637,20 +653,41 @@ html.dark .card {
   border: 3px solid var(--card);
   background: #dedbff;
   color: var(--primary);
-  font-size: 12px;
+  font-size: 13px;
   font-weight: 800;
   position: relative;
   box-shadow: var(--shadow);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  overflow: visible;
 }
-.avatar span {
-  width: 10px;
-  height: 10px;
+html.dark .avatar {
+  background: #312e81;
+  color: #c7d2fe;
+}
+.avatar .avatar-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+.avatar .status-dot {
+  width: 11px;
+  height: 11px;
   border-radius: 50%;
   background: var(--positive);
   border: 2px solid var(--card);
   position: absolute;
-  right: -1px;
-  bottom: -1px;
+  right: -2px;
+  bottom: -2px;
 }
 .hero-card {
   min-height: 174px;
@@ -769,8 +806,8 @@ html.dark .card {
 }
 .stat-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 8px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
   margin-top: 10px;
 }
 .stat-grid .card {
@@ -886,23 +923,47 @@ html.dark .card {
 .quick-action {
   border: 0;
   background: transparent;
-  font-size: 9px;
-  font-weight: 650;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 7px;
+  gap: 6px;
   cursor: pointer;
+  padding: 4px 2px;
+  text-align: center;
 }
-.quick-action span {
+.quick-action .quick-icon {
   width: 48px;
   height: 48px;
-  border-radius: 15px;
+  border-radius: 16px;
   background: var(--card);
+  border: 1px solid var(--line);
   box-shadow: var(--shadow);
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: var(--primary);
+  transition: transform 0.15s ease, background-color 0.15s ease;
+}
+.quick-action .quick-icon i {
+  width: 20px;
+  height: 20px;
+}
+.quick-action:active .quick-icon {
+  transform: scale(0.95);
+}
+.quick-action .quick-label {
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--text);
+  white-space: nowrap;
+}
+html.dark .quick-action .quick-label {
+  color: #f1f5f9 !important;
+}
+html.dark .quick-action .quick-icon {
+  background: #1e293b;
+  border-color: #334155;
+  color: #818cf8;
 }
 .support-banner {
   width: 100%;
@@ -1286,22 +1347,34 @@ html.dark .card {
   transform: rotate(180deg);
 }
 .plan-card {
-  padding: 5px 14px;
-  box-shadow: none;
+  display: flex !important;
+  align-items: center !important;
+  gap: 12px !important;
+  padding: 16px !important;
+  min-height: 72px !important;
 }
-.plan-card button {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  gap: 11px;
-  border: 0;
-  background: none;
-  padding: 11px 0;
-  text-align: left;
-  border-bottom: 1px solid var(--line);
+.plan-card .button,
+.plan-card button.button {
+  width: auto !important;
+  min-width: 72px !important;
+  min-height: 38px !important;
+  padding: 8px 16px !important;
+  border-radius: 12px !important;
+  background: var(--primary) !important;
+  color: #ffffff !important;
+  border: 0 !important;
+  font-weight: 600 !important;
+  font-size: 13px !important;
+  cursor: pointer !important;
+  text-align: center !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  box-shadow: 0 4px 12px rgba(81, 70, 229, 0.3) !important;
 }
-.plan-card button:last-child {
-  border: 0;
+.plan-card .button:hover,
+.plan-card button.button:hover {
+  background: var(--primary-dark) !important;
 }
 .plan-icon {
   width: 35px;
@@ -1510,8 +1583,11 @@ html.dark .card {
   border: 1px solid var(--line);
 }
 .trigger-row strong {
-  color: var(--primary);
-  margin-left: 5px;
+  color: var(--text);
+  font-weight: 600;
+}
+html.dark .trigger-row strong {
+  color: #f8fafc !important;
 }
 .recent-list {
   padding: 3px 13px;
@@ -4357,7 +4433,19 @@ html.large-text .assistant-beta-pill {
   }
 
   .page {
-    padding: 0 16px 120px !important;
+    padding: max(16px, env(safe-area-inset-top)) 16px calc(var(--app-nav-height) + max(16px, env(safe-area-inset-bottom)) + 24px) !important;
+  }
+
+  .home-top {
+    padding-top: max(8px, env(safe-area-inset-top)) !important;
+  }
+
+  .page-header {
+    padding-top: max(8px, env(safe-area-inset-top)) !important;
+  }
+
+  .auth-page {
+    padding: max(24px, env(safe-area-inset-top)) 20px max(24px, env(safe-area-inset-bottom)) !important;
   }
 
   .stat-grid {
@@ -4372,26 +4460,37 @@ html.large-text .assistant-beta-pill {
 
   .quick-grid {
     grid-template-columns: repeat(4, 1fr) !important;
-    gap: 6px !important;
+    gap: 8px !important;
   }
 
   .quick-action {
-    padding: 12px 4px !important;
-    font-size: 11px !important;
+    padding: 4px 2px !important;
   }
 
-  .quick-action span {
-    font-size: 10px !important;
+  .quick-action .quick-icon {
+    width: 48px !important;
+    height: 48px !important;
+  }
+
+  .quick-action .quick-label {
+    font-size: 10.5px !important;
     white-space: nowrap !important;
   }
 
   .mood-row {
-    gap: 5px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    gap: 4px !important;
+    width: 100% !important;
   }
 
   .mood-option {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    width: auto !important;
     height: 76px !important;
     border-radius: 14px !important;
+    padding: 6px 1px !important;
   }
 
   .mood-option .mood-emoji,
@@ -4400,7 +4499,13 @@ html.large-text .assistant-beta-pill {
   }
 
   .mood-option small {
-    font-size: 10.5px !important;
+    font-size: 10px !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    text-align: center !important;
+    max-width: 100% !important;
+    display: block !important;
   }
 
   .bottom-nav {

@@ -50,12 +50,14 @@ def ensure_demo_user():
         existing = cursor.fetchone()
         now = datetime.now(timezone.utc).isoformat()
 
-        if not existing:
+        if existing:
+            cursor.execute("UPDATE users SET full_name = 'Demo User' WHERE id = ? AND full_name = 'Shray Demo'", (existing[0],))
+        else:
             pw_hash = hash_password(DEMO_PASS)
             cursor.execute(
                 """
                 INSERT INTO users (id, email, password_hash, full_name, age, gender, occupation, country_code, email_verified, is_active, created_at)
-                VALUES (?, ?, ?, 'Shray Demo', 24, 'male', 'Software Engineer', 'IN', 1, 1, ?)
+                VALUES (?, ?, ?, 'Demo User', 24, 'male', 'Software Engineer', 'IN', 1, 1, ?)
                 """,
                 (DEMO_USER_ID, DEMO_EMAIL, pw_hash, now),
             )

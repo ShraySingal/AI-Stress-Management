@@ -10,9 +10,9 @@ const API_BASE = (window.location.hostname === 'localhost' || window.location.ho
 
 let authToken = localStorage.getItem("mindpulse_token") || "";
 let currentUser = {
-  name: "Shray Demo",
-  email: "demo@mindpulse.io",
-  initials: "SD",
+  name: "Friend",
+  email: "",
+  initials: "ME",
   stressScore: 38,
   stressCategory: "Moderate",
   mood: "Calm",
@@ -22,6 +22,15 @@ let currentUser = {
   habitsCompleted: 4,
   habitsTotal: 5
 };
+
+function formatNameFromEmail(email) {
+  if (!email) return "Friend";
+  const localPart = email.split('@')[0];
+  let cleaned = localPart.replace(/[._-]+/g, ' ');
+  cleaned = cleaned.replace(/\d+$/g, '').trim();
+  if (!cleaned) cleaned = localPart.trim();
+  return cleaned.split(/\s+/).map(w => w.charAt(0).toUpperCase() + w.slice(1).toLowerCase()).join(' ') || "Friend";
+}
 
 let authMode = "signin"; // 'signin' or 'signup'
 let selectedMood = { name: "Calm", emoji: "😌" };
@@ -63,17 +72,59 @@ document.addEventListener("DOMContentLoaded", () => {
   initTheme();
   initDateHeader();
 
+  const savedUser = localStorage.getItem("mindease_user");
+  if (savedUser) {
+    try {
+      const parsed = JSON.parse(savedUser);
+      if (parsed.name && parsed.name !== "Shray Demo") {
+        currentUser.name = parsed.name;
+        currentUser.email = parsed.email || "";
+        currentUser.initials = parsed.initials || getInitials(parsed.name);
+      }
+    } catch (e) {}
+  }
+
   if (authToken) {
+    updateUserDisplay();
     switchScreen("home");
     loadDashboardSummary();
     loadHabits();
+    fetchCurrentUserProfile();
   } else {
+    updateUserDisplay();
     switchScreen("signin");
   }
 
   renderHabitsList();
   if (window.lucide) lucide.createIcons();
 });
+
+async function fetchCurrentUserProfile() {
+  if (!authToken || authToken === "demo-local-session") return;
+  try {
+    const res = await fetch(`${API_BASE}/users/me`, {
+      headers: { "Authorization": `Bearer ${authToken}` }
+    });
+    if (res.ok) {
+      const data = await res.json();
+      let resolvedName = data.full_name;
+      if (!resolvedName || resolvedName === "Shray Demo") {
+        resolvedName = formatNameFromEmail(data.email);
+      }
+      currentUser.name = resolvedName;
+      currentUser.email = data.email || currentUser.email;
+      currentUser.initials = getInitials(resolvedName);
+      localStorage.setItem("mindease_user", JSON.stringify({
+        name: currentUser.name,
+        email: currentUser.email,
+        initials: currentUser.initials
+      }));
+      updateUserDisplay();
+    }
+  } catch (err) {
+    // Offline / network failure
+  }
+}
 
 // Theme Management
 function initTheme() {
@@ -187,13 +238,13 @@ async function handleAuthSubmit(e) {
   if (e) e.preventDefault();
   const email = document.getElementById("authEmail").value.trim();
   const password = document.getElementById("authPassword").value;
-  const name = document.getElementById("authName")?.value?.trim() || "Shray Demo";
+  const submittedName = document.getElementById("authName")?.value?.trim() || "";
   const feedback = document.getElementById("authFeedback");
 
   try {
     const endpoint = (authMode === "signup") ? `${API_BASE}/auth/register` : `${API_BASE}/auth/login`;
     const bodyData = (authMode === "signup")
-      ? { email, password, full_name: name }
+      ? { email, password, full_name: submittedName || formatNameFromEmail(email) }
       : { email, password };
 
     const res = await fetch(endpoint, {
@@ -211,14 +262,27 @@ async function handleAuthSubmit(e) {
     authToken = data.access_token;
     localStorage.setItem("mindpulse_token", authToken);
 
-    currentUser.name = name;
-    currentUser.email = email;
-    currentUser.initials = getInitials(name);
+    let resolvedName = data.full_name;
+    if (!resolvedName || resolvedName === "Shray Demo") {
+      resolvedName = (authMode === "signup" && submittedName) ? submittedName : formatNameFromEmail(email);
+    }
+    const resolvedEmail = data.email || email;
+
+    currentUser.name = resolvedName;
+    currentUser.email = resolvedEmail;
+    currentUser.initials = getInitials(resolvedName);
+    localStorage.setItem("mindease_user", JSON.stringify({
+      name: currentUser.name,
+      email: currentUser.email,
+      initials: currentUser.initials
+    }));
     updateUserDisplay();
 
     showToast(authMode === "signup" ? "Account created successfully!" : "Signed in successfully!");
     switchScreen("home");
     loadDashboardSummary();
+    loadHabits();
+    fetchCurrentUserProfile();
   } catch (err) {
     if (feedback) {
       feedback.innerText = err.message;
@@ -254,9 +318,14 @@ async function autoDemoLogin() {
       const data = await res.json();
       authToken = data.access_token;
       localStorage.setItem("mindpulse_token", authToken);
-      currentUser.name = "Shray Demo";
+      currentUser.name = data.full_name || "Demo User";
       currentUser.email = "demo@mindpulse.io";
-      currentUser.initials = "SD";
+      currentUser.initials = getInitials(currentUser.name);
+      localStorage.setItem("mindease_user", JSON.stringify({
+        name: currentUser.name,
+        email: currentUser.email,
+        initials: currentUser.initials
+      }));
       updateUserDisplay();
       if (feedback) feedback.style.display = "none";
       showToast("Signed in as Demo User!");
@@ -273,7 +342,7 @@ async function autoDemoLogin() {
       body: JSON.stringify({
         email: "demo@mindpulse.io",
         password: "Password123!",
-        full_name: "Shray Demo",
+        full_name: "Demo User",
         age: 24,
         occupation: "Software Engineer"
       })
@@ -283,9 +352,14 @@ async function autoDemoLogin() {
       const data = await regRes.json();
       authToken = data.access_token;
       localStorage.setItem("mindpulse_token", authToken);
-      currentUser.name = "Shray Demo";
+      currentUser.name = "Demo User";
       currentUser.email = "demo@mindpulse.io";
-      currentUser.initials = "SD";
+      currentUser.initials = "DU";
+      localStorage.setItem("mindease_user", JSON.stringify({
+        name: currentUser.name,
+        email: currentUser.email,
+        initials: currentUser.initials
+      }));
       updateUserDisplay();
       if (feedback) feedback.style.display = "none";
       showToast("Demo account created & signed in!");
@@ -298,11 +372,16 @@ async function autoDemoLogin() {
     throw new Error("Unable to log into demo account.");
   } catch (err) {
     // 3. Fallback: allow immediate offline demo access so user is never blocked
-    currentUser.name = "Shray Demo";
+    currentUser.name = "Demo User";
     currentUser.email = "demo@mindpulse.io";
-    currentUser.initials = "SD";
+    currentUser.initials = "DU";
     authToken = "demo-local-session";
     localStorage.setItem("mindpulse_token", authToken);
+    localStorage.setItem("mindease_user", JSON.stringify({
+      name: currentUser.name,
+      email: currentUser.email,
+      initials: currentUser.initials
+    }));
     updateUserDisplay();
     if (feedback) feedback.style.display = "none";
     showToast("Opened MindEase demo access!");
@@ -313,6 +392,11 @@ async function autoDemoLogin() {
 function logout() {
   authToken = "";
   localStorage.removeItem("mindpulse_token");
+  localStorage.removeItem("mindease_user");
+  currentUser.name = "Friend";
+  currentUser.email = "";
+  currentUser.initials = "ME";
+  updateUserDisplay();
   showToast("You have been signed out.");
   switchScreen("signin");
 }
@@ -330,12 +414,24 @@ function updateUserDisplay() {
   const profName = document.getElementById("profileFullName");
   const profEmail = document.getElementById("profileEmail");
   const profAvatar = document.getElementById("profileAvatarInitials");
+  const chatWelcome = document.getElementById("chatWelcomeBubble");
 
-  if (greeting) greeting.innerText = `Good morning, ${currentUser.name.split(' ')[0]}.`;
-  if (avatar) avatar.innerText = currentUser.initials;
-  if (profName) profName.innerText = currentUser.name;
-  if (profEmail) profEmail.innerText = currentUser.email;
-  if (profAvatar) profAvatar.innerText = currentUser.initials;
+  const displayName = currentUser.name && currentUser.name !== "User Profile" ? currentUser.name : "Friend";
+  const firstName = displayName.split(' ')[0];
+
+  const hour = new Date().getHours();
+  let timeGreeting = "Good morning";
+  if (hour >= 12 && hour < 17) timeGreeting = "Good afternoon";
+  else if (hour >= 17 || hour < 4) timeGreeting = "Good evening";
+
+  if (greeting) greeting.innerText = `${timeGreeting}, ${firstName}.`;
+  if (avatar) avatar.innerText = currentUser.initials || "U";
+  if (profName) profName.innerText = displayName;
+  if (profEmail) profEmail.innerText = currentUser.email || "user@example.com";
+  if (profAvatar) profAvatar.innerText = currentUser.initials || "U";
+  if (chatWelcome) {
+    chatWelcome.innerText = `Hi ${firstName}! I'm your MindEase wellness companion. I'm here to listen, offer cognitive reframing techniques, and guide you through calming exercises. How are you feeling right now?`;
+  }
 }
 
 // Data Fetching & Dashboard Updates

@@ -99,11 +99,11 @@
         <div class="home-top">
           <div>
             <div class="caption" id="homeTodayLabel">TODAY</div>
-            <div class="title-lg" id="homeGreeting">Good morning, Shray.</div>
+            <div class="title-lg" id="homeGreeting">Good morning, Friend.</div>
           </div>
           <button class="avatar" onclick="switchScreen('profile')" aria-label="Open profile">
-            <span id="avatarInitials">SD</span>
-            <span></span>
+            <span id="avatarInitials" class="avatar-text">U</span>
+            <span class="status-dot"></span>
           </button>
         </div>
 
@@ -187,21 +187,21 @@
           <div class="title-sm">Quick actions</div>
         </div>
         <div class="quick-grid">
-          <button class="card quick-action" onclick="switchScreen('checkin')">
-            <i data-lucide="heart"></i>
-            <span>Log Mood</span>
+          <button class="quick-action" onclick="switchScreen('checkin')">
+            <div class="quick-icon"><i data-lucide="heart"></i></div>
+            <span class="quick-label">Log Mood</span>
           </button>
-          <button class="card quick-action" onclick="switchScreen('breathing')">
-            <i data-lucide="wind"></i>
-            <span>Breathing</span>
+          <button class="quick-action" onclick="switchScreen('breathing')">
+            <div class="quick-icon"><i data-lucide="wind"></i></div>
+            <span class="quick-label">Breathing</span>
           </button>
-          <button class="card quick-action" onclick="switchScreen('chat')">
-            <i data-lucide="message-circle"></i>
-            <span>AI Coping</span>
+          <button class="quick-action" onclick="switchScreen('chat')">
+            <div class="quick-icon"><i data-lucide="message-circle"></i></div>
+            <span class="quick-label">AI Coping</span>
           </button>
-          <button class="card quick-action" onclick="switchScreen('assessment')">
-            <i data-lucide="brain"></i>
-            <span>PSS Test</span>
+          <button class="quick-action" onclick="switchScreen('assessment')">
+            <div class="quick-icon"><i data-lucide="brain"></i></div>
+            <span class="quick-label">PSS Test</span>
           </button>
         </div>
 
@@ -500,8 +500,8 @@
             <div class="bot-avatar" style="width: 32px; height: 32px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; color: white;">
               <i data-lucide="sparkles" style="width: 16px; height: 16px;"></i>
             </div>
-            <div class="bubble" style="background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 12px 16px; max-width: 80%; font-size: 13px; line-height: 1.5;">
-              Hi Shray! I'm your MindEase wellness companion. I'm here to listen, offer cognitive reframing techniques, and guide you through calming exercises. How are you feeling right now?
+            <div class="bubble" id="chatWelcomeBubble" style="background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 12px 16px; max-width: 80%; font-size: 13px; line-height: 1.5;">
+              Hi! I'm your MindEase wellness companion. I'm here to listen, offer cognitive reframing techniques, and guide you through calming exercises. How are you feeling right now?
             </div>
           </div>
         </div>
@@ -823,12 +823,12 @@
         </div>
 
         <div class="card profile-card" style="text-align: center; margin-bottom: 20px;">
-          <div class="avatar" style="width: 64px; height: 64px; font-size: 24px; margin: 0 auto 12px;">
-            <span id="profileAvatarInitials">SD</span>
-            <span></span>
+          <div class="avatar" style="width: 64px; height: 64px; font-size: 22px; margin: 0 auto 12px;">
+            <span id="profileAvatarInitials" class="avatar-text">U</span>
+            <span class="status-dot"></span>
           </div>
-          <div class="title-md" id="profileFullName">Shray Demo</div>
-          <div class="caption" id="profileEmail">demo@mindpulse.io</div>
+          <div class="title-md" id="profileFullName">User Profile</div>
+          <div class="caption" id="profileEmail">user@example.com</div>
         </div>
 
         <div class="section-heading">

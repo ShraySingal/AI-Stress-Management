@@ -50,6 +50,8 @@ def register(req: RegisterRequest):
         access_token=create_access_token(user_id),
         refresh_token=create_refresh_token(user_id),
         user_id=user_id,
+        email=req.email.lower(),
+        full_name=req.full_name,
     )
 
 
@@ -58,7 +60,7 @@ def login(req: LoginRequest):
     """Login with email and password."""
     with get_db() as db:
         user = db.execute(
-            "SELECT id, password_hash, is_active FROM users WHERE email = ?",
+            "SELECT id, email, full_name, password_hash, is_active FROM users WHERE email = ?",
             (req.email.lower(),)
         ).fetchone()
 
@@ -79,6 +81,8 @@ def login(req: LoginRequest):
         access_token=create_access_token(user_id),
         refresh_token=create_refresh_token(user_id),
         user_id=user_id,
+        email=user["email"],
+        full_name=user["full_name"],
     )
 
 
