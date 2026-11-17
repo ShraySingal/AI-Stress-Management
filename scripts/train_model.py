@@ -30,7 +30,10 @@ sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")
 if hasattr(sys.stdout, "reconfigure"):
     sys.stdout.reconfigure(encoding="utf-8")
 
-from ml_service.predictor import FEATURES
+try:
+    from backend.ml_service.predictor import FEATURES
+except ImportError:
+    from ml_service.predictor import FEATURES
 
 DATASET_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "dataset", "ml_training_dataset.csv")
 MODEL_OUTPUT_PATH = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "dataset", "best_model.joblib")

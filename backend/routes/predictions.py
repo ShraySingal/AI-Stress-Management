@@ -192,7 +192,10 @@ def trigger_prediction(user_id: str = Depends(get_current_user)):
     # Fallback to in-process model prediction
     if not result:
         try:
-            from ml_service.predictor import StressPredictor
+            try:
+                from backend.ml_service.predictor import StressPredictor
+            except ImportError:
+                from ml_service.predictor import StressPredictor
             import os
             model_path = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))),
                                        "dataset", "best_model.joblib")

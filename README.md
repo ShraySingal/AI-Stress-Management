@@ -12,63 +12,61 @@ and group-split (unseen users) cross-validation.
 `	ext
 AI-Stress-Management/
 │
-├── backend/                     # FastAPI backend service
-│   ├── main.py                  # App entrypoint, lifespan, route registration
-│   ├── config.py                # Environment & settings
-│   ├── database.py              # SQLite connection & schema init
-│   ├── middleware/
-│   │   └── auth.py              # JWT-based authentication middleware
-│   ├── models/
-│   │   └── __init__.py          # SQLAlchemy / Pydantic models
-│   ├── routes/
-│   │   ├── auth.py              # Login, signup, token refresh
-│   │   ├── users.py             # User profile CRUD
-│   │   ├── trackers.py          # Mood, sleep, activity tracker endpoints
-│   │   ├── dashboard.py         # Aggregated analytics dashboard
-│   │   ├── predictions.py       # ML prediction API (calls ml_service)
-│   │   └── habits.py            # Habit definitions & daily logging
-│   └── schemas/
-│       └── api.py               # Request / response Pydantic schemas
+├── backend/                     # FastAPI backend service & ML engine
+│   ├── main.py                  # App entrypoint, lifespan, route registration & static mounts
+│   ├── config.py                # Environment & settings management
+│   ├── database.py              # SQLite connection, transactions & schema initialization
+│   ├── middleware/              # JWT-based authentication middleware
+│   ├── models/                  # Data layer models
+│   ├── routes/                  # API endpoints (auth, dashboard, trackers, chat, habits, predictions)
+│   ├── schemas/                 # Request & response Pydantic schemas
+│   └── ml_service/              # Consolidated ML inference service
+│       ├── main.py              # FastAPI ML service endpoints
+│       ├── predictor.py         # Model loader, risk scoring & factor explanations
+│       ├── schemas.py           # ML input/output schemas
+│       └── requirements.txt     # ML-specific dependencies
 │
-├── ml_service/                  # Machine Learning inference microservice
-│   ├── main.py                  # FastAPI wrapper for prediction endpoints
-│   ├── predictor.py             # Model loader, prediction & explanation engine
-│   └── schemas.py               # ML-specific request/response schemas
-│
-├── frontend/                    # Single-page application (HTML/CSS/JS)
-│   ├── index.html               # Main SPA entry
+├── frontend/                    # Single-Page Application (SPA) frontend
+│   ├── index.html               # Main Web & PWA application entrypoint (inlined SVG icons)
 │   ├── css/
-│   │   └── style.css            # Responsive stylesheet
-│   └── js/
-│       └── app.js               # Client-side logic & API integration
+│   │   └── style.css            # MindEase UI design system & dark mode tokens
+│   ├── js/
+│   │   ├── app.js               # Client-side application logic & FastAPI bridge
+│   │   ├── icons.json           # Offline vector icon definitions
+│   │   └── lucide.min.js        # Local Lucide icon bundle
+│   ├── assets/                  # High-resolution vector icons (192, 512, SVG)
+│   ├── manifest.webmanifest     # PWA configuration
+│   ├── sw.js                    # Service Worker for cache invalidation & offline support
+│   └── README.md                # Frontend documentation
 │
-├── dataset/                     # Data assets (git-ignored; see .gitignore)
+├── dataset/                     # Biometric data assets & trained models
 │   ├── ml_training_dataset.csv  # 22,112-row synthetic training set
-│   ├── best_model.joblib        # Trained pipeline bundle (imputer+scaler+clf)
-│   ├── evaluation_report.json   # Detailed evaluation metrics (JSON)
-│   ├── model_comparison.csv     # Side-by-side model comparison table
-│   └── *.csv                    # Per-table exports from capstone.db
+│   ├── best_model.joblib        # Trained pipeline bundle (VotingClassifier RF + XGBoost)
+│   ├── evaluation_report.json   # Detailed evaluation metrics
+│   ├── model_comparison.csv     # Model comparison table
+│   └── *.csv                    # 17 application table CSV exports
 │
-├── scripts/                     # Utility & training scripts
-│   ├── train_model.py           # End-to-end training pipeline
+├── scripts/                     # Data generation, training, evaluation & seeding scripts
+│   ├── generate_dataset.py      # Synthetic biometric dataset generator
+│   ├── train_model.py           # ML training pipeline
+│   ├── train_and_compare_models.py # Multi-model comparison & evaluation generator
 │   ├── evaluate_comprehensive.py # Full evaluation with confusion matrices
 │   └── seed_data.py             # Database seeding from CSV exports
 │
 ├── db/
 │   └── migrations/
-│       └── 001_initial_schema.sql  # DDL for all 17 application tables
+│       └── 001_initial_schema.sql # DDL for all 17 application tables
+│
+├── docs/                        # Project documentation & architecture specs
+│   ├── methodology.md           # Solution methodology & feature categories
+│   └── mobile-health-integration.md # Wearable and mobile health integration spec
 │
 ├── tests/                       # Automated test suite
-│   └── test_api.py              # End-to-end API integration tests (6 tests)
+│   └── test_api.py              # End-to-end API integration tests (100% pass)
 │
-├── files/                       # Standalone data-generation utilities
-│   ├── generate_dataset.py      # Synthetic dataset generator
-│   ├── train_model.py           # Alternate training script
-│   └── requirements.txt         # ML-only pip dependencies
-│
-├── Documentation_template.md    # Official solution methodology documentation
-├── README.md                    # Project overview & guidelines (this file)
-├── requirements.txt             # Python dependencies
+├── Dockerfile                   # Multi-stage production container for Render deployment
+├── docker-compose.yml           # Local multi-service orchestration
+├── requirements.txt             # Project Python dependencies
 └── .gitignore                   # Git ignore rules
 `
 
@@ -76,10 +74,10 @@ AI-Stress-Management/
 
 ## 👤 Project Scope & Responsibilities
 
-- **Backend API** (ackend/): RESTful endpoints for user management, mood/sleep/stress tracking, habit logging, dashboard analytics, and ML prediction orchestration.
-- **ML Service** (ml_service/): Standalone prediction engine wrapping a trained scikit-learn / XGBoost pipeline. Generates risk scores (0–100), risk levels, confidence values, and factor-level explanations via surrogate models.
+- **Backend API & ML Engine** (ackend/ & ackend/ml_service/): RESTful endpoints for user management, mood/sleep/stress tracking, habit logging, dashboard analytics, and ML prediction orchestration.
 - **Frontend SPA** (rontend/): Responsive single-page application providing login, dashboard visualization, mood/stress entry forms, and real-time prediction display.
-- **Data & Training** (scripts/, iles/, dataset/): Synthetic biometric data generation, model training (Balanced Random Forest, Tuned XGBoost), hyperparameter optimization, and comprehensive evaluation.
+- **Data & Training** (scripts/, dataset/): Synthetic biometric data generation, model training (Balanced Random Forest, Tuned XGBoost), hyperparameter optimization, and comprehensive evaluation.
+- **Database & Persistence** (db/): SQLite schema with 17 relational tables, CSV data seeding, and automated migrations.
 
 ---
 
