@@ -1045,7 +1045,6 @@ html.dark .quick-action .quick-icon {
   height: 72px;
   padding: 8px 12px 9px;
   background: var(--card);
-  background: color-mix(in srgb, var(--card) 94%, transparent);
   -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
   border-top: 1px solid var(--line);
@@ -3291,8 +3290,6 @@ html.dark .phone-shell {
   min-height: 560px;
   padding-top: 18px;
   padding-bottom: 34px;
-  scrollbar-width: thin;
-  scrollbar-color: var(--line) transparent;
 }
 
 .assistant-profile strong {
@@ -3823,8 +3820,7 @@ button.goal-card {
 }
 
 .recommend-card.priority {
-  border-color: var(--line);
-  border-color: color-mix(in srgb, var(--primary) 40%, var(--line));
+  border-color: var(--primary);
 }
 
 .recommend-title-row {
@@ -3964,7 +3960,6 @@ button.goal-card {
   margin-bottom: 14px;
   padding: 16px;
   border: 1px solid var(--line);
-  border: 1px solid color-mix(in srgb, var(--primary) 24%, var(--line));
   border-radius: 18px;
   background: linear-gradient(135deg, var(--primary-soft), var(--card));
 }
@@ -4236,7 +4231,6 @@ button.goal-card {
   align-items: center;
   padding: 0 8px;
   border: 1px solid var(--line);
-  border: 1px solid color-mix(in srgb, var(--primary) 28%, var(--line));
   border-radius: 999px;
   background: var(--primary-soft);
   color: var(--primary);
@@ -4255,7 +4249,6 @@ button.goal-card {
   padding: 18px 16px;
   overflow: hidden;
   border: 1px solid var(--line);
-  border: 1px solid color-mix(in srgb, var(--primary) 24%, var(--line));
   border-radius: 20px;
   background:
     radial-gradient(circle at 100% 0, rgba(255, 255, 255, 0.88), transparent 42%),
@@ -4270,7 +4263,6 @@ button.goal-card {
   width: 88px;
   height: 88px;
   border: 1px solid rgba(81, 70, 229, 0.12);
-  border: 1px solid color-mix(in srgb, var(--primary) 12%, transparent);
   border-radius: 50%;
   content: '';
 }
