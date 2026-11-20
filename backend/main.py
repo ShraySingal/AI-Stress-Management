@@ -12,7 +12,7 @@ from fastapi.staticfiles import StaticFiles
 from fastapi.responses import FileResponse
 
 from backend.database import init_db
-from backend.routes import auth, users, trackers, dashboard, predictions, habits
+from backend.routes import auth, users, trackers, dashboard, predictions, habits, chat
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)
@@ -52,6 +52,7 @@ app.include_router(trackers.router, prefix="/api")
 app.include_router(dashboard.router, prefix="/api")
 app.include_router(predictions.router, prefix="/api")
 app.include_router(habits.router, prefix="/api")
+app.include_router(chat.router, prefix="/api")
 
 # Mount Static Frontend Assets
 FRONTEND_DIR = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), "frontend")

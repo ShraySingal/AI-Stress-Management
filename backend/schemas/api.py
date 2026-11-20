@@ -217,3 +217,40 @@ class AnalyticsResponse(BaseModel):
     activity_series: List[dict] = []
     averages: dict = {}
     correlations: dict = {}
+
+
+# ══════════════════════════════════════════════════════════
+# Chat
+# ══════════════════════════════════════════════════════════
+class ChatMessageRequest(BaseModel):
+    message: str = Field(..., min_length=1)
+    session_id: Optional[str] = None
+
+class CrisisResource(BaseModel):
+    name: str
+    contact: str
+    action_type: str = "call"
+    description: str
+
+class ChatMessageResponse(BaseModel):
+    session_id: str
+    role: str = "assistant"
+    content: str
+    intent: Optional[str] = "general_support"
+    is_crisis: bool = False
+    crisis_resources: Optional[List[CrisisResource]] = None
+    suggested_actions: Optional[List[str]] = None
+    created_at: Optional[str] = None
+
+class ChatMessageItem(BaseModel):
+    id: int
+    role: str
+    content: str
+    intent: Optional[str] = None
+    safety_flag: int = 0
+    created_at: str
+
+class ChatHistoryResponse(BaseModel):
+    session_id: Optional[str] = None
+    messages: List[ChatMessageItem] = []
+

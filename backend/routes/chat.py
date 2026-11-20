@@ -226,6 +226,7 @@ def generate_assistant_response(message: str, context: dict) -> Tuple[str, str, 
 # ─────────────────────────────────────────────────────────────
 @router.post("", response_model=ChatMessageResponse)
 @router.post("/", response_model=ChatMessageResponse)
+@router.post("/message", response_model=ChatMessageResponse)
 def send_chat_message(
     req: ChatMessageRequest,
     user_id: str = Depends(get_current_user)

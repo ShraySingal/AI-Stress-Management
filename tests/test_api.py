@@ -97,3 +97,19 @@ def test_habit_listing():
     res = client.get("/api/habits", headers=headers)
     assert res.status_code == 200
     assert isinstance(res.json(), list)
+
+
+def test_ai_coping_assistant_chat():
+    login_res = client.post("/api/auth/login", json={"email": "demo@mindpulse.io", "password": "Password123!"})
+    token = login_res.json()["access_token"]
+    headers = {"Authorization": f"Bearer {token}"}
+
+    # Test breathing guidance intent
+    res = client.post("/api/chat", json={"message": "Can you guide me through 4-7-8 breathing?"}, headers=headers)
+    assert res.status_code == 200
+    data = res.json()
+    assert "content" in data
+    assert data["intent"] == "breathing_technique"
+    assert "4-7-8" in data["content"]
+    assert "suggested_actions" in data
+

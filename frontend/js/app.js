@@ -629,6 +629,8 @@ async function submitDailyCheckIn() {
 }
 
 // AI Support Chat
+let currentChatSessionId = null;
+
 function sendQuickPrompt(text) {
   const input = document.getElementById("chatInput");
   if (input) input.value = text;
@@ -646,10 +648,9 @@ async function handleChatSubmit(e) {
 
   // Append user message
   const userRow = document.createElement("div");
-  userRow.className = "message-row";
-  userRow.style.cssText = "display: flex; gap: 10px; align-items: flex-start; justify-content: flex-end;";
+  userRow.className = "chat-msg-row msg-user";
   userRow.innerHTML = `
-    <div class="bubble" style="background: var(--primary); color: white; border-radius: 16px; padding: 12px 16px; max-width: 80%; font-size: 13px; line-height: 1.5;">
+    <div class="chat-bubble-user">
       ${escapeHtml(userText)}
     </div>
   `;
@@ -658,13 +659,12 @@ async function handleChatSubmit(e) {
 
   // Typing indicator
   const typingRow = document.createElement("div");
-  typingRow.className = "message-row typing-indicator";
-  typingRow.style.cssText = "display: flex; gap: 10px; align-items: flex-start;";
+  typingRow.className = "chat-msg-row typing-indicator";
   typingRow.innerHTML = `
-    <div class="bot-avatar" style="width: 32px; height: 32px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; color: white;">
+    <div class="chat-bot-avatar">
       ${getIconSvgHtml('sparkles', 16)}
     </div>
-    <div class="bubble" style="background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 10px 16px; font-size: 12px; color: var(--muted);">
+    <div class="chat-bubble-typing">
       MindEase Assistant is reflecting…
     </div>
   `;
@@ -673,46 +673,80 @@ async function handleChatSubmit(e) {
   renderAppIcons();
 
   try {
-    const res = await fetch(`${API_BASE}/chat/message`, {
+    const res = await fetch(`${API_BASE}/chat`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         "Authorization": `Bearer ${authToken}`
       },
-      body: JSON.stringify({ message: userText })
+      body: JSON.stringify({
+        message: userText,
+        session_id: currentChatSessionId || undefined
+      })
     });
 
     typingRow.remove();
 
     let botResponse = "I hear you, and it is completely natural to experience tension when facing demanding circumstances. Let's take one mindful breath together. Remember that thoughts are mental events, not immutable facts. Would you like to do a quick 3-minute Box Breathing exercise to center yourself?";
+    let suggestedActions = [];
+    let isCrisis = false;
+    let crisisResources = [];
+
     if (res.ok) {
       const data = await res.json();
-      botResponse = data.response || data.reply || botResponse;
+      botResponse = data.content || data.response || data.reply || botResponse;
+      suggestedActions = data.suggested_actions || [];
+      isCrisis = !!data.is_crisis;
+      crisisResources = data.crisis_resources || [];
+      if (data.session_id) currentChatSessionId = data.session_id;
     }
 
     const botRow = document.createElement("div");
-    botRow.className = "message-row";
-    botRow.style.cssText = "display: flex; gap: 10px; align-items: flex-start;";
+    botRow.className = "chat-msg-row";
     botRow.innerHTML = `
-      <div class="bot-avatar" style="width: 32px; height: 32px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; color: white;">
+      <div class="chat-bot-avatar">
         ${getIconSvgHtml('sparkles', 16)}
       </div>
-      <div class="bubble" style="background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 12px 16px; max-width: 80%; font-size: 13px; line-height: 1.5;">
-        ${escapeHtml(botResponse)}
+      <div class="chat-bubble-bot ${isCrisis ? 'crisis-highlight' : ''}">
+        ${escapeHtml(botResponse).replace(/\n/g, '<br>')}
+        ${isCrisis && crisisResources.length > 0 ? `
+          <div class="crisis-contacts-box">
+            <strong>Emergency Resources:</strong>
+            ${crisisResources.map(r => `<div class="crisis-item"><strong>${escapeHtml(r.name)}</strong>: <a href="${r.action_type === 'sms' ? 'sms:' + r.contact : r.action_type === 'call' ? 'tel:' + r.contact : r.contact}">${escapeHtml(r.contact)}</a> (${escapeHtml(r.description)})</div>`).join('')}
+          </div>
+        ` : ''}
       </div>
     `;
     stream.appendChild(botRow);
+
+    // Update quick replies dynamically if suggested actions are provided
+    if (suggestedActions && suggestedActions.length > 0) {
+      const quickContainer = document.getElementById("chatQuickReplies");
+      if (quickContainer) {
+        quickContainer.innerHTML = suggestedActions.map(action => {
+          if (action.includes("Breathing") || action.includes("Pacer")) {
+            return `<button type="button" class="quick-reply-pill" onclick="switchScreen('wearables')">${escapeHtml(action)}</button>`;
+          } else if (action.includes("Check-In") || action.includes("Assessment")) {
+            return `<button type="button" class="quick-reply-pill" onclick="switchScreen('checkin')">${escapeHtml(action)}</button>`;
+          } else if (action.includes("Insights") || action.includes("Trends")) {
+            return `<button type="button" class="quick-reply-pill" onclick="switchScreen('insights')">${escapeHtml(action)}</button>`;
+          } else {
+            return `<button type="button" class="quick-reply-pill" onclick="sendQuickPrompt('${escapeHtml(action)}')">${escapeHtml(action)}</button>`;
+          }
+        }).join('');
+      }
+    }
+
     stream.scrollTop = stream.scrollHeight;
-  } catch {
+  } catch (err) {
     typingRow.remove();
     const fallbackRow = document.createElement("div");
-    fallbackRow.className = "message-row";
-    fallbackRow.style.cssText = "display: flex; gap: 10px; align-items: flex-start;";
+    fallbackRow.className = "chat-msg-row";
     fallbackRow.innerHTML = `
-      <div class="bot-avatar" style="width: 32px; height: 32px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; color: white;">
+      <div class="chat-bot-avatar">
         ${getIconSvgHtml('sparkles', 16)}
       </div>
-      <div class="bubble" style="background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 12px 16px; max-width: 80%; font-size: 13px; line-height: 1.5;">
+      <div class="chat-bubble-bot">
         Take a moment to exhale fully. Ground your feet into the floor, release your shoulders down, and remind yourself that you are in control of this present moment.
       </div>
     `;
