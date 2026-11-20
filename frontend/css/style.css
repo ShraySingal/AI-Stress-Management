@@ -1044,7 +1044,9 @@ html.dark .quick-action .quick-icon {
   right: 0;
   height: 72px;
   padding: 8px 12px 9px;
+  background: var(--card);
   background: color-mix(in srgb, var(--card) 94%, transparent);
+  -webkit-backdrop-filter: blur(15px);
   backdrop-filter: blur(15px);
   border-top: 1px solid var(--line);
   display: flex;
@@ -2394,6 +2396,7 @@ html.dark .trigger-row strong {
   display: grid;
   place-items: center;
   padding: 24px;
+  -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
 }
 .modal {
@@ -3272,6 +3275,17 @@ html.dark .phone-shell {
   font-size: 10px;
 }
 
+.chat-scroll::-webkit-scrollbar {
+  width: 6px;
+}
+.chat-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.chat-scroll::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 999px;
+}
+
 .chat-scroll {
   height: calc(100vh - 180px);
   min-height: 560px;
@@ -3809,6 +3823,7 @@ button.goal-card {
 }
 
 .recommend-card.priority {
+  border-color: var(--line);
   border-color: color-mix(in srgb, var(--primary) 40%, var(--line));
 }
 
@@ -3948,6 +3963,7 @@ button.goal-card {
   gap: 13px;
   margin-bottom: 14px;
   padding: 16px;
+  border: 1px solid var(--line);
   border: 1px solid color-mix(in srgb, var(--primary) 24%, var(--line));
   border-radius: 18px;
   background: linear-gradient(135deg, var(--primary-soft), var(--card));
@@ -4219,6 +4235,7 @@ button.goal-card {
   min-height: 24px;
   align-items: center;
   padding: 0 8px;
+  border: 1px solid var(--line);
   border: 1px solid color-mix(in srgb, var(--primary) 28%, var(--line));
   border-radius: 999px;
   background: var(--primary-soft);
@@ -4237,6 +4254,7 @@ button.goal-card {
   margin: 0 0 20px;
   padding: 18px 16px;
   overflow: hidden;
+  border: 1px solid var(--line);
   border: 1px solid color-mix(in srgb, var(--primary) 24%, var(--line));
   border-radius: 20px;
   background:
@@ -4251,6 +4269,7 @@ button.goal-card {
   bottom: -35px;
   width: 88px;
   height: 88px;
+  border: 1px solid rgba(81, 70, 229, 0.12);
   border: 1px solid color-mix(in srgb, var(--primary) 12%, transparent);
   border-radius: 50%;
   content: '';
