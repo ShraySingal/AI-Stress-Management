@@ -631,6 +631,95 @@ async function submitDailyCheckIn() {
 // AI Support Chat
 let currentChatSessionId = null;
 
+function generateLocalAssistantResponse(text) {
+  const lowered = (text || "").toLowerCase();
+  const name = (currentUser.name && currentUser.name !== "Friend" && currentUser.name !== "User Profile") ? currentUser.name.split(' ')[0] : "there";
+
+  // Crisis detection
+  if (/\b(suicid|want to die|kill myself|end my life|hurt myself|cutting my|overdose|no reason to live)\b/i.test(lowered)) {
+    return {
+      content: `I hear how much pain you're in right now, ${name}. Your safety is the absolute priority, and you don't have to carry this alone. Please reach out to someone who can help immediately:\n\n• 988 Suicide & Crisis Lifeline: Call or Text 988 (24/7, Free & Confidential)\n• Crisis Text Line: Text HOME to 741741\n• Vandrevala Foundation (India): +91 9999 666 555\n• KIRAN Mental Health Helpline: 1800-599-0019`,
+      intent: "crisis_support",
+      is_crisis: true,
+      suggested_actions: ["Call 988", "Text 741741", "Find Support Center"]
+    };
+  }
+
+  // Clinical / Prescriptions boundary
+  if (/(prescribe|medication|pills|diagnose|bipolar|schizophrenia|prozac|xanax|adderall|cure my depression)/i.test(lowered)) {
+    return {
+      content: `I hear your concern, ${name}. As an AI wellness companion, I cannot prescribe medication, diagnose conditions, or substitute for a licensed psychiatrist or physician. If you are considering medical treatment or experiencing persistent symptoms, please consult a qualified healthcare provider.`,
+      intent: "clinical_boundary",
+      is_crisis: false,
+      suggested_actions: ["Find Provider", "Try Grounding Exercise", "View Wellness Tips"]
+    };
+  }
+
+  // Breathing Guide / 4-7-8 / Box Breathing
+  if (/(breathe|breathing|4-7-8|box breathing|pranayama|calm down|hyperventilating)/i.test(lowered)) {
+    return {
+      content: `Breathing exercises directly activate your parasympathetic nervous system to slow your heart rate. Let's do a guided 4-7-8 relaxation cycle together right now:\n\n1. Inhale quietly through your nose for 4 seconds.\n2. Hold your breath gently for 7 seconds.\n3. Exhale slowly and completely through your mouth for 8 seconds.\n\nRepeat this cycle 4 times to feel an immediate sense of relief.`,
+      intent: "breathing_technique",
+      is_crisis: false,
+      suggested_actions: ["Open Breathing Pacer", "Log Stress Check-In", "Check Stress Insights"]
+    };
+  }
+
+  // Work Stress & Burnout
+  if (/(work|overwhelm|burnout|deadline|boss|pressure|job|study|exam|too much)/i.test(lowered)) {
+    return {
+      content: `Workload pressure can quickly trigger cognitive overload, ${name}. Here is a practical 3-step reset:\n\n1. Stop and take a 2-minute physical step away from your workspace.\n2. Write down the top single task that truly matters today; defer the rest.\n3. Remember that taking short mindful breaks restores clarity—your well-being comes first.`,
+      intent: "burnout_management",
+      is_crisis: false,
+      suggested_actions: ["Review Habit Tracker", "Start Guided Rest", "Check Predictions"]
+    };
+  }
+
+  // Sleep & Rest
+  if (/(sleep|insomnia|tired|exhausted|nightmare|can't sleep|waking up)/i.test(lowered)) {
+    return {
+      content: `Restorative sleep is fundamental for nervous system recovery, ${name}. For restful sleep tonight:\n\n• Turn off bright overhead screens 30 minutes before bed.\n• Keep your sleeping area cool and dark.\n• Practice 4-7-8 breathing or a slow physiological sigh as you lay down.`,
+      intent: "sleep_hygiene",
+      is_crisis: false,
+      suggested_actions: ["Start 4-7-8 Breathing", "Log Sleep Record", "View Sleep Trends"]
+    };
+  }
+
+  // Sadness / Low Mood
+  if (/(sad|depressed|down|unhappy|lonely|crying|hopeless|heavy)/i.test(lowered)) {
+    return {
+      content: `Thank you for trusting me with how you're feeling, ${name}. It is completely valid to have difficult days where everything feels heavier than usual. Be gentle with yourself today. Even small micro-comforts—drinking a glass of water, taking a 5-minute walk in natural light, or listening to calming sounds—can offer quiet comfort.`,
+      intent: "emotional_support",
+      is_crisis: false,
+      suggested_actions: ["Log Daily Mood", "Connect with Contacts", "Try Calming Audio"]
+    };
+  }
+
+  // Panic / Acute Anxiety / Grounding
+  if (/(panic|anxious|anxiety|scared|fear|racing thoughts|freaking out)/i.test(lowered)) {
+    return {
+      content: `Take a slow, grounding breath with me right now, ${name}. Try the 5-4-3-2-1 sensory grounding technique:\n\n• Look for 5 things you can see around you.\n• Touch 4 physical objects near your hands.\n• Listen for 3 distinct sounds.\n• Notice 2 physical sensations.\n• Focus on 1 deep, full exhale.\n\nYou are safe in this present moment.`,
+      intent: "anxiety_grounding",
+      is_crisis: false,
+      suggested_actions: ["Open Breathing Pacer", "Log Stress Check-In", "Go to Support Center"]
+    };
+  }
+
+  // Default varied response
+  const defaultResponses = [
+    `I'm listening, ${name}. Whether you'd like to talk through what's causing tension, practice a calming breathing exercise, or explore practical stress management strategies, I'm here with you. What feels most helpful right now?`,
+    `Thank you for sharing, ${name}. Emotional wellness is an ongoing journey of small daily moments. Would you like to check in on today's stress levels, do a quick guided pause, or look at your wellness trends?`,
+    `I hear you, ${name}. Taking a moment to pause and reflect is a powerful self-care step. Let me know if you want to try a calming grounding technique or discuss what's on your mind.`
+  ];
+  const chosen = defaultResponses[Math.floor(Math.random() * defaultResponses.length)];
+  return {
+    content: chosen,
+    intent: "general_support",
+    is_crisis: false,
+    suggested_actions: ["Start 4-7-8 Breathing", "Log Stress Assessment", "View Next-Day Risk"]
+  };
+}
+
 function sendQuickPrompt(text) {
   const input = document.getElementById("chatInput");
   if (input) input.value = text;
@@ -672,6 +761,7 @@ async function handleChatSubmit(e) {
   stream.scrollTop = stream.scrollHeight;
   renderAppIcons();
 
+  let botData = null;
   try {
     const res = await fetch(`${API_BASE}/chat`, {
       method: "POST",
@@ -685,75 +775,63 @@ async function handleChatSubmit(e) {
       })
     });
 
-    typingRow.remove();
-
-    let botResponse = "I hear you, and it is completely natural to experience tension when facing demanding circumstances. Let's take one mindful breath together. Remember that thoughts are mental events, not immutable facts. Would you like to do a quick 3-minute Box Breathing exercise to center yourself?";
-    let suggestedActions = [];
-    let isCrisis = false;
-    let crisisResources = [];
-
     if (res.ok) {
-      const data = await res.json();
-      botResponse = data.content || data.response || data.reply || botResponse;
-      suggestedActions = data.suggested_actions || [];
-      isCrisis = !!data.is_crisis;
-      crisisResources = data.crisis_resources || [];
-      if (data.session_id) currentChatSessionId = data.session_id;
+      botData = await res.json();
     }
-
-    const botRow = document.createElement("div");
-    botRow.className = "chat-msg-row";
-    botRow.innerHTML = `
-      <div class="chat-bot-avatar">
-        ${getIconSvgHtml('sparkles', 16)}
-      </div>
-      <div class="chat-bubble-bot ${isCrisis ? 'crisis-highlight' : ''}">
-        ${escapeHtml(botResponse).replace(/\n/g, '<br>')}
-        ${isCrisis && crisisResources.length > 0 ? `
-          <div class="crisis-contacts-box">
-            <strong>Emergency Resources:</strong>
-            ${crisisResources.map(r => `<div class="crisis-item"><strong>${escapeHtml(r.name)}</strong>: <a href="${r.action_type === 'sms' ? 'sms:' + r.contact : r.action_type === 'call' ? 'tel:' + r.contact : r.contact}">${escapeHtml(r.contact)}</a> (${escapeHtml(r.description)})</div>`).join('')}
-          </div>
-        ` : ''}
-      </div>
-    `;
-    stream.appendChild(botRow);
-
-    // Update quick replies dynamically if suggested actions are provided
-    if (suggestedActions && suggestedActions.length > 0) {
-      const quickContainer = document.getElementById("chatQuickReplies");
-      if (quickContainer) {
-        quickContainer.innerHTML = suggestedActions.map(action => {
-          if (action.includes("Breathing") || action.includes("Pacer")) {
-            return `<button type="button" class="quick-reply-pill" onclick="switchScreen('wearables')">${escapeHtml(action)}</button>`;
-          } else if (action.includes("Check-In") || action.includes("Assessment")) {
-            return `<button type="button" class="quick-reply-pill" onclick="switchScreen('checkin')">${escapeHtml(action)}</button>`;
-          } else if (action.includes("Insights") || action.includes("Trends")) {
-            return `<button type="button" class="quick-reply-pill" onclick="switchScreen('insights')">${escapeHtml(action)}</button>`;
-          } else {
-            return `<button type="button" class="quick-reply-pill" onclick="sendQuickPrompt('${escapeHtml(action)}')">${escapeHtml(action)}</button>`;
-          }
-        }).join('');
-      }
-    }
-
-    stream.scrollTop = stream.scrollHeight;
   } catch (err) {
-    typingRow.remove();
-    const fallbackRow = document.createElement("div");
-    fallbackRow.className = "chat-msg-row";
-    fallbackRow.innerHTML = `
-      <div class="chat-bot-avatar">
-        ${getIconSvgHtml('sparkles', 16)}
-      </div>
-      <div class="chat-bubble-bot">
-        Take a moment to exhale fully. Ground your feet into the floor, release your shoulders down, and remind yourself that you are in control of this present moment.
-      </div>
-    `;
-    stream.appendChild(fallbackRow);
-    stream.scrollTop = stream.scrollHeight;
+    console.warn("API chat request failed, using local assistant engine:", err);
   }
 
+  typingRow.remove();
+
+  // If server response wasn't obtained (offline/spinup/error), use intelligent local engine
+  if (!botData || !botData.content) {
+    botData = generateLocalAssistantResponse(userText);
+  }
+
+  const botResponse = botData.content || botData.response || botData.reply || "";
+  const suggestedActions = botData.suggested_actions || [];
+  const isCrisis = !!botData.is_crisis;
+  const crisisResources = botData.crisis_resources || [];
+  if (botData.session_id) currentChatSessionId = botData.session_id;
+
+  const botRow = document.createElement("div");
+  botRow.className = "chat-msg-row";
+  botRow.innerHTML = `
+    <div class="chat-bot-avatar">
+      ${getIconSvgHtml('sparkles', 16)}
+    </div>
+    <div class="chat-bubble-bot ${isCrisis ? 'crisis-highlight' : ''}">
+      ${escapeHtml(botResponse).replace(/\n/g, '<br>')}
+      ${isCrisis && crisisResources.length > 0 ? `
+        <div class="crisis-contacts-box">
+          <strong>Emergency Resources:</strong>
+          ${crisisResources.map(r => `<div class="crisis-item"><strong>${escapeHtml(r.name)}</strong>: <a href="${r.action_type === 'sms' ? 'sms:' + r.contact : r.action_type === 'call' ? 'tel:' + r.contact : r.contact}">${escapeHtml(r.contact)}</a> (${escapeHtml(r.description)})</div>`).join('')}
+        </div>
+      ` : ''}
+    </div>
+  `;
+  stream.appendChild(botRow);
+
+  // Update quick replies dynamically if suggested actions are provided
+  if (suggestedActions && suggestedActions.length > 0) {
+    const quickContainer = document.getElementById("chatQuickReplies");
+    if (quickContainer) {
+      quickContainer.innerHTML = suggestedActions.map(action => {
+        if (action.includes("Breathing") || action.includes("Pacer")) {
+          return `<button type="button" class="quick-reply-pill" onclick="switchScreen('wearables')">${escapeHtml(action)}</button>`;
+        } else if (action.includes("Check-In") || action.includes("Assessment")) {
+          return `<button type="button" class="quick-reply-pill" onclick="switchScreen('checkin')">${escapeHtml(action)}</button>`;
+        } else if (action.includes("Insights") || action.includes("Trends")) {
+          return `<button type="button" class="quick-reply-pill" onclick="switchScreen('insights')">${escapeHtml(action)}</button>`;
+        } else {
+          return `<button type="button" class="quick-reply-pill" onclick="sendQuickPrompt('${escapeHtml(action)}')">${escapeHtml(action)}</button>`;
+        }
+      }).join('');
+    }
+  }
+
+  stream.scrollTop = stream.scrollHeight;
   renderAppIcons();
 }
 
