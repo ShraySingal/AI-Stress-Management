@@ -4565,3 +4565,110 @@ html.large-text .assistant-beta-pill {
     z-index: 1000 !important;
   }
 }
+
+/* ==========================================================================
+   UTILITY & COMPONENT CLASSES (NO INLINE STYLES)
+   ========================================================================== */
+
+/* Display & Visibility */
+.hidden { display: none !important; }
+.d-flex { display: flex; }
+.d-inline-flex { display: inline-flex; }
+.d-inline-block { display: inline-block; }
+.flex-1 { flex: 1; }
+.flex-col { display: flex; flex-direction: column; }
+.flex-center { display: flex; align-items: center; justify-content: center; }
+.flex-align-center { display: flex; align-items: center; }
+.flex-align-start { display: flex; align-items: flex-start; }
+.flex-row-between { display: flex; justify-content: space-between; align-items: center; }
+.flex-between { display: flex; justify-content: space-between; }
+.justify-start { justify-content: flex-start; }
+
+/* Text Alignment */
+.text-center { text-align: center; }
+.text-left { text-align: left; }
+
+/* Colors */
+.color-coral { color: var(--coral) !important; }
+.color-primary { color: var(--primary) !important; }
+.color-muted { color: var(--muted) !important; }
+.color-amber { color: var(--amber) !important; }
+
+/* Spacing - Gaps */
+.gap-6 { gap: 6px; }
+.gap-8 { gap: 8px; }
+.gap-10 { gap: 10px; }
+.gap-12 { gap: 12px; }
+
+/* Spacing - Margins */
+.mt-4 { margin-top: 4px; }
+.mt-6 { margin-top: 6px; }
+.mt-8 { margin-top: 8px; }
+.mt-10 { margin-top: 10px; }
+.mt-14 { margin-top: 14px; }
+.mt-16 { margin-top: 16px; }
+.mt-18 { margin-top: 18px; }
+.mt-20 { margin-top: 20px; }
+.mt-24 { margin-top: 24px; }
+
+.mb-8 { margin-bottom: 8px; }
+.mb-12 { margin-bottom: 12px; }
+.mb-16 { margin-bottom: 16px; }
+.mb-20 { margin-bottom: 20px; }
+.mb-24 { margin-bottom: 24px; }
+
+.my-6-14 { margin: 6px 0 14px; }
+.my-12-16 { margin: 12px 0 16px; }
+.m-auto { margin: auto; }
+
+/* Borders */
+.border-coral-left { border-left: 4px solid var(--coral); }
+.border-line-bottom { border-bottom: 1px solid var(--line); }
+.border-line-top { border-top: 1px solid var(--line); }
+
+/* Component Specific Styles */
+.ring-122 { width: 122px; height: 122px; }
+.ring-140 { width: 140px; height: 140px; margin: auto; }
+.avatar-64 { width: 64px; height: 64px; font-size: 22px; margin: 0 auto 12px; }
+
+.icon-xs { width: 14px; height: 14px; }
+.icon-15 { width: 15px; height: 15px; }
+.icon-sm { width: 16px; height: 16px; }
+.icon-17 { width: 17px; height: 17px; }
+.icon-md { width: 18px; height: 18px; }
+.icon-play { fill: currentColor; width: 14px; }
+.icon-vcenter { vertical-align: middle; }
+
+.prediction-hero-box { text-align: center; padding: 20px 0 16px; }
+.segmented-custom { display: flex; gap: 8px; margin-bottom: 20px; }
+.chart-labels-row { display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-top: 8px; }
+.trigger-row-item { display: flex; justify-content: space-between; align-items: center; padding: 10px 0; }
+.tag-pill-sm { font-size: 11px; white-space: nowrap; padding: 6px 12px; }
+
+.status-dot-green { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--positive); margin-right: 4px; }
+.status-dot-green-lg { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--positive); margin-right: 4px; }
+
+.habit-circle-done { width: 28px; height: 28px; border-radius: 50%; background: var(--positive-soft); color: var(--positive); display: flex; align-items: center; justify-content: center; margin: auto; }
+.habit-circle-pending { width: 28px; height: 28px; border-radius: 50%; background: var(--line); color: var(--muted); display: flex; align-items: center; justify-content: center; margin: auto; }
+.habit-circle-today { width: 28px; height: 28px; border-radius: 50%; background: var(--primary); color: white; display: flex; align-items: center; justify-content: center; margin: auto; }
+
+.privacy-badge { background: var(--primary-soft); color: var(--primary); padding: 8px 12px; border-radius: 12px; font-size: 11px; margin-bottom: 12px; }
+.streak-badge { display: flex; align-items: center; gap: 6px; color: var(--amber); font-weight: 700; }
+
+.chat-messages-container { flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; padding-bottom: 16px; min-height: 280px; max-height: 380px; }
+.chat-msg-row { display: flex; gap: 10px; align-items: flex-start; }
+.chat-bot-avatar { width: 32px; height: 32px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; color: white; }
+.chat-bubble-bot { background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 12px 16px; max-width: 80%; font-size: 13px; line-height: 1.5; }
+.chat-quick-replies { display: flex; gap: 8px; overflow-x: auto; padding: 8px 0; margin-bottom: 8px; }
+.chat-input-bar { display: flex; gap: 8px; padding-top: 8px; border-top: 1px solid var(--line); }
+.chat-send-btn { width: 44px; height: 44px; border-radius: 50%; padding: 0; display: flex; align-items: center; justify-content: center; }
+
+.pacer-container { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 320px; position: relative; }
+.pacer-circle-outer { position: absolute; width: 220px; height: 220px; border-radius: 50%; background: var(--primary-soft); transition: transform 4s ease-in-out; transform: scale(0.8); }
+.pacer-circle-inner { position: absolute; width: 150px; height: 150px; border-radius: 50%; background: var(--primary); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; transition: transform 4s ease-in-out; transform: scale(0.9); box-shadow: 0 10px 30px rgba(81, 70, 229, 0.4); }
+.pacer-phase-text { font-size: 18px; letter-spacing: 1px; }
+.pacer-seconds-text { font-size: 28px; font-weight: 700; margin-top: 4px; }
+
+.wearable-icon-box { width: 44px; height: 44px; border-radius: 12px; background: var(--primary-soft); color: var(--primary); display: flex; align-items: center; justify-content: center; }
+.action-link-btn { text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+

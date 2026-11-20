@@ -2,13 +2,14 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MindEase — Mental Health, Stress Intelligence & Wellbeing Platform</title>
   <meta name="description" content="AI-Powered multi-dimensional stress prediction, mood tracking, sleep & activity analytics platform.">
   <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
   <meta http-equiv="Pragma" content="no-cache">
   <meta http-equiv="Expires" content="0">
   <link rel="icon" href="./assets/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="./assets/icon-192.svg">
   <link rel="manifest" href="./manifest.webmanifest">
   <link rel="stylesheet" href="./css/style.css">
   
@@ -57,7 +58,7 @@
     <div class="phone-shell has-nav" id="phoneShell">
       
       <!-- SCREEN 1: SPLASH SCREEN -->
-      <section class="splash" id="screen-splash" style="display: none;">
+      <section class="splash hidden" id="screen-splash">
         <div class="brand-mark large">
           <span></span><span></span><span></span><span></span><div></div>
         </div>
@@ -69,7 +70,7 @@
       </section>
 
       <!-- SCREEN 2: AUTH SCREEN (Sign In & Sign Up) -->
-      <section class="auth-page" id="screen-signin" style="display: none;">
+      <section class="auth-page hidden" id="screen-signin">
         <div class="auth-brand">
           <div class="brand-mark">
             <span></span><span></span><span></span><span></span><div></div>
@@ -81,7 +82,7 @@
         </div>
 
         <form class="auth-form" id="authForm" onsubmit="handleAuthSubmit(event)">
-          <div id="signupNameGroup" style="display: none;">
+          <div id="signupNameGroup" class="hidden">
             <label class="field-label" for="authName">Name</label>
             <input id="authName" class="input" placeholder="Your full name" autocomplete="name">
           </div>
@@ -97,19 +98,19 @@
             </button>
           </div>
 
-          <div id="authFeedback" class="auth-feedback" style="display: none;"></div>
+          <div id="authFeedback" class="auth-feedback hidden"></div>
 
-          <button type="submit" class="button button-primary full" id="authSubmitBtn" style="margin-top: 16px;">Sign In</button>
-          <button type="button" class="button button-secondary full" onclick="autoDemoLogin()" style="margin-top: 10px;">Quick Demo Access</button>
+          <button type="submit" class="button button-primary full mt-16" id="authSubmitBtn">Sign In</button>
+          <button type="button" class="button button-secondary full mt-10" onclick="autoDemoLogin()">Quick Demo Access</button>
 
-          <div class="auth-footer" style="margin-top: 20px;">
+          <div class="auth-footer mt-20">
             <span id="authToggleText">New to MindEase?</span>
             <button type="button" onclick="toggleAuthMode()" id="authToggleBtn">Create account</button>
           </div>
         </form>
 
-        <div class="demo-note" style="margin-top: 24px;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield" style="width: 15px; height: 15px;"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg> Private beta · Your health entries are encrypted.
+        <div class="demo-note mt-24">
+          <svg xmlns="http://www.w3.org/2000/svg" width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield icon-15"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg> Private beta · Your health entries are encrypted.
         </div>
       </section>
 
@@ -133,7 +134,7 @@
             <div class="title-lg">How are you feeling today?</div>
             <div class="body-sm light">A small pause can make a meaningful difference.</div>
             <button class="button button-secondary" onclick="switchScreen('checkin')">
-              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart" style="width: 17px; height: 17px;"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path></svg> Check In
+              <svg xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-heart icon-17"><path d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5"></path></svg> Check In
             </button>
           </div>
           <div class="hero-flower">
@@ -151,7 +152,7 @@
         </div>
 
         <div class="card outlook-card card-clickable" onclick="switchScreen('prediction')">
-          <div class="ring" style="width: 122px; height: 122px;">
+          <div class="ring ring-122">
             <svg viewBox="0 0 100 100" aria-label="Stress outlook score">
               <circle class="ring-track" cx="50" cy="50" r="43"></circle>
               <circle class="ring-value" id="outlookRingValue" cx="50" cy="50" r="43" stroke-dasharray="270.17" stroke-dashoffset="130"></circle>
@@ -167,7 +168,7 @@
             <div class="title-md" id="outlookRiskText">38% moderate risk</div>
             <div class="body-sm">AI multi-dimensional forecast based on sleep, activity, and HRV.</div>
             <div class="trend-pill">
-              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-activity" style="width: 14px; height: 14px;"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"></path></svg> Latest stress: <span id="latestStressVal">3.5</span>/10
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-activity icon-xs"><path d="M22 12h-2.48a2 2 0 0 0-1.93 1.46l-2.35 8.36a.25.25 0 0 1-.48 0L9.24 2.18a.25.25 0 0 0-.48 0l-2.35 8.36A2 2 0 0 1 4.49 12H2"></path></svg> Latest stress: <span id="latestStressVal">3.5</span>/10
             </div>
           </div>
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right card-chevron"><path d="m9 18 6-6-6-6"></path></svg>
@@ -232,22 +233,22 @@
             <div class="title-md">Box Breathing Exercise</div>
             <div class="body-sm">Regulate your autonomic nervous system and lower elevated cortisol levels.</div>
           </div>
-          <div class="round-play"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play" style="fill: currentColor; width: 14px;"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path></svg></div>
+          <div class="round-play"><svg xmlns="http://www.w3.org/2000/svg" width="14" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-play icon-play"><path d="M5 5a2 2 0 0 1 3.008-1.728l11.997 6.998a2 2 0 0 1 .003 3.458l-12 7A2 2 0 0 1 5 19z"></path></svg></div>
         </div>
 
         <!-- Crisis Support Banner -->
         <div class="support-banner card-clickable" onclick="switchScreen('support')">
-          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone" style="width: 18px; height: 18px;"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone icon-md"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg>
           <div class="grow">
             <strong>Need immediate support?</strong>
             <div>Access free, confidential 24/7 crisis helplines and resources.</div>
           </div>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right" style="width: 16px;"><path d="m9 18 6-6-6-6"></path></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right icon-sm"><path d="m9 18 6-6-6-6"></path></svg>
         </div>
       </section>
 
       <!-- SCREEN 4: DAILY CHECK-IN -->
-      <section class="page" id="screen-checkin" style="display: none;">
+      <section class="page hidden" id="screen-checkin">
         <div class="page-header">
           <div class="header-side">
             <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
@@ -292,21 +293,21 @@
         </div>
 
         <!-- Sliders -->
-        <div class="form-stack" style="margin-top: 24px;">
+        <div class="form-stack mt-24">
           <div class="field-heading">
             <label class="field-label">Stress Level: <strong id="stressSliderVal">4</strong> / 10</label>
             <div class="caption">1 = Very Relaxed, 10 = Severe Stress</div>
           </div>
           <input type="range" class="range" id="checkinStressSlider" min="1" max="10" value="4" oninput="document.getElementById('stressSliderVal').innerText = this.value">
 
-          <div class="field-heading" style="margin-top: 18px;">
+          <div class="field-heading mt-18">
             <label class="field-label">Energy Level: <strong id="energySliderVal">7</strong> / 10</label>
             <div class="caption">1 = Exhausted, 10 = Fully Energized</div>
           </div>
           <input type="range" class="range" id="checkinEnergySlider" min="1" max="10" value="7" oninput="document.getElementById('energySliderVal').innerText = this.value">
 
           <!-- Tags -->
-          <div class="field-heading" style="margin-top: 20px;">
+          <div class="field-heading mt-20">
             <label class="field-label">What is influencing your mood?</label>
           </div>
           <div class="tag-wrap">
@@ -321,19 +322,19 @@
           </div>
 
           <!-- Notes Textarea -->
-          <div class="field-heading" style="margin-top: 20px;">
+          <div class="field-heading mt-20">
             <label class="field-label">Daily Notes / Reflections</label>
           </div>
           <textarea class="textarea" id="checkinNotes" placeholder="Describe any thoughts or challenges you are experiencing today..."></textarea>
 
-          <button class="button button-primary full" style="margin-top: 24px;" onclick="submitDailyCheckIn()">
+          <button class="button button-primary full mt-24" onclick="submitDailyCheckIn()">
             Save Daily Check-In
           </button>
         </div>
       </section>
 
       <!-- SCREEN 5: AI STRESS RISK PREDICTION -->
-      <section class="page" id="screen-prediction" style="display: none;">
+      <section class="page hidden" id="screen-prediction">
         <div class="page-header">
           <div class="header-side">
             <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
@@ -347,8 +348,8 @@
           <div class="header-side header-action"></div>
         </div>
 
-        <div class="prediction-hero" style="text-align: center; padding: 20px 0 16px;">
-          <div class="ring" style="width: 140px; height: 140px; margin: auto;">
+        <div class="prediction-hero prediction-hero-box">
+          <div class="ring ring-140">
             <svg viewBox="0 0 100 100">
               <circle class="ring-track" cx="50" cy="50" r="43"></circle>
               <circle class="ring-value" id="predRingValue" cx="50" cy="50" r="43" stroke-dasharray="270.17" stroke-dashoffset="135"></circle>
@@ -358,12 +359,12 @@
               <small id="predCategoryVal">Moderate Risk</small>
             </div>
           </div>
-          <div class="title-lg" style="margin-top: 14px;">Next-Day Stress Forecast</div>
+          <div class="title-lg mt-14">Next-Day Stress Forecast</div>
           <div class="body-sm">Predicted from XGBoost model trained on multi-sensor physiological & behavioral metrics.</div>
         </div>
 
         <div class="disclaimer">
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield" style="width: 16px; height: 16px;"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield icon-sm"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>
           <span>Clinical Disclaimer: For proactive wellness tracking only. Not a medical or diagnostic substitute.</span>
         </div>
 
@@ -400,7 +401,7 @@
           </div>
         </div>
 
-        <div class="section-heading" style="margin-top: 24px;">
+        <div class="section-heading mt-24">
           <div class="title-sm">Recommended Action Plan</div>
         </div>
 
@@ -416,7 +417,7 @@
       </section>
 
       <!-- SCREEN 6: INSIGHTS & ANALYTICS -->
-      <section class="page" id="screen-insights" style="display: none;">
+      <section class="page hidden" id="screen-insights">
         <div class="page-header">
           <div class="header-side">
             <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
@@ -430,14 +431,14 @@
           <div class="header-side header-action"></div>
         </div>
 
-        <div class="segmented" style="display: flex; gap: 8px; margin-bottom: 20px;">
-          <button class="button button-primary active" style="flex: 1;" onclick="setInsightsRange('7d', this)">7 Days</button>
-          <button class="button button-ghost" style="flex: 1;" onclick="setInsightsRange('30d', this)">30 Days</button>
-          <button class="button button-ghost" style="flex: 1;" onclick="setInsightsRange('90d', this)">90 Days</button>
+        <div class="segmented segmented-custom">
+          <button class="button button-primary active flex-1" onclick="setInsightsRange('7d', this)">7 Days</button>
+          <button class="button button-ghost flex-1" onclick="setInsightsRange('30d', this)">30 Days</button>
+          <button class="button button-ghost flex-1" onclick="setInsightsRange('90d', this)">90 Days</button>
         </div>
 
         <div class="card">
-          <div class="section-heading" style="margin-bottom: 12px;">
+          <div class="section-heading mb-12">
             <div>
               <div class="title-sm">Stress Trend Line</div>
               <div class="caption">Daily calculated stress index</div>
@@ -459,32 +460,32 @@
               <circle cx="255" cy="70" r="4" class="chart-dot" fill="var(--primary)"></circle>
               <circle cx="300" cy="45" r="4" class="chart-dot" fill="var(--primary)"></circle>
             </svg>
-            <div class="chart-labels" style="display: flex; justify-content: space-between; font-size: 11px; color: var(--muted); margin-top: 8px;">
+            <div class="chart-labels chart-labels-row">
               <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
             </div>
           </div>
         </div>
 
-        <div class="section-heading" style="margin-top: 24px;">
+        <div class="section-heading mt-24">
           <div class="title-sm">Correlations & Triggers</div>
         </div>
 
         <div class="card">
-          <div class="trigger-row" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line);">
+          <div class="trigger-row trigger-row-item border-line-bottom">
             <div>
               <strong>Work Deadlines</strong>
               <div class="caption">Associated with 68% of elevated stress events</div>
             </div>
             <span class="microcopy amber">High Impact</span>
           </div>
-          <div class="trigger-row" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0; border-bottom: 1px solid var(--line);">
+          <div class="trigger-row trigger-row-item border-line-bottom">
             <div>
               <strong>Sleep Deficit (&lt;6.5 hrs)</strong>
               <div class="caption">Increases next-day anxiety probability by 2.4x</div>
             </div>
             <span class="microcopy amber">High Impact</span>
           </div>
-          <div class="trigger-row" style="display: flex; justify-content: space-between; align-items: center; padding: 10px 0;">
+          <div class="trigger-row trigger-row-item">
             <div>
               <strong>Daily Walking (&gt;7,500 steps)</strong>
               <div class="caption">Reduces average stress score by 18 points</div>
@@ -495,7 +496,7 @@
       </section>
 
       <!-- SCREEN 7: AI SUPPORT CHAT -->
-      <section class="page chat-page" id="screen-chat" style="display: none;">
+      <section class="page chat-page hidden" id="screen-chat">
         <div class="page-header">
           <div class="header-side">
             <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
@@ -504,46 +505,46 @@
           </div>
           <div class="header-copy">
             <div class="title-md">AI Coping Assistant</div>
-            <div class="caption"><span class="online-dot" style="display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--positive); margin-right: 4px;"></span> Online · Evidence-Based CBT</div>
+            <div class="caption"><span class="online-dot status-dot-green-lg"></span> Online · Evidence-Based CBT</div>
           </div>
           <div class="header-side header-action"></div>
         </div>
 
-        <div class="chat-safety" style="background: var(--primary-soft); color: var(--primary); padding: 8px 12px; border-radius: 12px; font-size: 11px; margin-bottom: 12px;">
-          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield" style="width: 14px; height: 14px; vertical-align: middle;"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg> Private & confidential session. In case of emergency, please dial 988.
+        <div class="chat-safety privacy-badge">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield icon-xs icon-vcenter"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg> Private & confidential session. In case of emergency, please dial 988.
         </div>
 
-        <div class="chat-scroll" id="chatMessageStream" style="flex: 1; overflow-y: auto; display: flex; flex-direction: column; gap: 12px; padding-bottom: 16px; min-height: 280px; max-height: 380px;">
+        <div class="chat-scroll chat-messages-container" id="chatMessageStream">
           <!-- Assistant welcome -->
-          <div class="message-row" style="display: flex; gap: 10px; align-items: flex-start;">
-            <div class="bot-avatar" style="width: 32px; height: 32px; border-radius: 50%; background: var(--primary); display: flex; align-items: center; justify-content: center; color: white;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles" style="width: 16px; height: 16px;"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>
+          <div class="message-row chat-msg-row">
+            <div class="bot-avatar chat-bot-avatar">
+              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sparkles icon-sm"><path d="M11.017 2.814a1 1 0 0 1 1.966 0l1.051 5.558a2 2 0 0 0 1.594 1.594l5.558 1.051a1 1 0 0 1 0 1.966l-5.558 1.051a2 2 0 0 0-1.594 1.594l-1.051 5.558a1 1 0 0 1-1.966 0l-1.051-5.558a2 2 0 0 0-1.594-1.594l-5.558-1.051a1 1 0 0 1 0-1.966l5.558-1.051a2 2 0 0 0 1.594-1.594z"></path><path d="M20 2v4"></path><path d="M22 4h-4"></path><circle cx="4" cy="20" r="2"></circle></svg>
             </div>
-            <div class="bubble" id="chatWelcomeBubble" style="background: var(--card); border: 1px solid var(--line); border-radius: 16px; padding: 12px 16px; max-width: 80%; font-size: 13px; line-height: 1.5;">
+            <div class="bubble chat-bubble-bot" id="chatWelcomeBubble">
               Hi! I'm your MindEase wellness companion. I'm here to listen, offer cognitive reframing techniques, and guide you through calming exercises. How are you feeling right now?
             </div>
           </div>
         </div>
 
         <!-- Quick Prompts -->
-        <div class="prompt-list" style="display: flex; gap: 8px; overflow-x: auto; padding: 8px 0; margin-bottom: 8px;">
-          <button class="button button-ghost" style="font-size: 11px; white-space: nowrap; padding: 6px 12px;" onclick="sendQuickPrompt('Help me calm down right now')">Calm me down</button>
-          <button class="button button-ghost" style="font-size: 11px; white-space: nowrap; padding: 6px 12px;" onclick="sendQuickPrompt('I feel overwhelmed with work')">Work stress</button>
-          <button class="button button-ghost" style="font-size: 11px; white-space: nowrap; padding: 6px 12px;" onclick="sendQuickPrompt('Can you guide me through 4-7-8 breathing?')">Breathing guide</button>
-          <button class="button button-ghost" style="font-size: 11px; white-space: nowrap; padding: 6px 12px;" onclick="sendQuickPrompt('Tips for better sleep tonight')">Sleep tips</button>
+        <div class="prompt-list chat-quick-replies">
+          <button class="button button-ghost tag-pill-sm" onclick="sendQuickPrompt('Help me calm down right now')">Calm me down</button>
+          <button class="button button-ghost tag-pill-sm" onclick="sendQuickPrompt('I feel overwhelmed with work')">Work stress</button>
+          <button class="button button-ghost tag-pill-sm" onclick="sendQuickPrompt('Can you guide me through 4-7-8 breathing?')">Breathing guide</button>
+          <button class="button button-ghost tag-pill-sm" onclick="sendQuickPrompt('Tips for better sleep tonight')">Sleep tips</button>
         </div>
 
         <!-- Compose Bar -->
-        <form class="chat-compose" onsubmit="handleChatSubmit(event)" style="display: flex; gap: 8px; padding-top: 8px; border-top: 1px solid var(--line);">
-          <input class="input" id="chatInput" placeholder="Message MindEase Assistant..." style="flex: 1;" autocomplete="off">
-          <button type="submit" class="button button-primary send-button" style="width: 44px; height: 44px; border-radius: 50%; padding: 0; display: flex; align-items: center; justify-content: center;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send" style="width: 18px; height: 18px;"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg>
+        <form class="chat-compose chat-input-bar" onsubmit="handleChatSubmit(event)">
+          <input class="input flex-1" id="chatInput" placeholder="Message MindEase Assistant..." autocomplete="off">
+          <button type="submit" class="button button-primary send-button chat-send-btn">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-send icon-md"><path d="M14.536 21.686a.5.5 0 0 0 .937-.024l6.5-19a.496.496 0 0 0-.635-.635l-19 6.5a.5.5 0 0 0-.024.937l7.93 3.18a2 2 0 0 1 1.112 1.11z"></path><path d="m21.854 2.147-10.94 10.939"></path></svg>
           </button>
         </form>
       </section>
 
       <!-- SCREEN 8: BREATHING PACER -->
-      <section class="page breathing-page" id="screen-breathing" style="display: none;">
+      <section class="page breathing-page hidden" id="screen-breathing">
         <div class="page-header">
           <div class="header-side">
             <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
@@ -557,25 +558,25 @@
           <div class="header-side header-action"></div>
         </div>
 
-        <div class="duration-picker" style="display: flex; gap: 8px; margin-bottom: 24px;">
-          <button class="button button-primary active" id="btnModeBox" style="flex: 1;" onclick="setBreathingMode('box', this)">Box (4-4-4-4)</button>
-          <button class="button button-ghost" id="btnMode478" style="flex: 1;" onclick="setBreathingMode('478', this)">Relax (4-7-8)</button>
+        <div class="duration-picker d-flex gap-8 mb-24">
+          <button class="button button-primary active flex-1" id="btnModeBox" onclick="setBreathingMode('box', this)">Box (4-4-4-4)</button>
+          <button class="button button-ghost flex-1" id="btnMode478" onclick="setBreathingMode('478', this)">Relax (4-7-8)</button>
         </div>
 
         <!-- Breathing Animated Visualizer -->
-        <div class="breathing-stage" style="display: flex; flex-direction: column; align-items: center; justify-content: center; height: 320px; position: relative;">
-          <div class="breathing-halo" id="breathHalo" style="position: absolute; width: 220px; height: 220px; border-radius: 50%; background: var(--primary-soft); transition: transform 4s ease-in-out; transform: scale(0.8);"></div>
-          <div class="breathing-circle" id="breathCircle" style="position: absolute; width: 150px; height: 150px; border-radius: 50%; background: var(--primary); display: flex; flex-direction: column; align-items: center; justify-content: center; color: white; transition: transform 4s ease-in-out; transform: scale(0.9); box-shadow: 0 10px 30px rgba(81, 70, 229, 0.4);">
-            <strong id="breathAction" style="font-size: 18px; letter-spacing: 1px;">IN-HALE</strong>
-            <span id="breathCount" style="font-size: 28px; font-weight: 700; margin-top: 4px;">4</span>
+        <div class="breathing-stage pacer-container">
+          <div class="breathing-halo pacer-circle-outer" id="breathHalo"></div>
+          <div class="breathing-circle pacer-circle-inner" id="breathCircle">
+            <strong id="breathAction" class="pacer-phase-text">IN-HALE</strong>
+            <span id="breathCount" class="pacer-seconds-text">4</span>
           </div>
         </div>
 
-        <div class="body-sm" id="breathInstruction" style="text-align: center; color: var(--muted); margin-bottom: 24px;">
+        <div class="body-sm text-center color-muted mb-24" id="breathInstruction">
           Breathe in slowly through your nose, filling your diaphragm.
         </div>
 
-        <div class="breath-controls" style="display: flex; gap: 12px;">
+        <div class="breath-controls d-flex gap-12">
           <button class="button button-primary full" id="breathToggleBtn" onclick="toggleBreathingPacer()">
             Start Session
           </button>
@@ -586,7 +587,7 @@
       </section>
 
       <!-- SCREEN 9: HABITS TRACKER -->
-      <section class="page" id="screen-habits" style="display: none;">
+      <section class="page hidden" id="screen-habits">
         <div class="page-header">
           <div class="header-side">
             <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
@@ -600,35 +601,35 @@
           <div class="header-side header-action"></div>
         </div>
 
-        <div class="card habit-summary" style="margin-bottom: 20px;">
-          <div style="display: flex; justify-content: space-between; align-items: center;">
+        <div class="card habit-summary mb-20">
+          <div class="flex-row-between">
             <div>
               <div class="eyebrow">THIS WEEK</div>
               <div class="title-md"><span id="habitsCompletedNum">4</span> of 5 Completed Today</div>
             </div>
-            <div class="streak" style="display: flex; align-items: center; gap: 6px; color: var(--amber); font-weight: 700;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flame" style="width: 18px; height: 18px;"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"></path></svg> 5 Days
+            <div class="streak streak-badge">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-flame icon-md"><path d="M12 3q1 4 4 6.5t3 5.5a1 1 0 0 1-14 0 5 5 0 0 1 1-3 1 1 0 0 0 5 0c0-2-1.5-3-1.5-5q0-2 2.5-4"></path></svg> 5 Days
             </div>
           </div>
           <!-- Weekly circle dots -->
-          <div class="habit-week" style="display: flex; justify-content: space-between; margin-top: 14px;">
-            <div style="text-align: center;"><div class="score-badge" style="width: 28px; height: 28px; border-radius: 50%; background: var(--positive-soft); color: var(--positive); display: flex; align-items: center; justify-content: center; margin: auto;">✓</div><small class="caption">M</small></div>
-            <div style="text-align: center;"><div class="score-badge" style="width: 28px; height: 28px; border-radius: 50%; background: var(--positive-soft); color: var(--positive); display: flex; align-items: center; justify-content: center; margin: auto;">✓</div><small class="caption">T</small></div>
-            <div style="text-align: center;"><div class="score-badge" style="width: 28px; height: 28px; border-radius: 50%; background: var(--positive-soft); color: var(--positive); display: flex; align-items: center; justify-content: center; margin: auto;">✓</div><small class="caption">W</small></div>
-            <div style="text-align: center;"><div class="score-badge" style="width: 28px; height: 28px; border-radius: 50%; background: var(--positive-soft); color: var(--positive); display: flex; align-items: center; justify-content: center; margin: auto;">✓</div><small class="caption">T</small></div>
-            <div style="text-align: center;"><div class="score-badge" style="width: 28px; height: 28px; border-radius: 50%; background: var(--primary); color: white; display: flex; align-items: center; justify-content: center; margin: auto;">✓</div><small class="caption">F</small></div>
-            <div style="text-align: center;"><div class="score-badge" style="width: 28px; height: 28px; border-radius: 50%; background: var(--line); color: var(--muted); display: flex; align-items: center; justify-content: center; margin: auto;">-</div><small class="caption">S</small></div>
-            <div style="text-align: center;"><div class="score-badge" style="width: 28px; height: 28px; border-radius: 50%; background: var(--line); color: var(--muted); display: flex; align-items: center; justify-content: center; margin: auto;">-</div><small class="caption">S</small></div>
+          <div class="habit-week flex-between mt-14">
+            <div class="text-center"><div class="score-badge habit-circle-done">✓</div><small class="caption">M</small></div>
+            <div class="text-center"><div class="score-badge habit-circle-done">✓</div><small class="caption">T</small></div>
+            <div class="text-center"><div class="score-badge habit-circle-done">✓</div><small class="caption">W</small></div>
+            <div class="text-center"><div class="score-badge habit-circle-done">✓</div><small class="caption">T</small></div>
+            <div class="text-center"><div class="score-badge habit-circle-today">✓</div><small class="caption">F</small></div>
+            <div class="text-center"><div class="score-badge habit-circle-pending">-</div><small class="caption">S</small></div>
+            <div class="text-center"><div class="score-badge habit-circle-pending">-</div><small class="caption">S</small></div>
           </div>
         </div>
 
-        <div class="habit-list" style="display: flex; flex-direction: column; gap: 12px;" id="habitsListContainer">
+        <div class="habit-list flex-col gap-12" id="habitsListContainer">
           <!-- Dynamic Habits injected by JS -->
         </div>
       </section>
 
       <!-- SCREEN 10: WEARABLES SYNC -->
-      <section class="page" id="screen-wearables" style="display: none;">
+      <section class="page hidden" id="screen-wearables">
         <div class="page-header">
           <div class="header-side">
             <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
@@ -642,14 +643,14 @@
           <div class="header-side header-action"></div>
         </div>
 
-        <div class="card device-card" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 16px;">
-          <div style="display: flex; gap: 12px; align-items: center;">
-            <div class="device-icon" style="width: 44px; height: 44px; border-radius: 12px; background: var(--primary-soft); color: var(--primary); display: flex; align-items: center; justify-content: center;">
+        <div class="card device-card flex-row-between mb-16">
+          <div class="d-flex gap-12 flex-align-center">
+            <div class="device-icon wearable-icon-box">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-watch"><path d="M12 10v2.2l1.6 1"></path><path d="m16.13 7.66-.81-4.05a2 2 0 0 0-2-1.61h-2.68a2 2 0 0 0-2 1.61l-.78 4.05"></path><path d="m7.88 16.36.8 4a2 2 0 0 0 2 1.61h2.72a2 2 0 0 0 2-1.61l.81-4.05"></path><circle cx="12" cy="12" r="6"></circle></svg>
             </div>
             <div>
               <div class="title-sm">Apple Health & Watch</div>
-              <div class="body-sm"><span class="status-dot" style="display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: var(--positive); margin-right: 4px;"></span> Connected · Synced 5m ago</div>
+              <div class="body-sm"><span class="status-dot status-dot-green"></span> Connected · Synced 5m ago</div>
             </div>
           </div>
           <button class="button button-secondary" onclick="simulateWearableSync(this)">Sync</button>
@@ -688,7 +689,7 @@
       </section>
 
       <!-- SCREEN 11: CLINICAL STRESS ASSESSMENT (PSS-10) -->
-      <section class="page" id="screen-assessment" style="display: none;">
+      <section class="page hidden" id="screen-assessment">
         <div class="page-header">
           <div class="header-side">
             <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
@@ -702,23 +703,23 @@
           <div class="header-side header-action"></div>
         </div>
 
-        <div class="card" style="margin-bottom: 20px;">
+        <div class="card mb-20">
           <div class="eyebrow" id="pssQuestionCounter">QUESTION 1 OF 10</div>
-          <div class="title-lg" id="pssQuestionText" style="margin: 12px 0 16px;">
+          <div class="title-lg my-12-16" id="pssQuestionText">
             In the last month, how often have you been upset because of something that happened unexpectedly?
           </div>
-          <div class="radio-grid" style="display: flex; flex-direction: column; gap: 8px;">
-            <button class="button button-ghost" style="text-align: left; justify-content: flex-start;" onclick="answerPSS(0)">0 - Never</button>
-            <button class="button button-ghost" style="text-align: left; justify-content: flex-start;" onclick="answerPSS(1)">1 - Almost Never</button>
-            <button class="button button-ghost" style="text-align: left; justify-content: flex-start;" onclick="answerPSS(2)">2 - Sometimes</button>
-            <button class="button button-ghost" style="text-align: left; justify-content: flex-start;" onclick="answerPSS(3)">3 - Fairly Often</button>
-            <button class="button button-ghost" style="text-align: left; justify-content: flex-start;" onclick="answerPSS(4)">4 - Very Often</button>
+          <div class="radio-grid flex-col gap-8">
+            <button class="button button-ghost text-left justify-start" onclick="answerPSS(0)">0 - Never</button>
+            <button class="button button-ghost text-left justify-start" onclick="answerPSS(1)">1 - Almost Never</button>
+            <button class="button button-ghost text-left justify-start" onclick="answerPSS(2)">2 - Sometimes</button>
+            <button class="button button-ghost text-left justify-start" onclick="answerPSS(3)">3 - Fairly Often</button>
+            <button class="button button-ghost text-left justify-start" onclick="answerPSS(4)">4 - Very Often</button>
           </div>
         </div>
       </section>
 
       <!-- SCREEN 12: CRISIS SUPPORT & HELPLINES -->
-      <section class="page" id="screen-support" style="display: none;">
+      <section class="page hidden" id="screen-support">
         <div class="page-header">
           <div class="header-side">
             <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
@@ -732,16 +733,16 @@
           <div class="header-side header-action"></div>
         </div>
 
-        <div class="card" style="border-left: 4px solid var(--coral); margin-bottom: 16px;">
-          <div class="title-md" style="color: var(--coral);">Emergency / Urgent Support</div>
-          <div class="body-sm" style="margin: 6px 0 14px;">
+        <div class="card border-coral-left mb-16">
+          <div class="title-md color-coral">Emergency / Urgent Support</div>
+          <div class="body-sm my-6-14">
             If you or someone you know is in immediate danger or experiencing severe emotional distress, please reach out now.
           </div>
-          <div style="display: flex; gap: 10px;">
-            <a href="tel:988" class="button button-danger" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+          <div class="d-flex gap-10">
+            <a href="tel:988" class="button button-danger action-link-btn">
               <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg> Call 988 Lifeline
             </a>
-            <a href="sms:741741" class="button button-secondary" style="text-decoration: none; display: inline-flex; align-items: center; gap: 6px;">
+            <a href="sms:741741" class="button button-secondary action-link-btn">
               Text HOME to 741741
             </a>
           </div>
@@ -751,27 +752,27 @@
           <div class="title-sm">Free Helplines</div>
         </div>
 
-        <div class="card" style="margin-bottom: 12px;">
+        <div class="card mb-12">
           <div class="title-sm">988 Suicide & Crisis Lifeline</div>
           <div class="body-sm">Free, confidential 24/7 support available across the US & Canada.</div>
-          <a href="tel:988" class="text-button" style="margin-top: 8px; display: inline-block;">Call or Text 988</a>
+          <a href="tel:988" class="text-button mt-8 d-inline-block">Call or Text 988</a>
         </div>
 
-        <div class="card" style="margin-bottom: 12px;">
+        <div class="card mb-12">
           <div class="title-sm">Crisis Text Line</div>
           <div class="body-sm">Connect with a volunteer crisis counselor 24/7 over SMS.</div>
-          <a href="sms:741741" class="text-button" style="margin-top: 8px; display: inline-block;">Text 741741</a>
+          <a href="sms:741741" class="text-button mt-8 d-inline-block">Text 741741</a>
         </div>
 
         <div class="card">
           <div class="title-sm">International Helplines</div>
           <div class="body-sm">Find localized helplines in the UK (111), India (KIRAN 1800-599-0019), and worldwide.</div>
-          <a href="https://findahelpline.com" target="_blank" rel="noopener noreferrer" class="text-button" style="margin-top: 8px; display: inline-block;">Visit FindAHelpline.com</a>
+          <a href="https://findahelpline.com" target="_blank" rel="noopener noreferrer" class="text-button mt-8 d-inline-block">Visit FindAHelpline.com</a>
         </div>
       </section>
 
       <!-- SCREEN 13: PRIVACY & DATA GOVERNANCE -->
-      <section class="page" id="screen-privacy" style="display: none;">
+      <section class="page hidden" id="screen-privacy">
         <div class="page-header">
           <div class="header-side">
             <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
@@ -785,9 +786,9 @@
           <div class="header-side header-action"></div>
         </div>
 
-        <div class="card" style="margin-bottom: 16px;">
+        <div class="card mb-16">
           <div class="title-sm">Your Data Ownership Guarantee</div>
-          <div class="body-sm" style="margin-top: 6px;">
+          <div class="body-sm mt-6">
             Your personal mental health and biometric data belongs exclusively to you. MindEase never sells your data to third parties, advertisers, or insurers.
           </div>
         </div>
@@ -796,7 +797,7 @@
           <div class="title-sm">Data Controls</div>
         </div>
 
-        <div class="card" style="margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
+        <div class="card flex-row-between mb-12">
           <div>
             <strong>Biometric Data Sync</strong>
             <div class="caption">Allow reading Apple Health / Wearable feeds</div>
@@ -804,7 +805,7 @@
           <button class="toggle active" onclick="this.classList.toggle('active')"><span></span></button>
         </div>
 
-        <div class="card" style="margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center;">
+        <div class="card flex-row-between mb-24">
           <div>
             <strong>Anonymous AI Telemetry</strong>
             <div class="caption">Help improve prediction model accuracy</div>
@@ -816,7 +817,7 @@
           <div class="title-sm">Export & Erasure Rights</div>
         </div>
 
-        <div style="display: flex; flex-direction: column; gap: 10px;">
+        <div class="flex-col gap-10">
           <button class="button button-secondary full" onclick="exportUserData()">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-download"><path d="M12 15V3"></path><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path><path d="m7 10 5 5 5-5"></path></svg> Export All Health Data (JSON)
           </button>
@@ -827,7 +828,7 @@
       </section>
 
       <!-- SCREEN 14: PROFILE & SETTINGS -->
-      <section class="page" id="screen-profile" style="display: none;">
+      <section class="page hidden" id="screen-profile">
         <div class="page-header">
           <div class="header-side">
             <button class="icon-button" onclick="switchScreen('home')" aria-label="Go back">
@@ -841,8 +842,8 @@
           <div class="header-side header-action"></div>
         </div>
 
-        <div class="card profile-card" style="text-align: center; margin-bottom: 20px;">
-          <div class="avatar" style="width: 64px; height: 64px; font-size: 22px; margin: 0 auto 12px;">
+        <div class="card profile-card text-center mb-20">
+          <div class="avatar avatar-64">
             <span id="profileAvatarInitials" class="avatar-text">U</span>
             <span class="status-dot"></span>
           </div>
@@ -854,13 +855,13 @@
           <div class="title-sm">Preferences</div>
         </div>
 
-        <div class="card" style="margin-bottom: 12px;">
+        <div class="card mb-12">
           <label class="field-label">Wellness Goal</label>
-          <input class="input" id="profileGoalInput" value="Reduce Workplace Stress & Improve Sleep" style="margin-top: 6px;">
-          <button class="button button-secondary" style="margin-top: 10px;" onclick="saveWellnessGoal()">Update Goal</button>
+          <input class="input mt-6" id="profileGoalInput" value="Reduce Workplace Stress & Improve Sleep">
+          <button class="button button-secondary mt-10" onclick="saveWellnessGoal()">Update Goal</button>
         </div>
 
-        <div class="card" style="margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;">
+        <div class="card flex-row-between mb-12">
           <div>
             <strong>Dark Theme</strong>
             <div class="caption">Sleek high-contrast dark appearance</div>
@@ -868,9 +869,9 @@
           <button class="toggle" id="themeToggleBtn" onclick="toggleTheme()"><span></span></button>
         </div>
 
-        <div class="card card-clickable" style="margin-bottom: 12px; display: flex; justify-content: space-between; align-items: center;" onclick="switchScreen('privacy')">
-          <div style="display: flex; gap: 10px; align-items: center;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield" style="color: var(--primary);"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>
+        <div class="card card-clickable flex-row-between mb-12" onclick="switchScreen('privacy')">
+          <div class="d-flex gap-10 flex-align-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield color-primary"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path></svg>
             <div>
               <strong>Privacy & Data Rights</strong>
               <div class="caption">GDPR export, erase, and consents</div>
@@ -879,9 +880,9 @@
           <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-right"><path d="m9 18 6-6-6-6"></path></svg>
         </div>
 
-        <div class="card card-clickable" style="margin-bottom: 24px; display: flex; justify-content: space-between; align-items: center;" onclick="switchScreen('support')">
-          <div style="display: flex; gap: 10px; align-items: center;">
-            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone" style="color: var(--coral);"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg>
+        <div class="card card-clickable flex-row-between mb-24" onclick="switchScreen('support')">
+          <div class="d-flex gap-10 flex-align-center">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone color-coral"><path d="M13.832 16.568a1 1 0 0 0 1.213-.303l.355-.465A2 2 0 0 1 17 15h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2A18 18 0 0 1 2 4a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v3a2 2 0 0 1-.8 1.6l-.468.351a1 1 0 0 0-.292 1.233 14 14 0 0 0 6.392 6.384"></path></svg>
             <div>
               <strong>Crisis & Mental Health Support</strong>
               <div class="caption">24/7 helplines & emergency contacts</div>
@@ -923,8 +924,8 @@
   </div>
 
   <!-- Toast Notification Container -->
-  <div id="toastNotification" class="toast" style="display: none;">
-    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check" style="width: 16px; height: 16px;"><path d="M20 6 9 17l-5-5"></path></svg>
+  <div id="toastNotification" class="toast hidden">
+    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check icon-sm"><path d="M20 6 9 17l-5-5"></path></svg>
     <span id="toastMessage">Check-in saved successfully!</span>
   </div>
 
@@ -936,3 +937,56 @@
   </script>
 </body>
 </html>
+3. I want to identify your actual technology stack
+Answer these four questions:
+Q1. How did your Python backend run?
+
+I don't know
+
+Flask
+
+FastAPI
+
+Django
+
+Streamlit
+
+
+Q2. What kind of AI model did you use?
+
+I don't know the model name
+
+Gemini API
+
+OpenAI API
+
+A trained Machine Learning model
+
+A combination of an LLM and ML model
+
+
+Q3. How was the training performed?
+
+I don't know
+
+Used an existing pretrained model
+
+Trained a model using a custom dataset
+
+Used an API without training a model
+
+Combination of these
+
+
+Q4. Where is your application deployed?
+
+Render (frontend and backend together)
+
+Render (backend only)
+
+Render (frontend only)
+
+I don't know the deployment architecture
+
+Submit answers
+My advice: Don't worry about not knowing every technology name. For an AI Generalist position, being able to explain what you built, how AI tools helped you build it, what works, and what remains incomplete is much more valuable than memorising framework names.

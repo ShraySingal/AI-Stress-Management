@@ -222,11 +222,15 @@ function initDateHeader() {
 function switchScreen(screenName) {
   // Hide all screens
   const screens = document.querySelectorAll(".phone-shell > section");
-  screens.forEach(s => s.style.display = "none");
+  screens.forEach(s => {
+    s.style.display = "none";
+    s.classList.add("hidden");
+  });
 
   // Show target screen
   const target = document.getElementById(`screen-${screenName}`);
   if (target) {
+    target.classList.remove("hidden");
     target.style.display = (screenName === 'chat') ? 'flex' : 'block';
   }
 
@@ -270,6 +274,7 @@ function toggleAuthMode() {
   if (authMode === "signup") {
     title.innerText = "Create your account";
     subtitle.innerText = "Start your private wellness sanctuary.";
+    nameGroup.classList.remove("hidden");
     nameGroup.style.display = "block";
     submitBtn.innerText = "Create Account";
     toggleText.innerText = "Already have an account?";
@@ -277,6 +282,7 @@ function toggleAuthMode() {
   } else {
     title.innerText = "Welcome to MindEase";
     subtitle.innerText = "Your calmer days start here.";
+    nameGroup.classList.add("hidden");
     nameGroup.style.display = "none";
     submitBtn.innerText = "Sign In";
     toggleText.innerText = "New to MindEase?";
